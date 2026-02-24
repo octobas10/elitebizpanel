@@ -678,10 +678,10 @@ $response['pass']=$randId;
 					$msg = '3';
 				}
 			} else {
-				include_once __DIR__.'/Twilio/autoload.php';
+				//include_once __DIR__.'/Twilio/autoload.php';
 				// use Twilio\Rest\Client;
 				// Your Account SID and Auth Token from twilio.com/console
-				$sid = 'AC2ad767555f9d6f1d75789f88d44180f8';
+				/* $sid = 'AC2ad767555f9d6f1d75789f88d44180f8';
 				$token = '2abd99b12fbfcb7ed434cb87692e06cb';
 				$client = new \Twilio\Rest\Client($sid, $token);
 				$number = $client->lookups
@@ -695,7 +695,7 @@ $response['pass']=$randId;
 						$is_valid = '1';
 					} else {
 						$msg = '3';
-					}
+					} */
 					/**
 					 * @since : 02-12-2016 12:23 PM
 					 * @author : Siddharajsinh Maharaul
