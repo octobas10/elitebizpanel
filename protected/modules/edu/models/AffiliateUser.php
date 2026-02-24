@@ -662,37 +662,6 @@ $response['pass']=$randId;
   		}
 	}
 
-	
-
-	public function changeDuplicateIP($id,$duplicate) {
-		if(parent::getDbConnection()->createCommand()->update('edu_affiliate_user', array('allow_duplicate_ip'=>$duplicate), 'id=:id', array(':id'=>$id))) {
-			return true;
-		}
-		return false;
-	}
-
-	/* public function checkUSPSPostalAddress($address,$city,$state,$zip,$is_insert='0',$is_valid='0',$s_response='') {
-		if(isset($is_insert) && $is_insert=='1') {
-			parent::getDbConnection()->createCommand()->insert('edu_address_verification',array('address'=>$address,'city'=>$city,'state'=>$state,'zip_code'=>$zip,'is_valid'=>$is_valid,'response'=>$s_response,'response_date_time'=>date('Y-m-d H:i:s'),'api'=>'1'));
-		} else {
-			$msg = '3';
-			$postal_verification = parent::getDbConnection()->createCommand()->select('id,is_valid')
-				->from('edu_address_verification')
-				->where("address='".$address."' AND city='".$city."' AND state='".$state."' AND zip_code='".$zip."' LIMIT 1")
-				->queryAll();
-				if(isset($postal_verification) && !empty($postal_verification)) {
-					if($postal_verification[0]['is_valid']==1) {
-						//valid
-						$msg = '1';
-					} else {
-						//not valid
-						$msg = '2';
-					}
-				}
-			return $msg;
-		}
-	} */
-
 	public function getAllowedVerification() {
 		$allowed_verification = parent::getDbConnection()->createCommand()->select('verify_phone,verify_email,verify_address')
 				->from('edu_affiliate_verification')
