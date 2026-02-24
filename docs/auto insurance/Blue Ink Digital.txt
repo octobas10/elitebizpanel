@@ -1,0 +1,211 @@
+Hi Tony, Hope all is well.  Please meet Bethany who works for Blue Ink Digital.  She wants to know when we can update Blue Ink Digital Buyer Tiers for these verticals below...
+
+Auto Insurance Specs: https://app.standardinformation.io/integration/3b34b5b2-dfe6-4b8b-b38a-f2765f855b32
+Authorization: Token 70bf76af-f659-4bf2-9774-153fd322ed7c
+
+===============================================================
+{
+"data"
+:
+{
+"drivers"
+:
+[
+0
+:
+{
+"gender":"M"
+"incident"
+:
+[
+0
+:
+{
+"date":"06/18/2021"
+"type":"Speeding Violation"
+"state":"CO"
+"at_fault":"false"
+"insurance_paid":"1500"
+}
+1
+:
+{
+"date":"06/18/2021"
+"type":"Speeding Violation"
+"state":"CO"
+"at_fault":"false"
+"insurance_paid":"1500"
+}
+]
+"education":"Some College"
+"last_name":"Doe"
+"bankruptcy":"true"
+"birth_date":"06/09/2000"
+"first_name":"John"
+"occupation":"Teacher"
+"age_licensed":"16"
+"relationship":"Self"
+"credit_rating":"Excellent"
+"license_state":"CA"
+"requires_sr22":"false"
+"license_status":"Active"
+"marital_status":"Single"
+"occupancy_date":"12/01/2023"
+"residence_type":"Own"
+"months_at_employer":46
+"months_at_residence":6
+"occupation_start_date":"06/05/2022"
+"license_ever_suspended":"false"
+}
+1
+:
+{
+"gender":"M"
+"incident"
+:
+[
+0
+:
+{
+"date":"06/18/2021"
+"type":"Speeding Violation"
+"state":"CO"
+"at_fault":"false"
+"insurance_paid":"1500"
+}
+1
+:
+{
+"date":"06/18/2021"
+"type":"Speeding Violation"
+"state":"CO"
+"at_fault":"false"
+"insurance_paid":"1500"
+}
+]
+"education":"Some College"
+"last_name":"Doe"
+"bankruptcy":"true"
+"birth_date":"06/09/2000"
+"first_name":"John"
+"occupation":"Teacher"
+"age_licensed":"16"
+"relationship":"Self"
+"credit_rating":"Excellent"
+"license_state":"CA"
+"requires_sr22":"false"
+"license_status":"Active"
+"marital_status":"Single"
+"occupancy_date":"12/01/2023"
+"residence_type":"Own"
+"months_at_employer":98
+"months_at_residence":16
+"occupation_start_date":"06/05/2022"
+"license_ever_suspended":"false"
+}
+]
+"vehicles"
+:
+[
+0
+:
+{
+"abs":true
+"vin":"1HGBH41JXM*******"
+"make":"Ford"
+"year":"2016"
+"alarm":"OnStar"
+"model":"Escape"
+"garage":"Full Garage"
+"rental":true
+"towing":true
+"airbags":false
+"salvaged":false
+"submodel":"Titanium"
+"ownership":"Own"
+"primary_use":"Commute Work"
+"annual_miles":"5000"
+"four_wheel_drive":true
+"one_way_distance":"15"
+"weekly_commute_days":"5"
+"automatic_seat_belts":false
+"collision_deductible":82
+"comprehensive_deductible":65
+}
+1
+:
+{
+"abs":true
+"vin":"1HGBH41JXM*******"
+"make":"Ford"
+"year":"2016"
+"alarm":"Audible Alarm"
+"model":"Escape"
+"garage":"Full Garage"
+"rental":true
+"towing":false
+"airbags":true
+"salvaged":true
+"submodel":"Titanium"
+"ownership":"Own"
+"primary_use":"Commute Work"
+"annual_miles":"5000"
+"four_wheel_drive":false
+"one_way_distance":"15"
+"weekly_commute_days":"5"
+"automatic_seat_belts":true
+"collision_deductible":57
+"comprehensive_deductible":96
+}
+]
+"current_policy"
+:
+{
+"coverage_type":"Preferred"
+"insured_since":"02/19/2024"
+"expiration_date":"03/01/2025"
+"insurance_company":"21st Century Insurance"
+}
+"requested_policy"
+:
+{
+"bodily_injury":"25/50"
+"coverage_type":"Standard"
+"property_damage":3
+"collision_deductible":"500"
+"compreshensive_deductible":"500"
+}
+}
+"meta"
+:
+{
+"offer_id":"0-1234"
+"source_id":"Sub1-1234"
+"user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+"lead_id_code":"B7FF9DA5-CF52-39A4-6F4F-C74CD3C33622"
+"tcpa_compliant":"true"
+"landing_page_url":"sample.com"
+"tcpa_consent_text":"I authorize blank to contact me"
+"originally_created":"2024-12-22T19:03:40Z"
+"trusted_form_cert_url":"https://cert.trustedform.com/ffe3f331912509a2cc06b5fd0d72d74d8a5a6a20"
+}
+"contact"
+:
+{
+"city":"Denver"
+"email":"test@gmail.com"
+"phone":"5159998888"
+"state":"CA"
+"phone2":"5153448458"
+"address":"123 Main St"
+"address2":"Apt 209"
+"zip_code":"80209"
+"last_name":"Doe"
+"first_name":"John"
+"ip_address":"138.84.231.238"
+"phone_last_four":"1234"
+}
+"auth_code":"magna nisi"
+}
+
+

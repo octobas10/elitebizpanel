@@ -1,0 +1,862 @@
+2024/05/02 13:49:14 [trace] [system.CModule] Loading "log" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (25)
+2024/05/02 13:49:14 [trace] [system.CModule] Loading "request" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (25)
+2024/05/02 13:49:14 [trace] [system.CModule] Loading "urlManager" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (25)
+2024/05/02 13:49:14 [trace] [system.CModule] Loading "themeManager" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/controllers/SiteController.php (31)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (25)
+2024/05/02 13:49:14 [trace] [system.CModule] Loading "widgetFactory" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/column1.php (2)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/controllers/SiteController.php (31)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (25)
+2024/05/02 13:49:14 [trace] [system.CModule] Loading "clientScript" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/main.php (3)
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/column1.php (14)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/controllers/SiteController.php (31)
+2024/05/02 13:49:14 [trace] [system.CModule] Loading "user" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/tpl_navigation.php (12)
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/main.php (67)
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/column1.php (14)
+2024/05/02 13:49:14 [trace] [system.CModule] Loading "session" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/tpl_navigation.php (12)
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/main.php (67)
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/column1.php (14)
+2025/11/18 14:59:29 [trace] [system.CModule] Loading "log" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 14:59:29 [trace] [system.CModule] Loading "request" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 14:59:29 [trace] [system.CModule] Loading "urlManager" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 14:59:29 [trace] [system.CModule] Loading "themeManager" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/controllers/SiteController.php (31)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 14:59:29 [trace] [system.CModule] Loading "widgetFactory" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/column1.php (2)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/controllers/SiteController.php (31)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 14:59:29 [trace] [system.CModule] Loading "clientScript" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/main.php (3)
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/column1.php (14)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/controllers/SiteController.php (31)
+2025/11/18 14:59:29 [trace] [system.CModule] Loading "user" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/tpl_navigation.php (12)
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/main.php (67)
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/column1.php (14)
+2025/11/18 14:59:29 [trace] [system.CModule] Loading "session" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/tpl_navigation.php (12)
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/main.php (67)
+in /usr/local/var/www/ecw/elitebizpanel.com/themes/abound/views/layouts/column1.php (14)
+2025/11/18 17:36:06 [trace] [system.CModule] Loading "log" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.CModule] Loading "request" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.CModule] Loading "urlManager" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.base.CModule] Loading "autoinsurance" module
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.CModule] Loading "user" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/AutoinsuranceModule.php (22)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.CModule] Loading "session" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/AutoinsuranceModule.php (22)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.CModule] Loading "dbAutoinsurance" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/autoInsuranceActive.php (23)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (24)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbConnection] Opening DB connection
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/autoInsuranceActive.php (23)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (24)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `autoinsurance_affiliate_user`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (24)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `autoinsurance_affiliate_user`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (24)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `autoinsurance_affiliate_transactions`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (92)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (26)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `autoinsurance_affiliate_transactions`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (92)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (26)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.ar.CActiveRecord] AffiliateTransactions.insert()
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (100)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (26)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `autoinsurance_affiliate_transactions` (`ping_status`, `ping_price`, `vendor_ping_price`, `ping_time`, `post_price`, `vendor_post_price`, `post_time`, `ip`, `promo_code`, `sub_id`, `ping_request`, `posting_type`, `is_organic`, `date`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13). Bound with :yp0=0, :yp1='0', :yp2='0', :yp3='0', :yp4='0', :yp5='0', :yp6='0', :yp7='::1', :yp8=1, :yp9='123', :yp10='submit=Ping%2FPost+to+Elite+Auto+Insurance&lead_mode=1&lender=QuinStreet&ipaddress=74.205.70.188&promo_code=1&sub_id=123&tcpa_optin=1&tcpa_text=By+submitting+this+form....&universal_leadid=4D1CG7Y3-3E6C-AT96-U88W-J56N7FY881V1&trustedformcerturl=https%3A%2F%2Fcert.trustedform.com%2Fe1f90db30e5233566b2b6329c784ab1ed71adf20&zip=90100&sub_id2=ABC&is_rented=rent&stay_in_year=0&stay_in_month=0&credit_rating=1&bankruptcy=0&coverage_type=1&vehicle_deductibles=1&vehicle_collision_deductibles=1&medical_pay=1&insurance_policy=1&driver1_gender=M&driver1_dob=1979-10-10&driver1_marital_status=2&driver1_education=3&driver1_occupation=9&driver1_required_SR22=1&driver1_hasTAVCs=1&driver1_num_of_incidents=2&driver1_incident1_type=1&driver1_incident1_date=2025-11-17&driver1_ticket1_description=1&driver1_accident1_at_fault=1&driver1_accident1_damage=1&driver1_accident1_amount=25000&driver1_accident1_description=1&driver1_claim1_description=1&driver1_claim1_paid_amount=17000&driver1_incident2_type=1&driver1_incident2_date=2025-10-04&driver1_ticket2_description=5&driver2_gender=F&driver2_dob=1986-02-03&driver2_marital_status=2&driver2_education=5&driver2_occupation=9&driver2_required_SR22=1&driver2_hasTAVCs=1&driver2_num_of_incidents=2&driver2_incident1_type=1&driver2_incident1_date=2025-11-18&driver2_ticket1_description=4&driver2_incident2_type=1&driver2_incident2_date=2025-11-18&driver2_ticket2_description=1&driver2_claim1_description=2&vehicle1_year=2018&vehicle1_make=Audi&vehicle1_model=A4&vehicle1_vin=8YUBC535%2AB%2A%2A%2A%2A%2A%2A%2A&vehicle1_submodel=3.2+Sedan&vehicle1_primary_use=3&vehicle1_vehicle_ownership=2&vehicle1_daily_mileage=4&vehicle1_annual_mileage=2&vehicle2_year=2019&vehicle2_make=Acura&vehicle2_model=MDX&vehicle2_vin=9YDJH32D%2AB%2A%2A%2A%2A%2A%2A%2A&vehicle2_submodel=4.5+Non+Sedan&vehicle2_primary_use=2&vehicle2_vehicle_ownership=2&vehicle2_daily_mileage=4&vehicle2_annual_mileage=2&insurance_company=40&insurance_start_date=2017-01-10&insurance_expiration_date=2020-12-31&continuously_insured_period=2', :yp11=0, :yp12=0, :yp13='2025-11-18 17:36:06'
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (100)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (26)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `autoinsurance_submissions`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (207)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `autoinsurance_submissions`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (207)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.CModule] Loading "coreMessages" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "submit" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "lender" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "trustedformcerturl" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "sub_id2" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "credit_rating" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver1_accident1_at_fault" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver1_accident1_damage" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver1_accident1_amount" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver1_accident1_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver1_claim1_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver1_claim1_paid_amount" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_gender" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_dob" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_marital_status" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_education" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_occupation" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_required_SR22" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_hasTAVCs" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_ticket2_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_claim1_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "vehicle1_vin" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "vehicle1_submodel" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "vehicle2_year" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "vehicle2_make" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "vehicle2_model" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "vehicle2_vin" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "vehicle2_submodel" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT `dup_days`
+FROM `autoinsurance_affiliate_user`
+WHERE id = 1
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (466)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (271)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "submit" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "lender" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "trustedformcerturl" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "sub_id2" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "credit_rating" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver1_accident1_at_fault" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver1_accident1_damage" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver1_accident1_amount" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver1_accident1_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver1_claim1_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver1_claim1_paid_amount" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_gender" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_dob" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_marital_status" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_education" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_occupation" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_required_SR22" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_hasTAVCs" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_ticket2_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "driver2_claim1_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "vehicle1_vin" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "vehicle1_submodel" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "vehicle2_year" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "vehicle2_make" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "vehicle2_model" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "vehicle2_vin" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [warning] [application] Failed to set unsafe attribute "vehicle2_submodel" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT zipcode,city,UPPER(state) AS state
+FROM `zipcodes`
+WHERE zipcode = "90100"
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (404)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (285)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+2025/11/18 17:36:06 [trace] [system.db.ar.CActiveRecord] Submissions.insert()
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (290)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `autoinsurance_submissions` (`vendor_lead_price`, `lead_mode`, `ipaddress`, `promo_code`, `sub_id`, `tcpa_optin`, `tcpa_text`, `universal_leadid`, `zip`, `is_rented`, `stay_in_year`, `stay_in_month`, `bankruptcy`, `coverage_type`, `vehicle_deductibles`, `vehicle_collision_deductibles`, `medical_pay`, `insurance_policy`, `driver1_gender`, `driver1_dob`, `driver1_marital_status`, `driver1_education`, `driver1_occupation`, `driver1_required_SR22`, `driver1_hasTAVCs`, `driver1_num_of_incidents`, `driver1_incident1_type`, `driver1_incident1_date`, `driver1_ticket1_description`, `driver1_incident2_type`, `driver1_incident2_date`, `driver1_ticket2_description`, `driver2_num_of_incidents`, `driver2_incident1_type`, `driver2_incident1_date`, `driver2_ticket1_description`, `driver2_incident2_type`, `driver2_incident2_date`, `vehicle1_year`, `vehicle1_make`, `vehicle1_model`, `vehicle1_primary_use`, `vehicle1_vehicle_ownership`, `vehicle1_daily_mileage`, `vehicle1_annual_mileage`, `vehicle2_primary_use`, `vehicle2_vehicle_ownership`, `vehicle2_daily_mileage`, `vehicle2_annual_mileage`, `insurance_company`, `insurance_start_date`, `insurance_expiration_date`, `continuously_insured_period`, `city`, `state`, `posting_type`, `is_organic`, `sub_date`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25, :yp26, :yp27, :yp28, :yp29, :yp30, :yp31, :yp32, :yp33, :yp34, :yp35, :yp36, :yp37, :yp38, :yp39, :yp40, :yp41, :yp42, :yp43, :yp44, :yp45, :yp46, :yp47, :yp48, :yp49, :yp50, :yp51, :yp52, :yp53, :yp54, :yp55, :yp56, :yp57). Bound with :yp0='0', :yp1=1, :yp2='74.205.70.188', :yp3=1, :yp4='123', :yp5=1, :yp6='By submitting this form....', :yp7='4D1CG7Y3-3E6C-AT96-U88W-J56N7FY881V1', :yp8='90100', :yp9='rent', :yp10=0, :yp11=0, :yp12=0, :yp13=1, :yp14=1, :yp15=1, :yp16='1', :yp17=1, :yp18='M', :yp19='1979-10-10', :yp20=2, :yp21=3, :yp22=9, :yp23=1, :yp24=1, :yp25=2, :yp26=1, :yp27='2025-11-17', :yp28='1', :yp29=1, :yp30='2025-10-04', :yp31='5', :yp32=2, :yp33=1, :yp34='2025-11-18', :yp35='4', :yp36=1, :yp37='2025-11-18', :yp38='2018', :yp39='Audi', :yp40='A4', :yp41=3, :yp42=2, :yp43=4, :yp44=2, :yp45=2, :yp46=2, :yp47=4, :yp48=2, :yp49=40, :yp50='2017-01-10', :yp51='2020-12-31', :yp52=2, :yp53='Los Angeles', :yp54='CA', :yp55=0, :yp56=0, :yp57='2025-11-18 17:36:06'
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (290)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.ar.CActiveRecord] AffiliateTransactions.updateByPk()
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (485)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (290)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `autoinsurance_affiliate_transactions` SET `customer_id`=:yp0 WHERE `autoinsurance_affiliate_transactions`.`id`=316. Bound with :yp0=308
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (485)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (290)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+2025/11/18 17:36:06 [trace] [system.db.ar.CActiveRecord] AffiliateUser.find()
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/AffiliateUser.php (156)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (32)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT cap_limit FROM `autoinsurance_affiliate_user` `t` WHERE id=1 LIMIT 1
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/AffiliateUser.php (156)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (32)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `autoinsurance_lenders_affiliates_transactions`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (37)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `autoinsurance_lenders_affiliates_transactions`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (37)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `autoinsurance_lender_details`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (38)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `autoinsurance_lender_details`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (38)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.ar.CActiveRecord] AffiliateUser.find()
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/AffiliateUser.php (139)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (39)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT status FROM `autoinsurance_affiliate_user` `t` WHERE id=1 LIMIT 1
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/AffiliateUser.php (139)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (39)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.ar.CActiveRecord] LenderDetails.findAll()
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (51)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `autoinsurance_lender_details` `t` WHERE status = -1 AND name IN ('QuinStreet') AND static_lead_price=0.00 ORDER BY id DESC
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (51)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT `paused_vendor`
+FROM `autoinsurance_lender_details`
+WHERE id= '24'
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderDetails.php (231)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (61)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT `submission_cap`, `accepted_cap`, `hourly_submission_cap`
+FROM `autoinsurance_lender_details`
+WHERE id=:lender_id LIMIT 1. Bound with :lender_id=24
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderDetails.php (170)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (66)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT SUM(ping_sent) AS total_submission,SUM(post_accepted) AS total_accept
+FROM `autoinsurance_lenders_affiliates_transactions`
+WHERE lender_id = 24 AND `date` = '2025-11-18' LIMIT 1
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderDetails.php (182)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (66)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT SUM(ping_sent) as hourly_submission_cap
+FROM `autoinsurance_lenders_affiliates_transactions`
+WHERE lender_id = 24 AND last_inserted_datetime >= DATE_SUB(NOW(),INTERVAL 1 HOUR) LIMIT 1
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderDetails.php (192)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (66)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT `id`
+FROM `autoinsurance_lender_details`
+WHERE id= '24' AND (NOT FIND_IN_SET(DAYOFWEEK(DATE(CURTIME())),traffic_out_days) OR traffic_out_days='' OR traffic_out_days IS NULL) AND (HOUR(CURTIME()) BETWEEN traffic_in_start_time AND traffic_in_end_time OR (traffic_in_start_time='' AND traffic_in_end_time='') OR (traffic_in_start_time IS NULL AND traffic_in_end_time IS NULL)) LIMIT 1
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderDetails.php (210)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (66)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT `cap`, `intervals`
+FROM `autoinsurance_lender_affiliate_settings`
+WHERE affiliate_user_id= '1' AND lender_details_id= '24'
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderAffiliateTransaction.php (38)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (69)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT SUM(ping_sent) as todays_submission
+FROM `autoinsurance_lenders_affiliates_transactions`
+WHERE lender_id = 24 AND promo_code= '1' AND DATE(date) ='2025-11-18'
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderAffiliateTransaction.php (52)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (69)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT `last_inserted_datetime`
+FROM `autoinsurance_lenders_affiliates_transactions`
+WHERE lender_id = 24 AND promo_code= '1' AND DATE(date) ='2025-11-18'
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderAffiliateTransaction.php (58)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (69)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.ar.CActiveRecord] LenderDetails.findAll()
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (83)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `autoinsurance_lender_details` `t` WHERE  id IN (24) AND static_lead_price=0.00
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (83)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT zipcode,city,UPPER(state) AS state
+FROM `zipcodes`
+WHERE zipcode = "90100"
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (404)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/cash_lender/QuinStreetController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (104)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT `insurance_company_id`, `insurance_company_name`
+FROM `insurance_companies`
+WHERE insurance_company_id = "40"
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (414)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (419)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/cash_lender/QuinStreetController.php (216)
+2025/11/18 17:36:06 [trace] [system.db.CDbCommand] Querying SQL: SELECT `occupation_id`, `occupation_name`
+FROM `driver_occupation`
+WHERE occupation_id = "123"
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (432)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (436)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/cash_lender/QuinStreetController.php (217)
+2025/11/18 17:39:21 [trace] [system.CModule] Loading "log" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.CModule] Loading "request" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.CModule] Loading "urlManager" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.base.CModule] Loading "autoinsurance" module
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.CModule] Loading "user" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/AutoinsuranceModule.php (22)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.CModule] Loading "session" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/AutoinsuranceModule.php (22)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.CModule] Loading "dbAutoinsurance" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/autoInsuranceActive.php (23)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (24)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbConnection] Opening DB connection
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/autoInsuranceActive.php (23)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (24)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `autoinsurance_affiliate_user`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (24)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `autoinsurance_affiliate_user`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (24)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `autoinsurance_affiliate_transactions`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (92)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (26)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `autoinsurance_affiliate_transactions`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (92)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (26)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.ar.CActiveRecord] AffiliateTransactions.insert()
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (100)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (26)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `autoinsurance_affiliate_transactions` (`ping_status`, `ping_price`, `vendor_ping_price`, `ping_time`, `post_price`, `vendor_post_price`, `post_time`, `ip`, `promo_code`, `sub_id`, `ping_request`, `posting_type`, `is_organic`, `date`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13). Bound with :yp0=0, :yp1='0', :yp2='0', :yp3='0', :yp4='0', :yp5='0', :yp6='0', :yp7='::1', :yp8=1, :yp9='123', :yp10='submit=Ping%2FPost+to+Elite+Auto+Insurance&lead_mode=1&lender=QuinStreet&ipaddress=74.205.70.188&promo_code=1&sub_id=123&tcpa_optin=1&tcpa_text=By+submitting+this+form....&universal_leadid=4D1CG7Y3-3E6C-AT96-U88W-J56N7FY881V1&trustedformcerturl=https%3A%2F%2Fcert.trustedform.com%2Fe1f90db30e5233566b2b6329c784ab1ed71adf20&zip=90100&sub_id2=ABC&is_rented=rent&stay_in_year=0&stay_in_month=0&credit_rating=1&bankruptcy=0&coverage_type=1&vehicle_deductibles=1&vehicle_collision_deductibles=1&medical_pay=1&insurance_policy=1&driver1_gender=M&driver1_dob=1979-10-10&driver1_marital_status=2&driver1_education=3&driver1_occupation=9&driver1_required_SR22=1&driver1_hasTAVCs=1&driver1_num_of_incidents=2&driver1_incident1_type=1&driver1_incident1_date=2025-11-17&driver1_ticket1_description=1&driver1_accident1_at_fault=1&driver1_accident1_damage=1&driver1_accident1_amount=25000&driver1_accident1_description=1&driver1_claim1_description=1&driver1_claim1_paid_amount=17000&driver1_incident2_type=1&driver1_incident2_date=2025-10-04&driver1_ticket2_description=5&driver2_gender=F&driver2_dob=1986-02-03&driver2_marital_status=2&driver2_education=5&driver2_occupation=9&driver2_required_SR22=1&driver2_hasTAVCs=1&driver2_num_of_incidents=2&driver2_incident1_type=1&driver2_incident1_date=2025-11-18&driver2_ticket1_description=4&driver2_incident2_type=1&driver2_incident2_date=2025-11-18&driver2_ticket2_description=1&driver2_claim1_description=2&vehicle1_year=2018&vehicle1_make=Audi&vehicle1_model=A4&vehicle1_vin=8YUBC535%2AB%2A%2A%2A%2A%2A%2A%2A&vehicle1_submodel=3.2+Sedan&vehicle1_primary_use=3&vehicle1_vehicle_ownership=2&vehicle1_daily_mileage=4&vehicle1_annual_mileage=2&vehicle2_year=2019&vehicle2_make=Acura&vehicle2_model=MDX&vehicle2_vin=9YDJH32D%2AB%2A%2A%2A%2A%2A%2A%2A&vehicle2_submodel=4.5+Non+Sedan&vehicle2_primary_use=2&vehicle2_vehicle_ownership=2&vehicle2_daily_mileage=4&vehicle2_annual_mileage=2&insurance_company=40&insurance_start_date=2017-01-10&insurance_expiration_date=2020-12-31&continuously_insured_period=2', :yp11=0, :yp12=0, :yp13='2025-11-18 17:39:21'
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (100)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (26)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `autoinsurance_submissions`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (207)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `autoinsurance_submissions`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (207)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.CModule] Loading "coreMessages" application component
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "submit" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "lender" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "trustedformcerturl" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "sub_id2" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "credit_rating" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver1_accident1_at_fault" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver1_accident1_damage" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver1_accident1_amount" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver1_accident1_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver1_claim1_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver1_claim1_paid_amount" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_gender" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_dob" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_marital_status" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_education" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_occupation" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_required_SR22" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_hasTAVCs" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_ticket2_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_claim1_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "vehicle1_vin" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "vehicle1_submodel" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "vehicle2_year" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "vehicle2_make" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "vehicle2_model" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "vehicle2_vin" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "vehicle2_submodel" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (28)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT `dup_days`
+FROM `autoinsurance_affiliate_user`
+WHERE id = 1
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (466)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (271)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "submit" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "lender" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "trustedformcerturl" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "sub_id2" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "credit_rating" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver1_accident1_at_fault" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver1_accident1_damage" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver1_accident1_amount" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver1_accident1_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver1_claim1_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver1_claim1_paid_amount" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_gender" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_dob" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_marital_status" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_education" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_occupation" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_required_SR22" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_hasTAVCs" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_ticket2_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "driver2_claim1_description" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "vehicle1_vin" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "vehicle1_submodel" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "vehicle2_year" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "vehicle2_make" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "vehicle2_model" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "vehicle2_vin" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [warning] [application] Failed to set unsafe attribute "vehicle2_submodel" of "Submissions".
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (284)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT zipcode,city,UPPER(state) AS state
+FROM `zipcodes`
+WHERE zipcode = "90100"
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (404)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (285)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+2025/11/18 17:39:21 [trace] [system.db.ar.CActiveRecord] Submissions.insert()
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (290)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `autoinsurance_submissions` (`vendor_lead_price`, `lead_mode`, `ipaddress`, `promo_code`, `sub_id`, `tcpa_optin`, `tcpa_text`, `universal_leadid`, `zip`, `is_rented`, `stay_in_year`, `stay_in_month`, `bankruptcy`, `coverage_type`, `vehicle_deductibles`, `vehicle_collision_deductibles`, `medical_pay`, `insurance_policy`, `driver1_gender`, `driver1_dob`, `driver1_marital_status`, `driver1_education`, `driver1_occupation`, `driver1_required_SR22`, `driver1_hasTAVCs`, `driver1_num_of_incidents`, `driver1_incident1_type`, `driver1_incident1_date`, `driver1_ticket1_description`, `driver1_incident2_type`, `driver1_incident2_date`, `driver1_ticket2_description`, `driver2_num_of_incidents`, `driver2_incident1_type`, `driver2_incident1_date`, `driver2_ticket1_description`, `driver2_incident2_type`, `driver2_incident2_date`, `vehicle1_year`, `vehicle1_make`, `vehicle1_model`, `vehicle1_primary_use`, `vehicle1_vehicle_ownership`, `vehicle1_daily_mileage`, `vehicle1_annual_mileage`, `vehicle2_primary_use`, `vehicle2_vehicle_ownership`, `vehicle2_daily_mileage`, `vehicle2_annual_mileage`, `insurance_company`, `insurance_start_date`, `insurance_expiration_date`, `continuously_insured_period`, `city`, `state`, `posting_type`, `is_organic`, `sub_date`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25, :yp26, :yp27, :yp28, :yp29, :yp30, :yp31, :yp32, :yp33, :yp34, :yp35, :yp36, :yp37, :yp38, :yp39, :yp40, :yp41, :yp42, :yp43, :yp44, :yp45, :yp46, :yp47, :yp48, :yp49, :yp50, :yp51, :yp52, :yp53, :yp54, :yp55, :yp56, :yp57). Bound with :yp0='0', :yp1=1, :yp2='74.205.70.188', :yp3=1, :yp4='123', :yp5=1, :yp6='By submitting this form....', :yp7='4D1CG7Y3-3E6C-AT96-U88W-J56N7FY881V1', :yp8='90100', :yp9='rent', :yp10=0, :yp11=0, :yp12=0, :yp13=1, :yp14=1, :yp15=1, :yp16='1', :yp17=1, :yp18='M', :yp19='1979-10-10', :yp20=2, :yp21=3, :yp22=9, :yp23=1, :yp24=1, :yp25=2, :yp26=1, :yp27='2025-11-17', :yp28='1', :yp29=1, :yp30='2025-10-04', :yp31='5', :yp32=2, :yp33=1, :yp34='2025-11-18', :yp35='4', :yp36=1, :yp37='2025-11-18', :yp38='2018', :yp39='Audi', :yp40='A4', :yp41=3, :yp42=2, :yp43=4, :yp44=2, :yp45=2, :yp46=2, :yp47=4, :yp48=2, :yp49=40, :yp50='2017-01-10', :yp51='2020-12-31', :yp52=2, :yp53='Los Angeles', :yp54='CA', :yp55=0, :yp56=0, :yp57='2025-11-18 17:39:21'
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (290)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.ar.CActiveRecord] AffiliateTransactions.updateByPk()
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (485)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (290)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `autoinsurance_affiliate_transactions` SET `customer_id`=:yp0 WHERE `autoinsurance_affiliate_transactions`.`id`=317. Bound with :yp0=309
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (485)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/LeadsController.php (290)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (30)
+2025/11/18 17:39:21 [trace] [system.db.ar.CActiveRecord] AffiliateUser.find()
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/AffiliateUser.php (156)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (32)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT cap_limit FROM `autoinsurance_affiliate_user` `t` WHERE id=1 LIMIT 1
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/AffiliateUser.php (156)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (32)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `autoinsurance_lenders_affiliates_transactions`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (37)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `autoinsurance_lenders_affiliates_transactions`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (37)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `autoinsurance_lender_details`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (38)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `autoinsurance_lender_details`
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (38)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.ar.CActiveRecord] AffiliateUser.find()
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/AffiliateUser.php (139)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (39)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT status FROM `autoinsurance_affiliate_user` `t` WHERE id=1 LIMIT 1
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/AffiliateUser.php (139)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (39)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.ar.CActiveRecord] LenderDetails.findAll()
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (51)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `autoinsurance_lender_details` `t` WHERE status = -1 AND name IN ('QuinStreet') AND static_lead_price=0.00 ORDER BY id DESC
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (51)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT `paused_vendor`
+FROM `autoinsurance_lender_details`
+WHERE id= '24'
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderDetails.php (231)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (61)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT `submission_cap`, `accepted_cap`, `hourly_submission_cap`
+FROM `autoinsurance_lender_details`
+WHERE id=:lender_id LIMIT 1. Bound with :lender_id=24
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderDetails.php (170)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (66)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT SUM(ping_sent) AS total_submission,SUM(post_accepted) AS total_accept
+FROM `autoinsurance_lenders_affiliates_transactions`
+WHERE lender_id = 24 AND `date` = '2025-11-18' LIMIT 1
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderDetails.php (182)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (66)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT SUM(ping_sent) as hourly_submission_cap
+FROM `autoinsurance_lenders_affiliates_transactions`
+WHERE lender_id = 24 AND last_inserted_datetime >= DATE_SUB(NOW(),INTERVAL 1 HOUR) LIMIT 1
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderDetails.php (192)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (66)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT `id`
+FROM `autoinsurance_lender_details`
+WHERE id= '24' AND (NOT FIND_IN_SET(DAYOFWEEK(DATE(CURTIME())),traffic_out_days) OR traffic_out_days='' OR traffic_out_days IS NULL) AND (HOUR(CURTIME()) BETWEEN traffic_in_start_time AND traffic_in_end_time OR (traffic_in_start_time='' AND traffic_in_end_time='') OR (traffic_in_start_time IS NULL AND traffic_in_end_time IS NULL)) LIMIT 1
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderDetails.php (210)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (66)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT `cap`, `intervals`
+FROM `autoinsurance_lender_affiliate_settings`
+WHERE affiliate_user_id= '1' AND lender_details_id= '24'
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderAffiliateTransaction.php (38)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (69)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT SUM(ping_sent) as todays_submission
+FROM `autoinsurance_lenders_affiliates_transactions`
+WHERE lender_id = 24 AND promo_code= '1' AND DATE(date) ='2025-11-18'
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderAffiliateTransaction.php (52)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (69)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT `last_inserted_datetime`
+FROM `autoinsurance_lenders_affiliates_transactions`
+WHERE lender_id = 24 AND promo_code= '1' AND DATE(date) ='2025-11-18'
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/LenderAffiliateTransaction.php (58)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (69)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.ar.CActiveRecord] LenderDetails.findAll()
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (83)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `autoinsurance_lender_details` `t` WHERE  id IN (24) AND static_lead_price=0.00
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (83)
+in /usr/local/var/www/ecw/elitebizpanel.com/index.php (34)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT zipcode,city,UPPER(state) AS state
+FROM `zipcodes`
+WHERE zipcode = "90100"
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (404)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/cash_lender/QuinStreetController.php (208)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/PingprocessController.php (104)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT `insurance_company_id`, `insurance_company_name`
+FROM `insurance_companies`
+WHERE insurance_company_id = "40"
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (414)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (419)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/cash_lender/QuinStreetController.php (216)
+2025/11/18 17:39:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT `occupation_id`, `occupation_name`
+FROM `driver_occupation`
+WHERE occupation_id = "123"
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (432)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/models/Submissions.php (436)
+in /usr/local/var/www/ecw/elitebizpanel.com/protected/modules/autoinsurance/controllers/cash_lender/QuinStreetController.php (217)

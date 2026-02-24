@@ -1,0 +1,11 @@
+Express revenue specs
+
+Here are your AIP Specs, please send a test lead to each and verify everything is being passed properly. 
+
+Roofing: https://api.leadprosper.io/api-specs?hash=0ez7f1vk6brg6p
+
+Windows: https://api.leadprosper.io/api-specs?hash=jnkpaknmmh06op
+
+Solar: https://api.leadprosper.io/api-specs?hash=lpd7ien5oclq36
+
+Bath: https://api.leadprosper.io/api-specs?hash=jnkpaky6lu06ov

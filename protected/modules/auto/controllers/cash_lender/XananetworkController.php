@@ -1,0 +1,249 @@
+<?php
+class XananetworkController extends Controller {
+	public function __construct() {
+	}
+	/**
+	 * Create Ping Request for Lender
+	 */
+	public static function returnPingData($p1 = false, $p2 = false, $p3 = false, $status = 0){
+		$pingData = array();
+		$ZIP_POSTAL_CODE = Yii::app()->request->getParam('zip');
+		$GROSS_MONTHLY_INCOME = Yii::app()->request->getParam('monthly_income');
+		if($GROSS_MONTHLY_INCOME >= '500' && $GROSS_MONTHLY_INCOME >'100'){
+			$gross_income = '500-1000';
+		}else if($GROSS_MONTHLY_INCOME >='1000' && $GROSS_MONTHLY_INCOME >'1500'){
+			$gross_income = '1000-1500';
+		}else if($GROSS_MONTHLY_INCOME >='1500' && $GROSS_MONTHLY_INCOME >'2000'){
+			$gross_income = '1500-2000';
+		}else if($GROSS_MONTHLY_INCOME >='2000' && $GROSS_MONTHLY_INCOME >'3000'){
+			$gross_income = '2000-3000';
+		}else if( $GROSS_MONTHLY_INCOME >='3000'){
+			$gross_income = '3000+ ';
+		}
+		$SSN = Yii::app()->request->getParam('ssn');
+		//$LeadiD_Token = Yii::app()->request->getParam('universal_leadid','LeadiD_Token');
+		//$TCPA_Language = Yii::app()->request->getParam('tcpa_text','TCPA_Language');
+		$submission_model = new Submissions();
+		$city_state = $submission_model->getCityStateFromZip($ZIP_POSTAL_CODE);
+		$fields = array (
+			'Key' => $p1 ? $p1 : 'stMWOtkbOtGiOtqzOiYxXivxSgp_stYxsRqzO5S1stk4S8pW91HuOgc4',
+			'API_Action' => 'pingPostLead',
+			'Mode' => 'ping',
+			'Return_Best_Price' => '1',
+			'TCPA_Consent' => 'Yes',
+			'TYPE' => $p2 ? $p2 : '26',
+			'SRC' => $p3 ? $p3 : 'Elite_AF',
+			'Zip' => $ZIP_POSTAL_CODE,
+			'State' => $city_state['state'],
+			'SSN' => $SSN,
+			'Monthly_Income' => $gross_income,
+			//'Test_Lead' => '1',
+			
+		);
+		$pingData['ping_request'] = http_build_query($fields);
+        return $pingData;
+	}
+	/**
+	 * Preg Match the Lender Ping Full XML/JSON Response.
+	 */
+	public static function returnPingResponse($ping_response){
+		$ping_response = html_entity_decode($ping_response);
+		preg_match("/<status>(.*)<\/status>/msui", $ping_response, $result);
+		if (trim ($result[1]) == 'Matched'){
+			preg_match("/<price>(.*)<\/price>/msui", $ping_response, $price );
+			preg_match("/<lead_id>(.*)<\/lead_id>/msui", $ping_response, $confirmation_id );
+			$ping_price = isset($price[1]) ? $price[1] : 0;
+			$confirmation_id = $confirmation_id [1];
+			$ping_response_info['ping_price'] = trim($ping_price);
+			$ping_response_info['ping_status'] = '1';
+			$ping_response_info['confirmation_id'] = $confirmation_id;
+		}else{
+			$ping_price = 0;
+			$ping_response_info['ping_price'] = $ping_price;
+			$ping_response_info['ping_status'] = '0';
+			$ping_response_info['confirmation_id'] = '';
+		}
+		return $ping_response_info;
+	}
+	/**
+	 * Send Post Data to Lender
+	 */	
+	public static function sendPostData($parameter1,$parameter2,$parameter3,$ping_response,$post_url,$status){
+		$ping_response = html_entity_decode($ping_response);
+		preg_match("/<lead_id>(.*)<\/lead_id>/msui", $ping_response,$confirmation_id);
+		$loan_term = array('36','48','60','72','84');
+		$loan_term_key = array_rand($loan_term);
+		if($status == 1){
+			preg_match("/<lead_id>(.*)<\/lead_id>/msui", $ping_response, $confirmation_id);
+			$PingId = $confirmation_id[1];
+		}else{
+			$PingId = $ping_response;
+		}
+		$LeadDate = date('Y-m-d H:i:s');
+		// Lead_Metadata
+		$SOURCE_ID = Yii::app()->request->getParam('url','www.eliteautocash.com');
+		$PROMO_CODE = Yii::app()->request->getParam('promo_code');
+		$LeadID = rand(1111,9999);
+		$LEAD_SOURCE_IP = Yii::app()->request->getParam('ipaddress');
+		// Lead_Data
+		$EMAIL = Yii::app()->request->getParam('email');
+		$SSN = Yii::app()->request->getParam('ssn');
+		$FIRST_NAME = Yii::app()->request->getParam('first_name');
+		$LAST_NAME = Yii::app()->request->getParam('last_name');
+		$DOB = date('m/d/Y',strtotime(Yii::app()->request->getParam('dob')));
+		$HOME_PHONE = Yii::app()->request->getParam('phone');
+		$WORK_PHONE = Yii::app()->request->getParam('work_phone','');
+		$MOBILE_PHONE = Yii::app()->request->getParam('mobile');
+		$YEARS_AT_RES = Yii::app()->request->getParam('stay_in_year','4');
+		$MONTHS_AT_RES = Yii::app()->request->getParam('stay_in_month','3');
+		$TIME_AT_RES = $YEARS_AT_RES*12 + $MONTHS_AT_RES;
+		if($TIME_AT_RES < '1'){
+			$time_at_residence = 'Less than 1 month';
+		}else if($TIME_AT_RES >='1' && $TIME_AT_RES >'6'){
+			$time_at_residence = '1-6 months';
+		}else if($TIME_AT_RES >='6' && $TIME_AT_RES >'12'){
+			$time_at_residence = '6-24 months';
+		}else if($TIME_AT_RES >='12' && $TIME_AT_RES >'24'){
+			$time_at_residence = '12-24 months';
+		}else if($TIME_AT_RES >='24' && $TIME_AT_RES >'60'){
+			$time_at_residence = ' 2-5 years';
+		}else if($TIME_AT_RES >='60' && $TIME_AT_RES >'120'){
+			$time_at_residence = '1-6 months';
+		}else if($TIME_AT_RES >='120'){
+			$time_at_residence = '10+ years';
+		}
+		$BANKRUPTCY = Yii::app()->request->getParam('bankruptcy');
+		$BANKRUPTCY = $BANKRUPTCY == 1 ? 'Yes' : 'No' ;
+		$AGREE_CREDIT_CHECK = Yii::app()->request->getParam('agree_credit_check');
+		$AGREE_CREDIT_CHECK = $AGREE_CREDIT_CHECK == 1 ? 'Yes' : 'No' ;
+		
+		$COSIGNER_AVAILABLE = Yii::app()->request->getParam('cosigner','Yes');
+		$GROSS_MONTHLY_INCOME = Yii::app()->request->getParam('monthly_income');
+		if($GROSS_MONTHLY_INCOME >= '500' && $GROSS_MONTHLY_INCOME >'100'){
+			$gross_income = '500-1000';
+		}else if($GROSS_MONTHLY_INCOME >='1000' && $GROSS_MONTHLY_INCOME >'1500'){
+			$gross_income = '1000-1500';
+		}else if($GROSS_MONTHLY_INCOME >='1500' && $GROSS_MONTHLY_INCOME >'2000'){
+			$gross_income = '1500-2000';
+		}else if($GROSS_MONTHLY_INCOME >='2000' && $GROSS_MONTHLY_INCOME >'3000'){
+			$gross_income = '2000-3000';
+		}else if( $GROSS_MONTHLY_INCOME >='3000'){
+			$gross_income = '3000+ ';
+		}
+		// EMPLOYMENT_INFO
+		$EMPLOYER_NAME = Yii::app()->request->getParam('employer');
+		$YEARS_AT_EMP = Yii::app()->request->getParam('employment_in_year',rand(1,5));
+		$MONTHS_AT_EMP = Yii::app()->request->getParam('employment_in_month',rand(1,11));
+		$TIME_WITH_EMPLOYER = $YEARS_AT_EMP*12 + $MONTHS_AT_EMP;
+		if($TIME_WITH_EMPLOYER < '1'){
+			$time_with_emp = 'Less than 1 month';
+		}else if($TIME_WITH_EMPLOYER >='1' && $TIME_WITH_EMPLOYER >'6'){
+			$time_with_emp = '1-6 months';
+		}else if($TIME_WITH_EMPLOYER >='6' && $TIME_WITH_EMPLOYER >'12'){
+			$time_with_emp = '6-24 months';
+		}else if($TIME_WITH_EMPLOYER >='12' && $TIME_WITH_EMPLOYER >'24'){
+			$time_with_emp = '12-24 months';
+		}else if($TIME_WITH_EMPLOYER >='24' && $TIME_WITH_EMPLOYER >'60'){
+			$time_with_emp = '2-5 years';
+		}else if($TIME_WITH_EMPLOYER >='60' && $TIME_WITH_EMPLOYER >'120'){
+			$time_with_emp = '1-6 months';
+		}else if($TIME_WITH_EMPLOYER >='120'){
+			$time_with_emp = '10+ years';
+		}
+		$JOB_TITLE = Yii::app()->request->getParam('job_title');
+		$MONTHLY_PAYMENT = Yii::app()->request->getParam('home_pay','2400');
+		if($MONTHLY_PAYMENT >= '0' && $MONTHLY_PAYMENT >'500'){
+			$monthly_pay = '0-500';
+		}else if($MONTHLY_PAYMENT >='501' && $MONTHLY_PAYMENT >'1000'){
+			$monthly_pay = '501-1000';
+		}else if($MONTHLY_PAYMENT >='1001' && $MONTHLY_PAYMENT >'1500'){
+			$monthly_pay = '1001-1500';
+		}else if($MONTHLY_PAYMENT >='1501' && $MONTHLY_PAYMENT >'2000'){
+			$monthly_pay = '1501-2000';
+		}else if( $MONTHLY_PAYMENT >='2000'){
+			$monthly_pay = '2000+ ';
+		}
+		$RENT_TYPE = (Yii::app()->request->getParam('is_rented')=='rent') ? 'Rent' : 'Own';
+		$ADDRESS = Yii::app()->request->getParam('address');
+		$CITY = Yii::app()->request->getParam('city');
+		$STATE_PROVINCE = Yii::app()->request->getParam('state');
+		$ZIP_POSTAL_CODE = Yii::app()->request->getParam('zip');
+		$COUNTRY = 'USA';
+		$DownPayment = array('900','1000','1100','1200','1300','1400','1450','1500','1550');
+		$down_payment_key = array_rand($DownPayment);
+		for($i = 600; $i < 3201; $i++) {
+			if($i % 200 == 0) {
+				$Month_Pays[] = $i;
+			}
+		}
+		$a_key = array_rand($Month_Pays);
+		$Month_Pay = $Month_Pays[$a_key];
+		$LeadiD_Token = Yii::app()->request->getParam('universal_leadid','');
+		$TCPA_Language = Yii::app()->request->getParam('tcpa_text','');
+		$fields = array (
+			//'Test_Lead' => '1',
+			'Key' => $parameter1 ? $parameter1 : 'stMWOtkbOtGiOtqzOiYxXivxSgp_stYxsRqzO5S1stk4S8pW91HuOgc4',
+			'API_Action' => 'pingPostLead',
+			'Mode' => 'post',
+			'Lead_ID' => trim($PingId),
+			'TYPE' => $parameter2 ? $parameter2 : '26',
+			'IP_Address' => $LEAD_SOURCE_IP,
+			'SRC' => $parameter3 ? $parameter3 : 'Elite_AF',
+			'Landing_Page' => $SOURCE_ID,
+			'Pub_ID' => $PROMO_CODE,
+			'LeadiD_Token' => $LeadiD_Token,
+			'TCPA_Language' => $TCPA_Language,
+			'First_Name' => $FIRST_NAME,
+			'Last_Name' => $LAST_NAME,
+			'Address' => $ADDRESS,
+			'Email' => $EMAIL,
+			'City' => $CITY,
+			'State' => $STATE_PROVINCE,
+			'Zip' => $ZIP_POSTAL_CODE,
+			'Home_Phone' => $HOME_PHONE,
+			'Cell_Phone' => $MOBILE_PHONE,
+			'Monthly_Income' => $gross_income,
+			'Employment_In_Years' => $YEARS_AT_EMP,
+			'Employment_In_Months' => $MONTHS_AT_EMP,
+			'Job_Title' => $JOB_TITLE,
+			'Employer' => $EMPLOYER_NAME,
+			'SSN' => $SSN,
+			'Date_of_Birth' => $DOB,
+			'Residence_Type' => $RENT_TYPE,
+			'Monthly_Payment' => $monthly_pay,
+			'Years_At_Residence' => $YEARS_AT_RES,
+			'Months_At_Residence' => $MONTHS_AT_RES,
+			'Agree_Credit_Check'=>$AGREE_CREDIT_CHECK,
+			'Bankruptcy'=>$BANKRUPTCY,
+			'Credit_Rating'=>'Good',
+		);
+		
+		$post_request = http_build_query($fields);
+		$cm = new CommonMethods();
+		$start_time = CommonToolsMethods::stopwatch();
+		//$header = array('Content-Type: application/xml');
+		$post_response = $cm->curl($post_url,$post_request);
+		//echo '<PRE>etn';print_r($post_response);exit;
+		$time_end = CommonToolsMethods::stopwatch();
+		$post_response = html_entity_decode($post_response);
+		preg_match("/<status>(.*)<\/status>/", $post_response, $success);
+		if(trim($success[1]) == 'Matched'){
+			$post_status = '1';
+			preg_match("/<price>(.*)<\/price>/msui",$post_response,$price);
+			preg_match("/<price>(.*)<\/price>/msui", $ping_response, $ping_price );
+			$post_price = isset($price[1]) ? $price[1] : $ping_price[1];
+		}else{
+			$post_status = '0';
+			$post_price = 0;
+			$redirect_url = '';
+		}
+		$post_time = ($time_end - $start_time);
+		$post_responses['post_request'] = $post_request;
+		$post_responses['post_response'] = $post_response;
+		$post_responses['post_status'] = $post_status;
+		$post_responses['post_price'] = $post_price;
+		$post_responses['redirect_url'] = $redirect_url;
+		$post_responses['post_time'] = $post_time;
+		return $post_responses;
+	}
+}

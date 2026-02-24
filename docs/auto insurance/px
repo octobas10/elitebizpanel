@@ -1,0 +1,36 @@
+ApiToken: Will be sent in a separate secured email
+
+SubId: Below is the format accepted:
+
+Traffic Type - Origin of the lead in full text (e.g. Search, Social, Google, Facebook, Taboola).
+
+Specific campaign (if all leads come from a single platform) - Abbreviate the traffic type/platform and add a numerical value at the end (e.g FB1, FB2, FB3, GG1, GG2, TB1, TB2, EM1, EM2 etc).
+
+Note: Avoid using the same 3 digits at the end
+
+Avoid using special characters (e.g. semi-colons, (back)slashes, quotation marks, commas, etc.)
+
+Avoid using formulas
+
+The ID should not be unique to each lead (Max 20 different subId’s per account)
+
+The use of the company name is not allowed
+
+Specs: Please follow the instructions provided in the links below.
+
+One-to-One Consent Leads (Brand Explicit Consent):
+
+Sending the Match Ping (pre ping) : https://api.px.com/v2/verticals/match-ping/match-ping-leads/
+
+only ping post: https://api.px.com/v2/verticals/auto/ping-post-exclusive-auto/
+
+Sending the Post:
+
+You will need to pass the BrandConsent and MatchPingId fields on the Post. You can find an example of this here: https://api.px.com/v2/verticals/match-ping/ping-post-leads-1/.
+Note: The Match Ping → Post flow will only allow you to send one to one consent leads with this account.
+
+Brand Explicit (One-to-One) Consent Form Flow: Could you share with us how you will be displaying the matched brand(s) in your form (ex: single brand in TCPA, multi-select of matched brands, multiple TCPAs...)?
+
+Non One-to-One Consent Leads (Regular Ping Post):
+
+Vertical Specific Requirements: https://api.px.com/v2/verticals/auto/ping-post-exclusive-auto/

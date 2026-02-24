@@ -1,0 +1,6 @@
+mysqldump -u axiom -p eliteautoinsurance backup_autoinsurance_submissions | gzip > /usr/virtual/www.elitebizpanel.com/www/loadbalance/database/backup_autoinsurance_submissions.sql.gzip;
+
+/usr/bin/mysqldump --user=axiom --password=7anAZewE --host=localhost eliteautoinsurance backup_autoinsurance_submissions | gzip > /usr/virtual/www.elitebizpanel.com/www/loadbalance/database/backup_autoinsurance_submissions.sql.gzip;
+
+WCdZ0avS22zgQNJi4hEW
+7anAZewE

@@ -1,0 +1,550 @@
+Program ID,Program Name,Accept/Reject,State,state code
+96671,M.S. - Accounting (BS to MS),Rejected,Alabama,AL
+96671,M.S. - Accounting (BS to MS),Rejected,Arkansas,AR
+96671,M.S. - Accounting (BS to MS),Rejected,California,CA
+96671,M.S. - Accounting (BS to MS),Rejected,Colorado,CO
+96671,M.S. - Accounting (BS to MS),Rejected,Connecticut,CT
+96671,M.S. - Accounting (BS to MS),Rejected,Illinois,IL
+96671,M.S. - Accounting (BS to MS),Rejected,Massachusetts,MA
+96671,M.S. - Accounting (BS to MS),Rejected,Mississippi,MS
+96671,M.S. - Accounting (BS to MS),Rejected,New Jersey,NJ
+96671,M.S. - Accounting (BS to MS),Rejected,New York,NY
+96671,M.S. - Accounting (BS to MS),Rejected,North Carolina,NC
+96671,M.S. - Accounting (BS to MS),Rejected,Oregon,OR
+96671,M.S. - Accounting (BS to MS),Rejected,Pennsylvania,PA
+96671,M.S. - Accounting (BS to MS),Rejected,Puerto Rico,PR
+96671,M.S. - Accounting (BS to MS),Rejected,Rhode Island,RI
+96671,M.S. - Accounting (BS to MS),Rejected,Texas,TX
+96671,M.S. - Accounting (BS to MS),Rejected,Washington DC,DC
+96671,M.S. - Accounting (BS to MS),Rejected,West Virginia,WV
+96671,M.S. - Accounting (BS to MS),Rejected,Wyoming,WY
+96672,A.S. - Medical Assisting,Rejected,Alabama,AL
+96672,A.S. - Medical Assisting,Rejected,Connecticut,CT
+96672,A.S. - Medical Assisting,Rejected,Kentucky,KY
+96672,A.S. - Medical Assisting,Rejected,Massachusetts,MA
+96672,A.S. - Medical Assisting,Rejected,Minnesota,MN
+96672,A.S. - Medical Assisting,Rejected,Nevada,NV
+96672,A.S. - Medical Assisting,Rejected,New Mexico,NM
+96672,A.S. - Medical Assisting,Rejected,New York,NY
+96672,A.S. - Medical Assisting,Rejected,North Carolina,NC
+96672,A.S. - Medical Assisting,Rejected,Ohio,OH
+96672,A.S. - Medical Assisting,Rejected,Oregon,OR
+96672,A.S. - Medical Assisting,Rejected,Puerto Rico,PR
+96672,A.S. - Medical Assisting,Rejected,South Carolina,SC
+96672,A.S. - Medical Assisting,Rejected,Utah,UT
+96672,A.S. - Medical Assisting,Rejected,Washington,WA
+96672,A.S. - Medical Assisting,Rejected,Washington DC,DC
+96672,A.S. - Medical Assisting,Rejected,Wisconsin,WI
+96673,A.S. - Occupational Therapy Assistant,Rejected,Puerto Rico,PR
+96673,A.S. - Occupational Therapy Assistant,Rejected,Rhode Island,RI
+96674,A.S. - Paralegal Studies,Rejected,Alabama,AL
+96674,A.S. - Paralegal Studies,Rejected,Connecticut,CT
+96674,A.S. - Paralegal Studies,Rejected,Massachusetts,MA
+96674,A.S. - Paralegal Studies,Rejected,Minnesota,MN
+96674,A.S. - Paralegal Studies,Rejected,New York,NY
+96674,A.S. - Paralegal Studies,Rejected,Oregon,OR
+96674,A.S. - Paralegal Studies,Rejected,Puerto Rico,PR
+96674,A.S. - Paralegal Studies,Rejected,Rhode Island,RI
+96674,A.S. - Paralegal Studies,Rejected,Washington DC,DC
+96675,A.S. - Physical Therapist Assistant,Rejected,Puerto Rico,PR
+96675,A.S. - Physical Therapist Assistant,Rejected,Rhode Island,RI
+96677,A.S. - Allied Health Science,Rejected,Alabama,AL
+96677,A.S. - Allied Health Science,Rejected,Connecticut,CT
+96677,A.S. - Allied Health Science,Rejected,Massachusetts,MA
+96677,A.S. - Allied Health Science,Rejected,Minnesota,MN
+96677,A.S. - Allied Health Science,Rejected,New York,NY
+96677,A.S. - Allied Health Science,Rejected,Oregon,OR
+96677,A.S. - Allied Health Science,Rejected,Puerto Rico,PR
+96677,A.S. - Allied Health Science,Rejected,Rhode Island,RI
+96677,A.S. - Allied Health Science,Rejected,Washington DC,DC
+96678,B.A. - Psychology,Rejected,Alabama,AL
+96678,B.A. - Psychology,Rejected,Connecticut,CT
+96678,B.A. - Psychology,Rejected,Massachusetts,MA
+96678,B.A. - Psychology,Rejected,New York,NY
+96678,B.A. - Psychology,Rejected,Oregon,OR
+96678,B.A. - Psychology,Rejected,Puerto Rico,PR
+96678,B.A. - Psychology,Rejected,Rhode Island,RI
+96678,B.A. - Psychology,Rejected,Washington DC,DC
+96679,B.B.A. - Business Administration,Rejected,Alabama,AL
+96679,B.B.A. - Business Administration,Rejected,Connecticut,CT
+96679,B.B.A. - Business Administration,Rejected,Massachusetts,MA
+96679,B.B.A. - Business Administration,Rejected,New York,NY
+96679,B.B.A. - Business Administration,Rejected,Oregon,OR
+96679,B.B.A. - Business Administration,Rejected,Puerto Rico,PR
+96679,B.B.A. - Business Administration,Rejected,Rhode Island,RI
+96679,B.B.A. - Business Administration,Rejected,Washington DC,DC
+96680,B.S. - Accounting,Rejected,Alabama,AL
+96680,B.S. - Accounting,Rejected,Arizona,AZ
+96680,B.S. - Accounting,Rejected,Arkansas,AR
+96680,B.S. - Accounting,Rejected,California,CA
+96680,B.S. - Accounting,Rejected,Connecticut,CT
+96680,B.S. - Accounting,Rejected,Kansas,KS
+96680,B.S. - Accounting,Rejected,Maryland,MD
+96680,B.S. - Accounting,Rejected,Massachusetts,MA
+96680,B.S. - Accounting,Rejected,Minnesota,MN
+96680,B.S. - Accounting,Rejected,New York,NY
+96680,B.S. - Accounting,Rejected,North Carolina,NC
+96680,B.S. - Accounting,Rejected,Oregon,OR
+96680,B.S. - Accounting,Rejected,Puerto Rico,PR
+96680,B.S. - Accounting,Rejected,Rhode Island,RI
+96680,B.S. - Accounting,Rejected,Washington DC,DC
+96680,B.S. - Accounting,Rejected,Wisconsin,WI
+96681,B.S. - Criminal Justice,Rejected,Alabama,AL
+96681,B.S. - Criminal Justice,Rejected,Connecticut,CT
+96681,B.S. - Criminal Justice,Rejected,Massachusetts,MA
+96681,B.S. - Criminal Justice,Rejected,New York,NY
+96681,B.S. - Criminal Justice,Rejected,Oregon,OR
+96681,B.S. - Criminal Justice,Rejected,Puerto Rico,PR
+96681,B.S. - Criminal Justice,Rejected,Rhode Island,RI
+96681,B.S. - Criminal Justice,Rejected,Washington DC,DC
+96683,B.S. - Healthcare Management,Rejected,Alabama,AL
+96683,B.S. - Healthcare Management,Rejected,Connecticut,CT
+96683,B.S. - Healthcare Management,Rejected,Massachusetts,MA
+96683,B.S. - Healthcare Management,Rejected,New York,NY
+96683,B.S. - Healthcare Management,Rejected,Oregon,OR
+96683,B.S. - Healthcare Management,Rejected,Puerto Rico,PR
+96683,B.S. - Healthcare Management,Rejected,Rhode Island,RI
+96683,B.S. - Healthcare Management,Rejected,Washington DC,DC
+96684,B.S. - Information Technology,Rejected,Alabama,AL
+96684,B.S. - Information Technology,Rejected,Connecticut,CT
+96684,B.S. - Information Technology,Rejected,Massachusetts,MA
+96684,B.S. - Information Technology,Rejected,Minnesota,MN
+96684,B.S. - Information Technology,Rejected,New York,NY
+96684,B.S. - Information Technology,Rejected,Oregon,OR
+96684,B.S. - Information Technology,Rejected,Puerto Rico,PR
+96684,B.S. - Information Technology,Rejected,Rhode Island,RI
+96684,B.S. - Information Technology,Rejected,Washington DC,DC
+96685,B.S. - Public Health,Rejected,Alabama,AL
+96685,B.S. - Public Health,Rejected,Connecticut,CT
+96685,B.S. - Public Health,Rejected,Massachusetts,MA
+96685,B.S. - Public Health,Rejected,New York,NY
+96685,B.S. - Public Health,Rejected,Oregon,OR
+96685,B.S. - Public Health,Rejected,Puerto Rico,PR
+96685,B.S. - Public Health,Rejected,Rhode Island,RI
+96685,B.S. - Public Health,Rejected,Washington DC,DC
+96685,B.S. - Public Health,Rejected,Wisconsin,WI
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Alabama,AL
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Alaska,AK
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Arkansas,AR
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Connecticut,CT
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Maryland,MD
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Massachusetts,MA
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Minnesota,MN
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Nevada,NV
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,New York,NY
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,North Dakota,ND
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Oregon,OR
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Puerto Rico,PR
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Rhode Island,RI
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Tennessee,TN
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Vermont,VT
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Washington,WA
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Washington DC,DC
+96686,B.S.N. - Nursing RN to BSN Degree Completion,Rejected,Wyoming,WY
+96687,M.A. - Clinical Mental Health Counseling,Rejected,Puerto Rico,PR
+96687,M.A. - Clinical Mental Health Counseling,Rejected,Rhode Island,RI
+96688,D.B.A. - Business Administration,Rejected,Alabama,AL
+96688,D.B.A. - Business Administration,Rejected,Connecticut,CT
+96688,D.B.A. - Business Administration,Rejected,Massachusetts,MA
+96688,D.B.A. - Business Administration,Rejected,New York,NY
+96688,D.B.A. - Business Administration,Rejected,Oregon,OR
+96688,D.B.A. - Business Administration,Rejected,Puerto Rico,PR
+96688,D.B.A. - Business Administration,Rejected,Rhode Island,RI
+96688,D.B.A. - Business Administration,Rejected,Washington DC,DC
+96689,D.Min. - Ministry,Rejected,Alabama,AL
+96689,D.Min. - Ministry,Rejected,Arkansas,AR
+96689,D.Min. - Ministry,Rejected,Connecticut,CT
+96689,D.Min. - Ministry,Rejected,Massachusetts,MA
+96689,D.Min. - Ministry,Rejected,Nevada,NV
+96689,D.Min. - Ministry,Rejected,New York,NY
+96689,D.Min. - Ministry,Rejected,North Carolina,NC
+96689,D.Min. - Ministry,Rejected,Oregon,OR
+96689,D.Min. - Ministry,Rejected,Puerto Rico,PR
+96689,D.Min. - Ministry,Rejected,Rhode Island,RI
+96689,D.Min. - Ministry,Rejected,Washington DC,DC
+96689,D.Min. - Ministry,Rejected,Wisconsin,WI
+96690,D.N.P. - Nursing Practice,Rejected,Alabama,AL
+96690,D.N.P. - Nursing Practice,Rejected,Alaska,AK
+96690,D.N.P. - Nursing Practice,Rejected,Connecticut,CT
+96690,D.N.P. - Nursing Practice,Rejected,Maryland,MD
+96690,D.N.P. - Nursing Practice,Rejected,Massachusetts,MA
+96690,D.N.P. - Nursing Practice,Rejected,Minnesota,MN
+96690,D.N.P. - Nursing Practice,Rejected,New York,NY
+96690,D.N.P. - Nursing Practice,Rejected,North Carolina,NC
+96690,D.N.P. - Nursing Practice,Rejected,North Dakota,ND
+96690,D.N.P. - Nursing Practice,Rejected,Oregon,OR
+96690,D.N.P. - Nursing Practice,Rejected,Pennsylvania,PA
+96690,D.N.P. - Nursing Practice,Rejected,Puerto Rico,PR
+96690,D.N.P. - Nursing Practice,Rejected,Rhode Island,RI
+96690,D.N.P. - Nursing Practice,Rejected,Tennessee,TN
+96690,D.N.P. - Nursing Practice,Rejected,Vermont,VT
+96690,D.N.P. - Nursing Practice,Rejected,Washington,WA
+96690,D.N.P. - Nursing Practice,Rejected,Washington DC,DC
+96690,D.N.P. - Nursing Practice,Rejected,Wisconsin,WI
+96690,D.N.P. - Nursing Practice,Rejected,Wyoming,WY
+96691,B.S. - Legal Studies,Rejected,Alabama,AL
+96691,B.S. - Legal Studies,Rejected,Connecticut,CT
+96691,B.S. - Legal Studies,Rejected,Massachusetts,MA
+96691,B.S. - Legal Studies,Rejected,New York,NY
+96691,B.S. - Legal Studies,Rejected,Oregon,OR
+96691,B.S. - Legal Studies,Rejected,Puerto Rico,PR
+96691,B.S. - Legal Studies,Rejected,Rhode Island,RI
+96691,B.S. - Legal Studies,Rejected,Washington DC,DC
+96692,M.B.A. - Healthcare Administration,Rejected,Alabama,AL
+96692,M.B.A. - Healthcare Administration,Rejected,Connecticut,CT
+96692,M.B.A. - Healthcare Administration,Rejected,Massachusetts,MA
+96692,M.B.A. - Healthcare Administration,Rejected,New York,NY
+96692,M.B.A. - Healthcare Administration,Rejected,Oregon,OR
+96692,M.B.A. - Healthcare Administration,Rejected,Puerto Rico,PR
+96692,M.B.A. - Healthcare Administration,Rejected,Rhode Island,RI
+96692,M.B.A. - Healthcare Administration,Rejected,Washington DC,DC
+96693,M.B.A. - Business Administration,Rejected,Alabama,AL
+96693,M.B.A. - Business Administration,Rejected,Connecticut,CT
+96693,M.B.A. - Business Administration,Rejected,Massachusetts,MA
+96693,M.B.A. - Business Administration,Rejected,New York,NY
+96693,M.B.A. - Business Administration,Rejected,Oregon,OR
+96693,M.B.A. - Business Administration,Rejected,Puerto Rico,PR
+96693,M.B.A. - Business Administration,Rejected,Rhode Island,RI
+96693,M.B.A. - Business Administration,Rejected,Washington DC,DC
+96694,M.H.A. - Healthcare Administration,Rejected,Alabama,AL
+96694,M.H.A. - Healthcare Administration,Rejected,Arizona,AZ
+96694,M.H.A. - Healthcare Administration,Rejected,California,CA
+96694,M.H.A. - Healthcare Administration,Rejected,Connecticut,CT
+96694,M.H.A. - Healthcare Administration,Rejected,Massachusetts,MA
+96694,M.H.A. - Healthcare Administration,Rejected,New York,NY
+96694,M.H.A. - Healthcare Administration,Rejected,North Carolina,NC
+96694,M.H.A. - Healthcare Administration,Rejected,Oregon,OR
+96694,M.H.A. - Healthcare Administration,Rejected,Puerto Rico,PR
+96694,M.H.A. - Healthcare Administration,Rejected,Rhode Island,RI
+96694,M.H.A. - Healthcare Administration,Rejected,Washington DC,DC
+96696,M.P.A. - Public Administration,Rejected,Alabama,AL
+96696,M.P.A. - Public Administration,Rejected,Connecticut,CT
+96696,M.P.A. - Public Administration,Rejected,Massachusetts,MA
+96696,M.P.A. - Public Administration,Rejected,New York,NY
+96696,M.P.A. - Public Administration,Rejected,Oregon,OR
+96696,M.P.A. - Public Administration,Rejected,Puerto Rico,PR
+96696,M.P.A. - Public Administration,Rejected,Rhode Island,RI
+96696,M.P.A. - Public Administration,Rejected,Washington DC,DC
+96697,M.S. - Accounting,Rejected,Alabama,AL
+96697,M.S. - Accounting,Rejected,Connecticut,CT
+96697,M.S. - Accounting,Rejected,Kansas,KS
+96697,M.S. - Accounting,Rejected,Massachusetts,MA
+96697,M.S. - Accounting,Rejected,New York,NY
+96697,M.S. - Accounting,Rejected,North Carolina,NC
+96697,M.S. - Accounting,Rejected,Oklahoma,OK
+96697,M.S. - Accounting,Rejected,Oregon,OR
+96697,M.S. - Accounting,Rejected,Puerto Rico,PR
+96697,M.S. - Accounting,Rejected,Rhode Island,RI
+96697,M.S. - Accounting,Rejected,Washington DC,DC
+96698,M.S. - Criminal Justice,Rejected,Alabama,AL
+96698,M.S. - Criminal Justice,Rejected,Connecticut,CT
+96698,M.S. - Criminal Justice,Rejected,Massachusetts,MA
+96698,M.S. - Criminal Justice,Rejected,New York,NY
+96698,M.S. - Criminal Justice,Rejected,Oregon,OR
+96698,M.S. - Criminal Justice,Rejected,Puerto Rico,PR
+96698,M.S. - Criminal Justice,Rejected,Rhode Island,RI
+96698,M.S. - Criminal Justice,Rejected,Washington DC,DC
+96699,M.S. - Human Resources Management,Rejected,Alabama,AL
+96699,M.S. - Human Resources Management,Rejected,California,CA
+96699,M.S. - Human Resources Management,Rejected,Connecticut,CT
+96699,M.S. - Human Resources Management,Rejected,Massachusetts,MA
+96699,M.S. - Human Resources Management,Rejected,New York,NY
+96699,M.S. - Human Resources Management,Rejected,North Carolina,NC
+96699,M.S. - Human Resources Management,Rejected,Oregon,OR
+96699,M.S. - Human Resources Management,Rejected,Puerto Rico,PR
+96699,M.S. - Human Resources Management,Rejected,Rhode Island,RI
+96699,M.S. - Human Resources Management,Rejected,Washington DC,DC
+96700,M.S. - Information Systems,Rejected,Alabama,AL
+96700,M.S. - Information Systems,Rejected,California,CA
+96700,M.S. - Information Systems,Rejected,Connecticut,CT
+96700,M.S. - Information Systems,Rejected,Massachusetts,MA
+96700,M.S. - Information Systems,Rejected,Minnesota,MN
+96700,M.S. - Information Systems,Rejected,New York,NY
+96700,M.S. - Information Systems,Rejected,North Carolina,NC
+96700,M.S. - Information Systems,Rejected,Oregon,OR
+96700,M.S. - Information Systems,Rejected,Puerto Rico,PR
+96700,M.S. - Information Systems,Rejected,Rhode Island,RI
+96700,M.S. - Information Systems,Rejected,Washington DC,DC
+96700,M.S. - Information Systems,Rejected,Wisconsin,WI
+96701,M.S. - Leadership,Rejected,Alabama,AL
+96701,M.S. - Leadership,Rejected,Connecticut,CT
+96701,M.S. - Leadership,Rejected,Massachusetts,MA
+96701,M.S. - Leadership,Rejected,New York,NY
+96701,M.S. - Leadership,Rejected,Oregon,OR
+96701,M.S. - Leadership,Rejected,Puerto Rico,PR
+96701,M.S. - Leadership,Rejected,Rhode Island,RI
+96701,M.S. - Leadership,Rejected,Washington DC,DC
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Alabama,AL
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Alaska,AK
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Arkansas,AR
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Connecticut,CT
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Maryland,MD
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Massachusetts,MA
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Minnesota,MN
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,New York,NY
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,North Dakota,ND
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Oregon,OR
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Pennsylvania,PA
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Puerto Rico,PR
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Rhode Island,RI
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Tennessee,TN
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Vermont,VT
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Washington,WA
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Washington DC,DC
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Wisconsin,WI
+96702,M.S.N. - Nursing with a specialization in Nursing Informatics,Rejected,Wyoming,WY
+96703,M.S. - Physician Assistant,Rejected,Puerto Rico,PR
+96703,M.S. - Physician Assistant,Rejected,Rhode Island,RI
+96704,M.P.H. - Public Health,Rejected,Alabama,AL
+96704,M.P.H. - Public Health,Rejected,Connecticut,CT
+96704,M.P.H. - Public Health,Rejected,Massachusetts,MA
+96704,M.P.H. - Public Health,Rejected,Nevada,NV
+96704,M.P.H. - Public Health,Rejected,New York,NY
+96704,M.P.H. - Public Health,Rejected,Oregon,OR
+96704,M.P.H. - Public Health,Rejected,Puerto Rico,PR
+96704,M.P.H. - Public Health,Rejected,Rhode Island,RI
+96704,M.P.H. - Public Health,Rejected,Washington DC,DC
+96705,Pharm.D. - Pharmacy,Rejected,Puerto Rico,PR
+96705,Pharm.D. - Pharmacy,Rejected,Rhode Island,RI
+96706,Certificate - Nursing Informatics,Rejected,Alabama,AL
+96706,Certificate - Nursing Informatics,Rejected,Alaska,AK
+96706,Certificate - Nursing Informatics,Rejected,Arkansas,AR
+96706,Certificate - Nursing Informatics,Rejected,Connecticut,CT
+96706,Certificate - Nursing Informatics,Rejected,Maryland,MD
+96706,Certificate - Nursing Informatics,Rejected,Massachusetts,MA
+96706,Certificate - Nursing Informatics,Rejected,Minnesota,MN
+96706,Certificate - Nursing Informatics,Rejected,New York,NY
+96706,Certificate - Nursing Informatics,Rejected,North Dakota,ND
+96706,Certificate - Nursing Informatics,Rejected,Oregon,OR
+96706,Certificate - Nursing Informatics,Rejected,Pennsylvania,PA
+96706,Certificate - Nursing Informatics,Rejected,Puerto Rico,PR
+96706,Certificate - Nursing Informatics,Rejected,Rhode Island,RI
+96706,Certificate - Nursing Informatics,Rejected,Tennessee,TN
+96706,Certificate - Nursing Informatics,Rejected,Vermont,VT
+96706,Certificate - Nursing Informatics,Rejected,Washington,WA
+96706,Certificate - Nursing Informatics,Rejected,Washington DC,DC
+96706,Certificate - Nursing Informatics,Rejected,Wisconsin,WI
+96706,Certificate - Nursing Informatics,Rejected,Wyoming,WY
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Alabama,AL
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Alaska,AK
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Connecticut,CT
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Louisiana,LA
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Maryland,MD
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Massachusetts,MA
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Minnesota,MN
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,New York,NY
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,North Carolina,NC
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,North Dakota,ND
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Oregon,OR
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Pennsylvania,PA
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Puerto Rico,PR
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Rhode Island,RI
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Tennessee,TN
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Vermont,VT
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Washington,WA
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Washington DC,DC
+96707,M.S.N. - RN to Master of Science in Nursing with a specialization in Family Nurse Practitioner,Rejected,Wyoming,WY
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Alabama,AL
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Alaska,AK
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Arkansas,AR
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Connecticut,CT
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Maryland,MD
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Massachusetts,MA
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Minnesota,MN
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,New York,NY
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,North Carolina,NC
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,North Dakota,ND
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Oregon,OR
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Pennsylvania,PA
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Puerto Rico,PR
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Rhode Island,RI
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Tennessee,TN
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Vermont,VT
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Washington,WA
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Washington DC,DC
+96708,M.S.N. - RN to Master of Science in Nursing with a specialization in Nursing Informatics,Rejected,Wyoming,WY
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,Alabama,AL
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,Alaska,AK
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,Connecticut,CT
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,Maryland,MD
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,Massachusetts,MA
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,Minnesota,MN
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,New York,NY
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,North Carolina,NC
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,North Dakota,ND
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,Oregon,OR
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,Pennsylvania,PA
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,Puerto Rico,PR
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,Rhode Island,RI
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,Tennessee,TN
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,Vermont,VT
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,Washington,WA
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,Washington DC,DC
+96709,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Administrator,Rejected,Wyoming,WY
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Alabama,AL
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Alaska,AK
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Arkansas,AR
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,California,CA
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Connecticut,CT
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Maryland,MD
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Massachusetts,MA
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Minnesota,MN
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,New York,NY
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,North Dakota,ND
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Oregon,OR
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Pennsylvania,PA
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Puerto Rico,PR
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Rhode Island,RI
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Tennessee,TN
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Vermont,VT
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Washington,WA
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Washington DC,DC
+96710,M.S.N. - Nursing with a specialization in Family Nurse Practitioner,Rejected,Wyoming,WY
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,Alabama,AL
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,Alaska,AK
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,Connecticut,CT
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,Maryland,MD
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,Massachusetts,MA
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,Minnesota,MN
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,New York,NY
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,North Carolina,NC
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,North Dakota,ND
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,Oregon,OR
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,Pennsylvania,PA
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,Puerto Rico,PR
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,Rhode Island,RI
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,Tennessee,TN
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,Vermont,VT
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,Washington,WA
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,Washington DC,DC
+96711,M.S.N. - RN to Master of Science in Nursing with a specialization in Nurse Educator,Rejected,Wyoming,WY
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Alabama,AL
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Alaska,AK
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Arkansas,AR
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Connecticut,CT
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Maryland,MD
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Massachusetts,MA
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Minnesota,MN
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,New York,NY
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,North Dakota,ND
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Oregon,OR
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Pennsylvania,PA
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Puerto Rico,PR
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Rhode Island,RI
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Tennessee,TN
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Vermont,VT
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Washington,WA
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Washington DC,DC
+96712,M.S.N. - Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Wyoming,WY
+96713,Certificate - Family Nurse Practitioner,Rejected,Alabama,AL
+96713,Certificate - Family Nurse Practitioner,Rejected,Alaska,AK
+96713,Certificate - Family Nurse Practitioner,Rejected,Connecticut,CT
+96713,Certificate - Family Nurse Practitioner,Rejected,Maryland,MD
+96713,Certificate - Family Nurse Practitioner,Rejected,Massachusetts,MA
+96713,Certificate - Family Nurse Practitioner,Rejected,Minnesota,MN
+96713,Certificate - Family Nurse Practitioner,Rejected,New York,NY
+96713,Certificate - Family Nurse Practitioner,Rejected,North Carolina,NC
+96713,Certificate - Family Nurse Practitioner,Rejected,North Dakota,ND
+96713,Certificate - Family Nurse Practitioner,Rejected,Oregon,OR
+96713,Certificate - Family Nurse Practitioner,Rejected,Pennsylvania,PA
+96713,Certificate - Family Nurse Practitioner,Rejected,Puerto Rico,PR
+96713,Certificate - Family Nurse Practitioner,Rejected,Rhode Island,RI
+96713,Certificate - Family Nurse Practitioner,Rejected,Tennessee,TN
+96713,Certificate - Family Nurse Practitioner,Rejected,Vermont,VT
+96713,Certificate - Family Nurse Practitioner,Rejected,Washington,WA
+96713,Certificate - Family Nurse Practitioner,Rejected,Washington DC,DC
+96713,Certificate - Family Nurse Practitioner,Rejected,Wisconsin,WI
+96713,Certificate - Family Nurse Practitioner,Rejected,Wyoming,WY
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Alabama,AL
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Alaska,AK
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Arkansas,AR
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Connecticut,CT
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Maryland,MD
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Massachusetts,MA
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Minnesota,MN
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Nevada,NV
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,New York,NY
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,North Dakota,ND
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Oregon,OR
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Pennsylvania,PA
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Puerto Rico,PR
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Rhode Island,RI
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Tennessee,TN
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Vermont,VT
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Washington,WA
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Washington DC,DC
+96715,M.S.N. - Nursing with a specialization in Nurse Administrator,Rejected,Wyoming,WY
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Alabama,AL
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Alaska,AK
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Arkansas,AR
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Connecticut,CT
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Maryland,MD
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Massachusetts,MA
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Minnesota,MN
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,New York,NY
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,North Dakota,ND
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Oregon,OR
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Pennsylvania,PA
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Puerto Rico,PR
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Rhode Island,RI
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Tennessee,TN
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Vermont,VT
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Washington,WA
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Washington DC,DC
+96716,M.S.N. - Nursing with a specialization in Nurse Educator,Rejected,Wyoming,WY
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Alabama,AL
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Alaska,AK
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Connecticut,CT
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Maryland,MD
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Massachusetts,MA
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Minnesota,MN
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,New York,NY
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,North Carolina,NC
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,North Dakota,ND
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Oregon,OR
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Pennsylvania,PA
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Puerto Rico,PR
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Rhode Island,RI
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Tennessee,TN
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Vermont,VT
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Washington,WA
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Washington DC,DC
+96717,M.S.N. - RN to Master of Science in Nursing with a specialization in Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Wyoming,WY
+96718,Certificate - Nurse Educator,Rejected,Alabama,AL
+96718,Certificate - Nurse Educator,Rejected,Alaska,AK
+96718,Certificate - Nurse Educator,Rejected,Arkansas,AR
+96718,Certificate - Nurse Educator,Rejected,Connecticut,CT
+96718,Certificate - Nurse Educator,Rejected,Maryland,MD
+96718,Certificate - Nurse Educator,Rejected,Massachusetts,MA
+96718,Certificate - Nurse Educator,Rejected,Minnesota,MN
+96718,Certificate - Nurse Educator,Rejected,New York,NY
+96718,Certificate - Nurse Educator,Rejected,North Dakota,ND
+96718,Certificate - Nurse Educator,Rejected,Oregon,OR
+96718,Certificate - Nurse Educator,Rejected,Pennsylvania,PA
+96718,Certificate - Nurse Educator,Rejected,Puerto Rico,PR
+96718,Certificate - Nurse Educator,Rejected,Rhode Island,RI
+96718,Certificate - Nurse Educator,Rejected,Tennessee,TN
+96718,Certificate - Nurse Educator,Rejected,Vermont,VT
+96718,Certificate - Nurse Educator,Rejected,Washington,WA
+96718,Certificate - Nurse Educator,Rejected,Washington DC,DC
+96718,Certificate - Nurse Educator,Rejected,Wisconsin,WI
+96718,Certificate - Nurse Educator,Rejected,Wyoming,WY
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Alabama,AL
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Alaska,AK
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Arkansas,AR
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Connecticut,CT
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Maryland,MD
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Massachusetts,MA
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Minnesota,MN
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,New York,NY
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,North Dakota,ND
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Oregon,OR
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Pennsylvania,PA
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Puerto Rico,PR
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Rhode Island,RI
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Tennessee,TN
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Vermont,VT
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Washington,WA
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Washington DC,DC
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Wisconsin,WI
+96719,Certificate - Adult-Gerontology Primary Care Nurse Practitioner,Rejected,Wyoming,WY

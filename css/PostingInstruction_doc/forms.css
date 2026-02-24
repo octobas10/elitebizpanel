@@ -1,0 +1,135 @@
+/* -----------------------------------------------------------------------------
+ * FORMS
+ * -------------------------------------------------------------------------- */
+
+form { background-color: transparent; }
+fieldset {
+  width: auto;
+  padding: .6em;
+  border-top: 1px solid #ddd;
+  margin: 0 0 1em 0;
+  }
+fieldset > *:first-child {
+  margin-top: 0;
+  }
+
+/* \*/
+
+legend {
+  font-size: .9em;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: .4em .6em;
+  border: 0;
+  margin: 0;
+  }
+
+/* */
+
+@media all and (min-width: 0px) /* for Opera 8 */ {
+  legend {
+    margin-bottom: 1.6em;
+    }
+  }
+
+input, textarea, select, button {
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+  white-space: normal;
+  }
+input[type="text"], input[type="password"], input[type="search"], textarea { width: 100%; padding: 2px 0 0 0; }
+input[type="text"]:hover, input[type="password"]:hover, input[type="search"]:hover, textarea:hover,
+input[type="text"]:focus, input[type="password"]:focus, input[type="search"]:focus, textarea:focus { cursor: text; }
+input[type="hidden"] { display: none; }
+
+/*
+form span {
+  display: block;
+  margin: 0;
+  padding: 1px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  overflow: hidden;
+  }
+*/
+/*
+form span input,
+form span textarea,
+form span select {
+  display: inline-block;
+  display: -moz-inline-box;
+  padding: 2px 2px 0 2px;
+*/
+/*
+  border: 1px solid #ccc;
+  border-top-color: #aaa;
+  border-bottom-color: #ddd;
+*/
+/*
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box: border-box;
+  box-sizing: border-box;
+  }
+*/
+/*
+form span input[type="checkbox"],
+form span input[type="radio"] {
+  width: auto;
+  }
+*/
+/*
+form span.checkbox,
+form span.radio {
+  display: inline;
+  width: auto;
+  }
+*/
+form td td {
+  padding-bottom: 0;
+  font-size: 1em;
+  }
+form span.note {
+  display: inline;
+  padding: 0;
+  border: none;
+  color: #aaa;
+  background-color: transparent;
+  overflow: auto;
+  }
+form span.pager {
+  display: inline;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  overflow: auto;
+  }
+/*
+form span.inline {
+  float: left;
+  margin: -.25em 0 0 0;
+  }
+*/
+form span.req {
+  display: inline;
+  width: auto;
+  color: #c33;
+  padding: 0;
+  border: none;
+  margin: 0;
+  background-color: transparent;
+  overflow: auto;
+  }
+/*
+form span.inline select {
+  min-width: 64px;
+  }
+*/
+form span.shorty {
+  width: 3em;
+  }
+textarea {
+  height: 5em;
+  }

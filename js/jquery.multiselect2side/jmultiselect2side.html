@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="https://www.sancasul.com/files/js/jquery.multiselect2side/css/jquery.multiselect2side.css" type="text/css" media="screen" />
+<script type="text/javascript" src="https://www.sancasul.com/files/js/jquery.multiselect2side/js/jquery.js" ></script>
+<script type="text/javascript" src="https://www.sancasul.com/files/js/jquery.multiselect2side/js/jquery.multiselect2side.js" ></script>
+<script type="text/javascript">
+ $().ready(function() {
+	$('#searchable').multiselect2side({
+		selectedPosition: 'right',
+			moveOptions: true,
+			labelTop: '+ +',
+			labelBottom: '- -',
+			search: "Find: ",
+			labelsx :"Available Vendors",
+	        labeldx :"Selected Vendors",
+	});
+});
+</script>
+</head>
+<body>
+<select name="searchable[]" id='searchable' multiple='multiple' >
+ <option value='1'>Option strawberry 1 - India</option>
+ <option value='2'>Option apricot 2 - Italy</option>
+ <option value='3'>Option cherry 3 - USA</option>
+ <option value='4'>Option pineapple 4 - Holland</option>
+</select>
+</body>
+</html>
+

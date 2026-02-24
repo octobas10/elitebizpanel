@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/elitepanel-com/!svn/ver/60/trunk/protected/extensions/editable
+END
+EditableColumn.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/elitepanel-com/!svn/ver/60/trunk/protected/extensions/editable/EditableColumn.php
+END
+EditableDetailView.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/elitepanel-com/!svn/ver/60/trunk/protected/extensions/editable/EditableDetailView.php
+END
+EditableSaver.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/elitepanel-com/!svn/ver/60/trunk/protected/extensions/editable/EditableSaver.php
+END
+EditableField.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/elitepanel-com/!svn/ver/60/trunk/protected/extensions/editable/EditableField.php
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/elitepanel-com/!svn/ver/60/trunk/protected/extensions/editable/README.md
+END
