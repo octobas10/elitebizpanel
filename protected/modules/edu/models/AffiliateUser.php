@@ -662,54 +662,7 @@ $response['pass']=$randId;
   		}
 	}
 
-	public function checkPhone($phone) {
-		//error = provide phone number
-		$msg = '2';
-		if(isset($phone) && !empty($phone)) {
-			$phone_verification = parent::getDbConnection()->createCommand()->select('is_valid')
-			->from('edu_phoneverification_list')
-			->where("phone=". $phone." LIMIT 1")
-			->queryAll();
-			if(isset($phone_verification) && !empty($phone_verification)) {
-				if($phone_verification[0]['is_valid']==1) {
-					$msg = '1';
-				} else {
-					//error = provided phone number is not valid
-					$msg = '3';
-				}
-			} else {
-				//include_once __DIR__.'/Twilio/autoload.php';
-				// use Twilio\Rest\Client;
-				// Your Account SID and Auth Token from twilio.com/console
-				/* $sid = 'AC2ad767555f9d6f1d75789f88d44180f8';
-				$token = '2abd99b12fbfcb7ed434cb87692e06cb';
-				$client = new \Twilio\Rest\Client($sid, $token);
-				$number = $client->lookups
-				// ->phoneNumbers('2015648759')
-				->phoneNumbers($phone)
-				->fetch(array("countryCode" => "US", "type" => "carrier"));
-				if(isset($number) && !empty($number)) {
-					$is_valid = '0';
-					if(isset($number->carrier["name"]) && !empty($number->carrier["name"]) &&  empty($number->carrier["error_code"])) {
-						$msg = '1';
-						$is_valid = '1';
-					} else {
-						$msg = '3';
-					} */
-					/**
-					 * @since : 02-12-2016 12:23 PM
-					 * @author : Siddharajsinh Maharaul
-					 * @functionality : Added datetime in verification_datetime field when making phone verified
-				 	*/
-					parent::getDbConnection()->createCommand()->insert('edu_phoneverification_list',array('phone'=>$phone,'is_valid'=>$is_valid,'response'=>json_encode(array('message' => (array)$number)),'verification_datetime'=>date('Y-m-d H:i:s')));
-				} else {
-					//error = provided phone number is not valid
-					$msg = '3';
-				}
-			}
-		}
-		return $msg;
-	}
+	
 
 	public function changeDuplicateIP($id,$duplicate) {
 		if(parent::getDbConnection()->createCommand()->update('edu_affiliate_user', array('allow_duplicate_ip'=>$duplicate), 'id=:id', array(':id'=>$id))) {
