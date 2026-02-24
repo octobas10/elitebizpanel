@@ -1,4 +1,4 @@
-<?php
+git commit --amend<?php
 class HSHReverseMortgageController extends Controller {
     public function __construct() {
     }

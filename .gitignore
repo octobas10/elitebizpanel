@@ -1,0 +1,26 @@
+# --- Directories ---
+/vendor/
+/runtime/
+/web/assets/
+
+# --- Local Configurations (Where your API keys live) ---
+/config/db-local.php
+/config/params-local.php
+/config/web-local.php
+/config/main-local.php
+/common/config/main-local.php
+/common/config/params-local.php
+/frontend/config/main-local.php
+/frontend/config/params-local.php
+/backend/config/main-local.php
+/backend/config/params-local.php
+
+# --- IDE & OS ---
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.env
+
+# --- Composer ---
+composer.phar
