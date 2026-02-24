@@ -671,7 +671,7 @@ $response['pass']=$randId;
 		return false;
 	}
 
-	public function checkUSPSPostalAddress($address,$city,$state,$zip,$is_insert='0',$is_valid='0',$s_response='') {
+	/* public function checkUSPSPostalAddress($address,$city,$state,$zip,$is_insert='0',$is_valid='0',$s_response='') {
 		if(isset($is_insert) && $is_insert=='1') {
 			parent::getDbConnection()->createCommand()->insert('edu_address_verification',array('address'=>$address,'city'=>$city,'state'=>$state,'zip_code'=>$zip,'is_valid'=>$is_valid,'response'=>$s_response,'response_date_time'=>date('Y-m-d H:i:s'),'api'=>'1'));
 		} else {
@@ -691,7 +691,7 @@ $response['pass']=$randId;
 				}
 			return $msg;
 		}
-	}
+	} */
 
 	public function getAllowedVerification() {
 		$allowed_verification = parent::getDbConnection()->createCommand()->select('verify_phone,verify_email,verify_address')
