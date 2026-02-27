@@ -1,141 +1,154 @@
 <?php
-$this->breadcrumbs=array('Lender Report');
-$this->menu=array(array('label'=>'Lender Setup','url'=>array('index')),array('label'=>'Lender Stats','url'=>array('lenderstats')));
-$MORTGAGE_LEAD_TYPES = Yii::app()->params['mortgage_lead_types'];
-$filter_date = Yii::app()->request->getParam('filter_date',date('Y-m-d'));
+$this->breadcrumbs = array('Lender Details' => array('index'), 'Lender Report');
+$this->menu = array(
+	array('label' => 'Lender Setup', 'url' => array('index')),
+	array('label' => 'Lender Stats', 'url' => array('lenderstats')),
+);
+
+$MORTGAGE_LEAD_TYPES = isset(Yii::app()->params['mortgage_lead_types']) ? Yii::app()->params['mortgage_lead_types'] : array(1 => 'New Home', 2 => 'Refinance', 3 => 'Home Equity', 4 => 'Reverse Mortgage');
+$filter_date = Yii::app()->request->getParam('filter_date', date('Y-m-d'));
 $lender = Yii::app()->request->getParam('lender');
 $mortgage_lead_type = Yii::app()->getRequest()->getParam('mortgage_lead_type');
+$indexUrl = $this->createUrl('index');
+$statsUrl = $this->createUrl('lenderstats');
+$start_date = isset($searched_data['filter_date']['start_date']) ? $searched_data['filter_date']['start_date'] : '';
+$end_date = isset($searched_data['filter_date']['end_date']) ? $searched_data['filter_date']['end_date'] : '';
+$campaignBase = Yii::app()->createAbsoluteUrl(Yii::app()->params['campaign']);
 ?>
-<h4>Lender Report</h4>
-<div class="row-fluid">
-<div class="span12">
-<?php
-$this->beginWidget('zii.widgets.CPortlet', array('title'=>"Search",));
-$form=$this->beginWidget('CActiveForm', array('id' => 'lender_reports', 'enableAjaxValidation' => false ));
-?>
-<table class="table table-striped table-hover table-bordered table-condensed">
-<tr>
-	<td style="width:100px;"><b>Date Range : </b>
-	<?php 
-		$this->widget('ext.EDateRangePicker.EDateRangePicker',array(
-	    	'id'=>'Filter_date',
-	    	'name'=>'filter_date',
-	    	'value'=>''.$filter_date.'',
-	    	'options'=>array('arrows'=>true,'closeOnSelect'=>true),
-	    	'htmlOptions'=>array('class'=>'inputClass'),
-    	));
-		?>
-	</td>
-	<td style="width:130px;"><b>Lender :</b><br>
-	<?php echo Chtml::dropDownList('lender', $lender,
-			CHtml::listData(LenderDetails::model()->findAll(),'id','name'),
-			array('style'=>'width:auto;','empty'=>'All Lenders'));
-	?>
-	</td>
-	<td style="width:130px;"><b>Mortgage Type :</b><br>
-	<?php echo CHtml::radioButtonList('mortgage_lead_type', ''.$mortgage_lead_type.'',array(''=>'All', '1' =>'NewHome','2' =>"Refinance",'3' =>'Home Equity','4' =>'Reverse Mortgage'),array('labelOptions'=>array('style'=>'display:inline')));
-	?>
-	</td>
-	<td><b>Action :</b><br>
-	<?php echo CHtml::submitButton('Search',array('class'=>'btn btn btn-primary')); ?>
-	</td>
-</tr>
-</table>
-<?php
-$this->endWidget();
-$this->endWidget();
-?>
-</div>
-</div>
-<div class="row-fluid">
-<div class="span12">
-<table class="table table-striped table-hover table-bordered table-condensed">
-<thead>
-	<tr>
-	<th>Lender</th>
-	<th>Mortgage Lead Type</th>
-	<th>Lead Price</th>
-	<th>Leads Accepted</th>
-	<th>Total Accepted</th>
-	<th>Returned</th>
-	<th>Grand Total</th>
-	<th>Turn Over / Profit Sum</th>
-	</tr>
-</thead>
-<tbody>
-<?php
-$start_date = $searched_data['filter_date']['start_date'];
-$end_date = $searched_data['filter_date']['end_date']; 
+<section class="lenders-page mortgage-dashboard-section lenders-report-page">
+	<header class="lenders-page-header">
+		<div class="lenders-page-header-inner">
+			<h1 class="lenders-page-title">Lender Report</h1>
+			<p class="lenders-page-subtitle">Leads accepted by lender and mortgage type with totals and profit.</p>
+		</div>
+		<div class="lenders-page-actions">
+			<a href="<?php echo CHtml::encode($statsUrl); ?>" class="btn btn-default">Lender Stats</a>
+			<a href="<?php echo CHtml::encode($indexUrl); ?>" class="btn btn-default">Lender Setup</a>
+		</div>
+	</header>
 
-$column_vise_leads_sum = 0;$column_vise_total_accepted_sum = 0;$column_vise_total_returned_leads = 0;$total_turn_over = 0;$total_profit = 0;$column_vise_grand_total=0;
-foreach ($lender_array as $lender => $lender_lead_price) {
-	$rowspan = '';
-	$count = count($lender_lead_price['transactions']);
-	if($count > 1){
-		$rowspan = 'rowspan="'.$count.'"  style="vertical-align: middle;"';
-	}
-	echo '<tr><td '.$rowspan.' width="120px;">'.$lender.'</td>';
-	$i=1;
-	foreach ($lender_lead_price['transactions'] as $lead_prices){
-		$lead_price = $lead_prices['lead_price'];
-		$leads = $lead_prices['leads'];
-		$column_vise_leads_sum +=$leads;
-		echo '<td width="120px;">'.$MORTGAGE_LEAD_TYPES[$lead_prices['mortgage_lead_type']].'</td>';
-		echo '<td width="120px;">$'.$lead_price.'</td>';
-		echo '<td width="120px;"><a target="_blank" href="'.Yii::app()->createAbsoluteUrl(Yii::app()->params['campaign']).'/leads/lead_info?lead_price='.$lead_price.'&lender='.$lender.'&start_date='.$start_date.'&end_date='.$end_date.'">'.$leads.'</a></td>';
-		if($i==1){
-			$column_vise_total_accepted_sum += $lender_lead_price['total_accepted_leads'];
-			echo '<td '.$rowspan.'  width="120px;"><a target="_blank" href="'.Yii::app()->createAbsoluteUrl(Yii::app()->params['campaign']).'/leads/lead_info?&lender='.$lender.'&start_date='.$start_date.'&end_date='.$end_date.'">'.$lender_lead_price['total_accepted_leads'].'</a></td>';
-			$column_vise_total_returned_leads += $lender_lead_price['total_returned_leads'];
-			echo '<td '.$rowspan.'  width="120px;"><a target="_blank" href="'.Yii::app()->createAbsoluteUrl(Yii::app()->params['campaign']).'/leads/lead_info?&lender='.$lender.'&start_date='.$start_date.'&end_date='.$end_date.'&is_returned=1">'.$lender_lead_price['total_returned_leads'].'</td>';
-			$column_vise_grand_total += $lender_lead_price['grand_total'];
-			echo '<td '.$rowspan.'  width="120px;"><a target="_blank" href="'.Yii::app()->createAbsoluteUrl(Yii::app()->params['campaign']).'/leads/lead_info?&lender='.$lender.'&start_date='.$start_date.'&end_date='.$end_date.'&final=1">'.$lender_lead_price['grand_total'].'</a></td>';
-			$total_turn_over += round($lender_lead_price['turn_over'],2);
-			$total_profit += round((int)$lender_lead_price['total_profit_per_lender'],2);
-			echo '<td '.$rowspan.'  width="120px;">$'.round($lender_lead_price['turn_over'],2).'</td>';
-		}
-		echo '</tr>';
-		$i++;
-	}
-	
-}
-echo '<tr><td><b>Total</b></td><td></td><td></td><td><b>'.$column_vise_leads_sum.'</b></td><td><b>'.$column_vise_total_accepted_sum.'</b></td><td><b>'.$column_vise_total_returned_leads.'</b></td><td><b>'.$column_vise_grand_total.'</b></td><td><b>$'.$total_turn_over.'</b></td></tr>';
- ?>
-</tbody>
-</table>
-</div></div>
-<style>
-.morecontent span { display: none; }
-.comment { width: 400px; }
-table{ text-align: center; vertical-align: middle;}
-</style>
-<script>
-$(document).ready(function() {
-    var showChar = 120;
-    var ellipsestext = "...";
-    var moretext = "more";
-    var lesstext = "less";
-    $('.more').each(function() {
-        var content = $(this).html();
-        if(content.length > showChar) {
-            var c = content.substr(0, showChar);
-            var h = content.substr(showChar-1, content.length - showChar);
-            var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
-            $(this).html(html);
-        }
-    });
- 
-    $(".morelink").click(function(){
-        if($(this).hasClass("less")) {
-            $(this).removeClass("less");
-            $(this).html(moretext);
-        } else {
-            $(this).addClass("less");
-            $(this).html(lesstext);
-        }
-        $(this).parent().prev().toggle();
-        $(this).prev().toggle();
-        return false;
-    });
-});
-</script>
+	<div class="stats-filter-card portlet portlet--filters-collapsible">
+		<div class="portlet-decoration">
+			<span class="portlet-title">Filters</span>
+		</div>
+		<div class="portlet-content">
+			<?php
+			$form = $this->beginWidget('CActiveForm', array('id' => 'lender_reports', 'enableAjaxValidation' => false));
+			?>
+			<div class="stats-filter-grid">
+				<div class="stats-filter-group">
+					<label class="stats-filter-label" for="Filter_date">Date range</label>
+					<div class="stats-filter-field">
+						<?php
+						$this->widget('ext.EDateRangePicker.EDateRangePicker', array(
+							'id' => 'Filter_date',
+							'name' => 'filter_date',
+							'value' => $filter_date,
+							'options' => array('arrows' => true, 'closeOnSelect' => true),
+							'htmlOptions' => array('class' => 'inputClass'),
+						));
+						?>
+					</div>
+				</div>
+				<div class="stats-filter-group">
+					<label class="stats-filter-label" for="lender">Lender</label>
+					<div class="stats-filter-field">
+						<?php echo CHtml::dropDownList('lender', $lender, CHtml::listData(LenderDetails::model()->findAll(), 'id', 'name'), array('class' => 'inputClass', 'empty' => 'All Lenders')); ?>
+					</div>
+				</div>
+				<div class="stats-filter-group">
+					<label class="stats-filter-label">Mortgage type</label>
+					<div class="stats-filter-field leads-filter-radios">
+						<?php echo CHtml::radioButtonList('mortgage_lead_type', $mortgage_lead_type, array('' => 'All', '1' => 'New Home', '2' => 'Refinance', '3' => 'Home Equity', '4' => 'Reverse Mortgage'), array('labelOptions' => array('style' => 'display:inline'))); ?>
+					</div>
+				</div>
+				<div class="stats-filter-group stats-filter-actions">
+					<label class="stats-filter-label">&nbsp;</label>
+					<?php echo CHtml::submitButton('Search', array('class' => 'btn btn-primary')); ?>
+				</div>
+			</div>
+			<?php $this->endWidget(); ?>
+		</div>
+	</div>
+
+	<div class="stats-table-card portlet">
+		<div class="portlet-decoration">
+			<span class="portlet-title">Report by lender and mortgage type</span>
+		</div>
+		<div class="portlet-content dashboard-table-wrap">
+			<table class="table table-striped table-hover table-bordered table-condensed lenders-report-table">
+				<thead>
+					<tr>
+						<th>Lender</th>
+						<th>Mortgage Lead Type</th>
+						<th>Lead Price</th>
+						<th class="text-right">Leads Accepted</th>
+						<th class="text-right">Total Accepted</th>
+						<th class="text-right">Returned</th>
+						<th class="text-right">Grand Total</th>
+						<th class="text-right">Turn Over / Profit Sum</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					$column_vise_leads_sum = 0;
+					$column_vise_total_accepted_sum = 0;
+					$column_vise_total_returned_leads = 0;
+					$total_turn_over = 0;
+					$column_vise_grand_total = 0;
+					if (!empty($lender_array)):
+						foreach ($lender_array as $lender_name => $lender_lead_price):
+							$count = isset($lender_lead_price['transactions']) ? count($lender_lead_price['transactions']) : 0;
+							$rowspan = $count > 1 ? ' rowspan="' . $count . '" style="vertical-align: middle;"' : '';
+							$i = 0;
+							if (!empty($lender_lead_price['transactions'])):
+								foreach ($lender_lead_price['transactions'] as $lead_prices):
+									$lead_price = $lead_prices['lead_price'];
+									$leads = $lead_prices['leads'];
+									$column_vise_leads_sum += $leads;
+									$is_first = ($i === 0);
+									if ($is_first) {
+										$column_vise_total_accepted_sum += $lender_lead_price['total_accepted_leads'];
+										$column_vise_total_returned_leads += $lender_lead_price['total_returned_leads'];
+										$column_vise_grand_total += $lender_lead_price['grand_total'];
+										$total_turn_over += round($lender_lead_price['turn_over'], 2);
+									}
+					?>
+					<tr>
+						<?php if ($is_first): ?><td<?php echo $rowspan; ?> width="120px"><?php echo CHtml::encode($lender_name); ?></td><?php endif; ?>
+						<td width="120px"><?php echo CHtml::encode($MORTGAGE_LEAD_TYPES[$lead_prices['mortgage_lead_type']] ?? ''); ?></td>
+						<td width="120px">$<?php echo CHtml::encode($lead_price); ?></td>
+						<td class="text-right" width="120px"><a target="_blank" rel="noopener noreferrer" href="<?php echo $campaignBase; ?>/leads/lead_info?lead_price=<?php echo urlencode($lead_price); ?>&lender=<?php echo urlencode($lender_name); ?>&start_date=<?php echo urlencode($start_date); ?>&end_date=<?php echo urlencode($end_date); ?>"><?php echo $leads; ?></a></td>
+						<?php if ($is_first): ?>
+						<td<?php echo $rowspan; ?> class="text-right" width="120px"><a target="_blank" rel="noopener noreferrer" href="<?php echo $campaignBase; ?>/leads/lead_info?&lender=<?php echo urlencode($lender_name); ?>&start_date=<?php echo urlencode($start_date); ?>&end_date=<?php echo urlencode($end_date); ?>"><?php echo $lender_lead_price['total_accepted_leads']; ?></a></td>
+						<td<?php echo $rowspan; ?> class="text-right" width="120px"><a target="_blank" rel="noopener noreferrer" href="<?php echo $campaignBase; ?>/leads/lead_info?&lender=<?php echo urlencode($lender_name); ?>&start_date=<?php echo urlencode($start_date); ?>&end_date=<?php echo urlencode($end_date); ?>&is_returned=1"><?php echo $lender_lead_price['total_returned_leads']; ?></a></td>
+						<td<?php echo $rowspan; ?> class="text-right" width="120px"><a target="_blank" rel="noopener noreferrer" href="<?php echo $campaignBase; ?>/leads/lead_info?&lender=<?php echo urlencode($lender_name); ?>&start_date=<?php echo urlencode($start_date); ?>&end_date=<?php echo urlencode($end_date); ?>&final=1"><?php echo $lender_lead_price['grand_total']; ?></a></td>
+						<td<?php echo $rowspan; ?> class="text-right" width="120px">$<?php echo number_format(round($lender_lead_price['turn_over'], 2), 2); ?></td>
+						<?php endif; ?>
+					</tr>
+					<?php
+									$i++;
+								endforeach;
+							endif;
+						endforeach;
+					?>
+					<tr>
+						<td><strong>Total</strong></td>
+						<td></td>
+						<td></td>
+						<td class="text-right"><strong><?php echo $column_vise_leads_sum; ?></strong></td>
+						<td class="text-right"><strong><?php echo $column_vise_total_accepted_sum; ?></strong></td>
+						<td class="text-right"><strong><?php echo $column_vise_total_returned_leads; ?></strong></td>
+						<td class="text-right"><strong><?php echo $column_vise_grand_total; ?></strong></td>
+						<td class="text-right"><strong>$<?php echo number_format($total_turn_over, 2); ?></strong></td>
+					</tr>
+					<?php else: ?>
+					<tr>
+						<td colspan="8" class="stats-table-empty">Set filters and click Search to view the report.</td>
+					</tr>
+					<?php endif; ?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</section>

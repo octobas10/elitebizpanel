@@ -1,96 +1,10 @@
 <?php
-$this->breadcrumbs = array(
-	'Add Email Creative' 
-);
-$this->menu = array(
-	array(
-		'label' => 'Banner Creative',
-		'url' => array('creatives'),
-	)
-);
+$this->breadcrumbs = array('Email Creatives');
+$this->menu = array(array('label' => 'Banner Creatives', 'url' => array('creatives')));
+$creativesUrl = $this->createUrl('creatives');
+$isAdmin = Yii::app()->user->getState('roles') == 1;
+$baseUrl = isset(Yii::app()->params['httphost']) && isset(Yii::app()->params['backEnd']) ? (rtrim(Yii::app()->params['httphost'], '/') . '/' . ltrim(Yii::app()->params['backEnd'], '/')) : '';
 ?>
-<style>
-.content{
-	min-height: 680px;
-}
-.creatives label {
-	display: inline-block;
-	margin-right: 5px; 
-}
-.creatives input[type="text"] {
-    width: 22%;
-}
-.creatives input {
-   margin: 7px;
-}
-.creatives input[type="submit"] {
-	padding: 2px 9px;
-}
-.error{
-	color:red;
-}
-div#error {
-	display:none;
-	background: none repeat scroll 0 0 lightyellow;
-   border: 1px solid red;
-   margin-bottom: 15px;
-   width: 50%;
-}
-p.error {
-   margin: 0;
-   padding: 1px 13px;
-}
-.promo_image{
-	border: 2px solid #999;
-	padding: 5px;
-	margin-bottom: 10px;
-}
-code {
-  display: block;
-  white-space: nowrap;
-  color: #fff;
-  background-color: #444;
-  padding: 1em;
-  border: 1px solid #d1d1d1;
-  overflow: auto;
-}
-.txtright {
-  text-align: right;
-}
-.display_creatives{
-	width: 100%;
-	border: 1px solid #ccc;
-	padding: 5px;
-	margin-bottom: 5px;
-}
-.display_creatives p {
-  color: black;
-  margin-bottom: 5px;
-}
-.display_creatives a {
-  text-decoration: underline;
-  color: black;
-}
-div.email_creatives_form {
-  width: 33%;
-  float: left;
-}
-.title{
-	font-size: 14px;
-	font-weight: bold;
-}
-.banner-img-list li{
-	float: left;
-	margin: 8px;
-	border: 3px solid #ccc;
-	height: 100px;
-	list-style: none;
-}
-.banner-img-list img{
-	width: 100px;
-	height: 100px;
-}
-</style>
 <script>
 $(document).ready(function(){
 	$("#upload").click(function(){
@@ -153,139 +67,97 @@ $(document).ready(function(){
 	});
 });
 </script>
-<h4>Email Creatives</h4>
-<?php if(Yii::app()->user->getState('roles')==1){?>
-<div class="creatives">
-<?php if(isset($errors) && !empty($errors)){?>
-	<div id="error" style="display: block !important;">
-	<?php foreach($errors as $error){?>
-		<p class='error'><?php echo $error;?></p>
-	<?php }?>
+<section class="affiliates-creatives-section mortgage-dashboard-section affiliates-page">
+	<header class="affiliates-page-header">
+		<div class="affiliates-page-header-inner">
+			<h1 class="affiliates-page-title">Email Creatives</h1>
+			<p class="affiliates-page-subtitle">Upload email banners and manage subject lines and from lines.</p>
+		</div>
+		<div class="affiliates-page-actions">
+			<a href="<?php echo CHtml::encode($creativesUrl); ?>" class="btn btn-default">Banner Creatives</a>
+		</div>
+	</header>
+	<?php if ($isAdmin): ?>
+	<div class="creatives-form-card portlet">
+		<div class="portlet-decoration"><span class="portlet-title">Add email creative</span></div>
+		<div class="portlet-content">
+			<?php if (isset($errors) && !empty($errors)): ?>
+				<div id="creatives-error-block" class="creatives-error-block" role="alert"><?php foreach ($errors as $err): ?><p><?php echo CHtml::encode($err); ?></p><?php endforeach; ?></div>
+			<?php endif; ?>
+			<div id="creatives-error-block" class="creatives-error-block" style="display:none;" role="alert"></div>
+			<div class="creatives-form-grid">
+				<div class="creatives-form-card" style="margin-bottom:0;">
+					<h3 class="creatives-display-title">Add banner image</h3>
+					<?php echo CHtml::beginForm('', 'post', array('id' => 'creatives', 'enctype' => 'multipart/form-data')); ?>
+					<div class="creatives-form-row"><label class="creatives-form-label" for="promotional_image">Banner image</label><div class="creatives-form-input"><?php echo CHtml::fileField('promotional_image', '', array('id' => 'promotional_image', 'accept' => 'image/*')); ?></div></div>
+					<div class="creatives-form-row"><?php echo CHtml::submitButton('Upload Banner', array('name' => 'upload', 'id' => 'upload', 'class' => 'btn btn-primary')); ?></div>
+					<?php echo CHtml::endForm(); ?>
+				</div>
+
+				<div class="creatives-form-card" style="margin-bottom:0;">
+					<h3 class="creatives-display-title">Add subject line</h3>
+					<?php echo CHtml::beginForm('', 'post', array('id' => 'creatives2', 'enctype' => 'multipart/form-data')); ?>
+					<div class="creatives-form-row"><label class="creatives-form-label" for="email_creatives_subject_line">Subject line</label><div class="creatives-form-input"><?php echo CHtml::textField('email_creatives_subject_line', '', array('id' => 'email_creatives_subject_line')); ?></div></div>
+					<div class="creatives-form-row"><?php echo CHtml::submitButton('Save', array('name' => 'add_subjectlines', 'id' => 'add_subjectlines', 'class' => 'btn btn-primary')); ?></div>
+					<?php echo CHtml::endForm(); ?>
+				</div>
+				<div class="creatives-form-card" style="margin-bottom:0;">
+					<h3 class="creatives-display-title">Add from line</h3>
+					<?php echo CHtml::beginForm('', 'post', array('id' => 'creatives3', 'enctype' => 'multipart/form-data')); ?>
+					<div class="creatives-form-row"><label class="creatives-form-label" for="email_creatives_from_line">From line</label><div class="creatives-form-input"><?php echo CHtml::textField('email_creatives_from_line', '', array('id' => 'email_creatives_from_line')); ?></div></div>
+					<div class="creatives-form-row"><?php echo CHtml::submitButton('Save', array('name' => 'add_fromlines', 'id' => 'add_fromlines', 'class' => 'btn btn-primary')); ?></div>
+					<?php echo CHtml::endForm(); ?>
+				</div>
+			</div>
+		</div>
 	</div>
-<?php } ?>
-<div id="error"></div>
+	<?php endif; ?>
 
-<div class="email_creatives_form add_banner_form">
-<?php echo CHtml::beginForm($action='',$method='post',$htmlOptions=array('id'=>'creatives','enctype'=>'multipart/form-data'));?>
-<table>
-<tr>
-<td><?php echo CHtml::label($label='Add Banner Image', $for='promotional_image', $htmlOptions=array());?></td>
-</tr>
-<tr>
-<td><?php echo CHtml::fileField($name='promotional_image','',$htmlOptions=array());?></td>
-</tr>
-<tr>
-<td colspan="2"><?php echo CHtml::submitButton($label='Upload Banner', $htmlOptions=array('name'=>'upload','id'=>'upload'));?></td>
-</tr>
-</table>
-<?php echo CHtml::endForm();?>
-</div>
-
-<div class="email_creatives_form add_subjectlines_form">
-<?php echo CHtml::beginForm($action='',$method='post',$htmlOptions=array('id'=>'creatives','enctype'=>'multipart/form-data'));?>
-<table>
-<tr>
-<td><?php echo CHtml::label($label='Add Email Subject Line', $for='email_creatives_subject_line', $htmlOptions=array());?></td>
-</tr>
-<tr>
-<td><?php echo CHtml::textField($name='email_creatives_subject_line',$value='',$htmlOptions=array('style'=>'width:204px;margin-left:0px'));?></td>
-</tr>
-<tr>
-<td colspan="2"><?php echo CHtml::submitButton($label='Save', $htmlOptions=array('name'=>'add_subjectlines','id'=>'add_subjectlines'));?></td>
-</tr>
-</table>
-<?php echo CHtml::endForm();?>
-</div>
-
-<div class="email_creatives_form add_fromlines_form">
-<?php echo CHtml::beginForm($action='',$method='post',$htmlOptions=array('id'=>'creatives','enctype'=>'multipart/form-data'));?>
-<table>
-<tr>
-<td><?php echo CHtml::label($label='Add Email From Line', $for='email_creatives_from_line', $htmlOptions=array());?></td>
-</tr>
-<tr>
-<td><?php echo CHtml::textField($name='email_creatives_from_line',$value='',$htmlOptions=array('style'=>'width:204px;margin-left:0px'));?></td>
-</tr>
-<tr>
-<td colspan="2"><?php echo CHtml::submitButton($label='Save', $htmlOptions=array('name'=>'add_fromlines','id'=>'add_fromlines'));?></td>
-</tr>
-</table>
-<?php echo CHtml::endForm();?>
-</div>
-
-</div>
-<?php }?>
-
-<div style="clear: both;"></div>
-
-<div class="row display_creatives">
-<p class="title">Elitemortgage Email Creatives:</p>
-
-
-<?php
-if(count($creatives)){?>
-<ul class="banner-img-list">
-<?php 
-	foreach($creatives as $creative){
-		//echo '<pre>';print_r($creative);echo '</pre>';
-		?>
-		<li><a href="viewemailcreatives?id=<?php echo $creative['id']?>" target="_blank">
-			<img alt="" src="<?php echo Yii::app()->params['httphost'].Yii::app()->params['backEnd']?>/email_creatives/<?php echo $creative['image_name']?>">
-			</a>
-		</li>
-<?php } ?>
-</ul>
-<?php }else{
-	echo 'No Email Banners Availables.';
-}
-?>
-
-</div>
-<div class="row display_creatives">
-<p class="title">Elitemortgage Email Creatives Subject Lines:</p>
-<?php 
-if(count($email_creatives_subject_lines)){
-foreach($email_creatives_subject_lines as $key=>$subject_line){
-	$key++;
-	//echo '<pre>';print_r($subject_line);echo '</pre>';
-	?>
-	<div class="subject_lines">
-	<p><?php echo $key.'. '.$subject_line['subject_lines']?></p>
-	<?php if(Yii::app()->user->getState('roles')==1){?>
-	<!-- 
-	<form action="" method="post">
-	<input type="hidden" name="remove_id" value="<?php echo $subject_line['id'];?>">
-	<p class="txtright"><input type="submit" value="Remove This Subject Line" onclick="return confirm('Are you sure? This can not be undone.');" style="border-radius:5px;padding: 5px;"></p>
-	</form>
-	 -->
-	<?php }?>
+	<div class="creatives-lines-row">
+		<div class="row display_creatives creatives-display-card portlet">
+			<div class="portlet-decoration"><span class="portlet-title">Email subject lines</span></div>
+			<div class="portlet-content">
+<?php if (empty($email_creatives_subject_lines)): ?>
+				<p class="dashboard-empty-state-hint">No email subject lines.</p>
+<?php else: ?>
+				<ul class="creatives-lines-list">
+				<?php $i = 1; foreach ($email_creatives_subject_lines as $subject_line): ?>
+					<li class="creatives-line-item"><?php echo $i . '. ' . CHtml::encode($subject_line['subject_lines']); ?></li>
+				<?php $i++; endforeach; ?>
+				</ul>
+<?php endif; ?>
+			</div>
+		</div>
+		<div class="row display_creatives creatives-display-card portlet">
+			<div class="portlet-decoration"><span class="portlet-title">Email from lines</span></div>
+			<div class="portlet-content">
+<?php if (empty($email_creatives_from_lines)): ?>
+				<p class="dashboard-empty-state-hint">No email from lines available.</p>
+<?php else: ?>
+				<ul class="creatives-lines-list">
+				<?php $j = 1; foreach ($email_creatives_from_lines as $from_line): ?>
+					<li class="creatives-line-item"><?php echo $j . '. ' . CHtml::encode($from_line['from_lines']); ?></li>
+				<?php $j++; endforeach; ?>
+				</ul>
+<?php endif; ?>
+			</div>
+		</div>
 	</div>
-<?php }
-}else{
-	echo 'No Email Subject Lines.';
-} ?>
-</div>
-<div class="row display_creatives">
-<p class="title">Elitemortgage Email Creatives From Lines:</p>
-<?php
-if(count($email_creatives_from_lines)){
-foreach($email_creatives_from_lines as $key=>$from_lines){
-	$key++;
-	//echo '<pre>';print_r($from_lines);echo '</pre>';
-	?>
-	<div class="subject_lines">
-	<p><?php echo $key.'. '.$from_lines['from_lines']?></p>
-	<?php if(Yii::app()->user->getState('roles')==1){?>
-	<!--
-	<form action="" method="post">
-	<input type="hidden" name="remove_id" value="<?php echo $from_lines['id'];?>">
-	<p class="txtright"><input type="submit" value="Remove This Subject Line" onclick="return confirm('Are you sure? This can not be undone.');" style="border-radius:5px;padding: 5px;"></p>
-	</form>
-	 -->
-	<?php }?>
+
+	<div class="row display_creatives creatives-display-card portlet">
+		<div class="portlet-decoration"><span class="portlet-title">Email creatives (banners)</span></div>
+		<div class="portlet-content">
+<?php if (count($creatives)): ?>
+			<ul class="creatives-banner-list">
+<?php foreach ($creatives as $creative): ?>
+				<li><a href="viewemailcreatives?id=<?php echo $creative['id']; ?>" target="_blank" rel="noopener">
+					<img alt="" src="<?php echo CHtml::encode(Yii::app()->params['httphost'] . Yii::app()->params['backEnd']); ?>/email_creatives/<?php echo CHtml::encode($creative['image_name']); ?>">
+				</a></li>
+<?php endforeach; ?>
+			</ul>
+<?php else: ?>
+			<p class="dashboard-empty-state-hint">No email banners available.</p>
+<?php endif; ?>
+		</div>
 	</div>
-<?php }
-}else{
-	echo 'No Email From Lines Availables.';
-} ?>
-</div>
+</section>

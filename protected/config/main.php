@@ -5,6 +5,12 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 require_once( dirname(__FILE__) . '/params.php');
+
+// DB connection from env (Docker) or defaults (local)
+$dbHost = getenv('DB_HOST') ?: '127.0.0.1';
+$dbUser = getenv('DB_USER') ?: 'root';
+$dbPassword = getenv('DB_PASSWORD') ?: '12345678';
+
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
     'name' => 'EliteBizPanel',
@@ -25,10 +31,10 @@ return array(
         'edu' => array(
             'db' => array(
                 'class' => 'CDbConnection',
-                'connectionString' => 'mysql:host=127.0.0.1;dbname=eliteedu',
+                'connectionString' => 'mysql:host=' . $dbHost . ';dbname=eliteedu',
                 'emulatePrepare' => true,
-                'username' => 'root',
-                'password' => '12345678',
+                'username' => $dbUser,
+                'password' => $dbPassword,
                 'charset' => 'utf8',
                 'enableProfiling' => true,
                 'enableParamLogging' => true,
@@ -53,6 +59,9 @@ return array(
             'urlFormat' => 'path',
             'showScriptName' => true,
             'rules' => array(
+                // Route api/pingpost and api/index to mortgage module (ApiController lives there)
+                'api/pingpost' => 'mortgage/api/pingpost',
+                'api/index' => 'mortgage/api/index',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
@@ -60,70 +69,70 @@ return array(
         ),
         'db' => array(
             'class' => 'CDbConnection',
-            'connectionString' => 'mysql:host=127.0.0.1;dbname=eliteautocash',
+            'connectionString' => 'mysql:host=' . $dbHost . ';dbname=eliteautocash',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => '12345678',
+            'username' => $dbUser,
+            'password' => $dbPassword,
             'charset' => 'utf8',
             'enableProfiling' => true,
             'enableParamLogging' => true,
         ),
         'dbAutoinsurance' => array(
             'class' => 'CDbConnection',
-            'connectionString' => 'mysql:host=127.0.0.1;dbname=eliteautoinsurance',
+            'connectionString' => 'mysql:host=' . $dbHost . ';dbname=eliteautoinsurance',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => '12345678',
+            'username' => $dbUser,
+            'password' => $dbPassword,
             'charset' => 'utf8',
             'enableProfiling' => true,
             'enableParamLogging' => true,
         ),
         'dbMortgage' => array(
             'class' => 'CDbConnection',
-            'connectionString' => 'mysql:host=127.0.0.1;dbname=elitemortgage',
+            'connectionString' => 'mysql:host=' . $dbHost . ';dbname=elitemortgage',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => '12345678',
+            'username' => $dbUser,
+            'password' => $dbPassword,
             'charset' => 'utf8',
             'enableProfiling' => true,
             'enableParamLogging' => true,
         ),
         'dbDebt' => array(
             'class' => 'CDbConnection',
-            'connectionString' => 'mysql:host=127.0.0.1;dbname=elitedebt',
+            'connectionString' => 'mysql:host=' . $dbHost . ';dbname=elitedebt',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => '12345678',
+            'username' => $dbUser,
+            'password' => $dbPassword,
             'charset' => 'utf8',
             'enableProfiling' => true,
             'enableParamLogging' => true,
         ),
         'dbHealthinsurance' => array(
             'class' => 'CDbConnection',
-            'connectionString' => 'mysql:host=127.0.0.1;dbname=elitehealthinsurance',
+            'connectionString' => 'mysql:host=' . $dbHost . ';dbname=elitehealthinsurance',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => '12345678',
+            'username' => $dbUser,
+            'password' => $dbPassword,
             'charset' => 'utf8',
             'enableProfiling' => true,
             'enableParamLogging' => true
         ),
         'dbHomeimprovement' => array(
             'class' => 'CDbConnection',
-            'connectionString' => 'mysql:host=127.0.0.1;dbname=elitehomeimprovement',
+            'connectionString' => 'mysql:host=' . $dbHost . ';dbname=elitehomeimprovement',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => '12345678',
+            'username' => $dbUser,
+            'password' => $dbPassword,
             'charset' => 'utf8',
             'enableProfiling' => true,
             'enableParamLogging' => true
         ),
         'dbBusinessLoans' => array(
             'class' => 'CDbConnection',
-            'connectionString' => 'mysql:host=127.0.0.1;dbname=elitebusinessloans',
+            'connectionString' => 'mysql:host=' . $dbHost . ';dbname=elitebusinessloans',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => '12345678',
+            'username' => $dbUser,
+            'password' => $dbPassword,
             'charset' => 'utf8',
             'enableProfiling' => true,
             'enableParamLogging' => true,

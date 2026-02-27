@@ -167,10 +167,12 @@ class AffiliateTransactions extends MortgageActive {
 				$where[] = 'customer_id IN ('.$customer_id.')';
 			}
 		}
-		if($promo_code = Yii::app()->getRequest()->getParam('promo_code')){
+		$promo_code = Yii::app()->getRequest()->getParam('promo_code');
+		if ($promo_code !== null && $promo_code !== '') {
+			$promo_code = is_array($promo_code) ? implode(',', $promo_code) : (string) $promo_code;
 			$promo_code = preg_split('/[\s,]+/', $promo_code, -1, PREG_SPLIT_NO_EMPTY);
-			$promo_codes = implode(',', $promo_code);
-			if($promo_codes){
+			$promo_codes = implode(',', array_map('intval', $promo_code));
+			if ($promo_codes !== '') {
 				$where[] = 'promo_code IN ('.$promo_codes.')';
 			}
 		}
@@ -343,14 +345,16 @@ class AffiliateTransactions extends MortgageActive {
 	public function search_posted_leads(){
 		$criteria = new CDbCriteria();
 		$criteria->select = 'promo_code, SUM(ping_request != "") as ping_sent , SUM(ping_status = 1) as ping_accepted, SUM(post_request != "") as post_sent, SUM(post_status = 1) as post_accepted';
-		if($promo_code = Yii::app()->getRequest()->getParam('promo_code')){
+		$promo_code = Yii::app()->getRequest()->getParam('promo_code');
+		if ($promo_code !== null && $promo_code !== '') {
+			$promo_code = is_array($promo_code) ? implode(',', $promo_code) : (string) $promo_code;
 			$promo_code = preg_split('/[\s,]+/', $promo_code, -1, PREG_SPLIT_NO_EMPTY);
-			$promo_codes = implode(',', $promo_code);
-			if($promo_codes){
+			$promo_codes = implode(',', array_map('intval', $promo_code));
+			if ($promo_codes !== '') {
 				$where[] = 'promo_code IN ('.$promo_codes.')';
 			}
 		}
-		
+
 		$filter = Yii::app()->getRequest()->getParam('filter_date',date("Y-m-d"));
 		$filter = explode(' - ',$filter);
 		$count =  count($filter);
@@ -370,7 +374,7 @@ class AffiliateTransactions extends MortgageActive {
 		$where = array_filter($where);
 		$where = (count($where) > 0) ? '' . implode(' AND ',$where) : '';
 		
-		$order = "a.date DESC";
+		$order = "DATE(a.date) DESC";
 		$groupby = "DATE(a.date),a.promo_code,a.ping_price";
 		
 		$dbCommand = Yii::app()->dbMortgage->createCommand()

@@ -25,7 +25,7 @@ class AutoFeedLenders extends MortgageActive
 	 */
 	public function tableName()
 	{
-		return 'mortgage_feed_lender';
+		return 'mortgage_feed_lenders';
 	}
 
 	/**

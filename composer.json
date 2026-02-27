@@ -1,5 +1,6 @@
 {
     "require": {
-        "predis/predis": "^2.2"
+        "predis/predis": "^2.2",
+        "yiisoft/yii": "1.1.29"
     }
 }

@@ -47,7 +47,7 @@ class FeedsController extends Controller{
 		if(isset($_POST['AutoFeedVendor'])){
 			$model->attributes=$_POST['AutoFeedVendor'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('viewvendor','id'=>$model->id));
 		}
 		$this->render('createvendor',array('model'=>$model));
 	}

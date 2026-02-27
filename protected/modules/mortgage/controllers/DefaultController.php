@@ -3,9 +3,9 @@ class DefaultController extends Controller{
 	public $layout = '/layouts/column1';
 	public function actionIndex(){
 		if(!Yii::app()->user->isGuest){
-			$this->redirect('../dashboard/index');
+			$this->redirect(array('dashboard/index'));
 		}else{
-			$this->redirect('affiliates/login');
+			$this->redirect(array('affiliates/login'));
 		}
 	}
 	public function actionLogout(){

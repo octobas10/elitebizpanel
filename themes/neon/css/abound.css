@@ -578,20 +578,6 @@ footer p{
     filter: progid: dximagetransform.microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
     filter: progid: dximagetransform.microsoft.gradient(enabled=false);
 }
-.inputClass.ui-rangepicker-input.ui-widget-content {
-    width: 195px;
-    height:20px;
-    font-size:12px;
-}
-.ui-daterangepicker-next.ui-corner-all {
-    top: 3px;
-}
-.ui-daterangepicker-prev.ui-corner-all {
-    top: 3px;
-}
-.ui-daterangepicker-arrows.ui-widget.ui-widget-header.ui-helper-clearfix.ui-corner-all {
-    width: 240px;
-}
 .errorSummary {
     color: red;
 }

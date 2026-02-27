@@ -20,6 +20,11 @@ body
 	margin: 0;
 	padding: 0;
 	border-top: 3px solid #C9E0ED;
+	background-color: #a30c22;
+	color: #fff;
+}
+#header #logo {
+	color: #fff;
 }
 
 #content
@@ -32,13 +37,123 @@ body
 	padding: 20px 20px 20px 0;
 }
 
-#footer
-{
-	padding: 10px;
-	margin: 10px 20px;
-	font-size: 0.8em;
-	text-align: center;
+/* Footer — IntelliBuddies-inspired layout (columns, panels, content) */
+.app-footer {
 	border-top: 1px solid #C9E0ED;
+	background: #f8fafb;
+	margin: 0;
+	padding: 0;
+	font-size: 0.9em;
+	color: #555;
+}
+.app-footer__inner {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 24px 20px 0;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.app-footer__columns {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: separate;
+	border-spacing: 0 0;
+	align-self: stretch;
+}
+.app-footer__panel {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0 16px 24px 0;
+	text-align: center;
+}
+.app-footer__panel:last-child {
+	padding-right: 0;
+}
+.app-footer__heading {
+	font-size: 0.85em;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #4a6b7c;
+	margin: 0 0 10px 0;
+	padding: 0;
+	border: none;
+}
+.app-footer__list {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	display: inline-block;
+	text-align: center;
+}
+.app-footer__list li {
+	margin: 0 0 6px 0;
+	padding: 0;
+}
+.app-footer__list a {
+	color: #0066A4;
+	text-decoration: none;
+}
+.app-footer__list a:hover {
+	text-decoration: underline;
+}
+.app-footer__content {
+	margin: 0 0 8px 0;
+	padding: 0;
+	line-height: 1.45;
+}
+.app-footer__powered {
+	margin: 0;
+	padding: 0;
+	font-size: 0.9em;
+	opacity: 0.85;
+}
+.app-footer__powered a {
+	color: #0066A4;
+	text-decoration: none;
+}
+.app-footer__powered a:hover {
+	text-decoration: underline;
+}
+.app-footer__copyright {
+	border-top: 1px dashed #C9E0ED;
+	padding: 14px 20px;
+	text-align: center;
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.app-footer__copyright .app-footer__content,
+.app-footer__copyright .app-footer__powered {
+	margin: 0 0 4px 0;
+}
+.app-footer__copyright .app-footer__powered:last-child {
+	margin-bottom: 0;
+}
+.app-footer__bar {
+	border-top: 1px solid #E5EEF2;
+	padding: 10px 0;
+	text-align: center;
+	background: #eef4f7;
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.app-footer__tagline {
+	font-size: 0.85em;
+	color: #5a6b73;
+}
+#footer { /* legacy id for any scripts */
+	padding: 0;
+	margin: 0;
 }
 
 #logo

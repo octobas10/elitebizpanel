@@ -1,0 +1,3819 @@
+/**
+ * Mortgage Portal — Professional design system.
+ * Blues, grays, clean cards. No heavy red. Responsive.
+ * Aligned with dashboard design system: 8px spacing, WCAG 2.1 AA, semantic sections.
+ * Compat: .row-fluid, .span*, .btn, .portlet, .table for existing views.
+ */
+
+:root {
+	/* Elite Mortgage Finder branding: navy #244E6A, orange #F26721, grey #808080 */
+	--portal-primary: #244E6A;
+	--portal-primary-hover: #1a3d52;
+	--portal-accent: #F26721;
+	--portal-accent-hover: #e55a14;
+	--portal-surface: #f8fafc;
+	--portal-surface-card: #ffffff;
+	--portal-text: #0f172a;
+	--portal-text-muted: #808080;
+	--portal-border: #e2e8f0;
+	--portal-header-bg: #f1f5f9;
+	--portal-header-bg-bar: #000000;
+	--portal-success: #10b981;
+	--portal-success-bg: #d1fae5;
+	--portal-danger: #ef4444;
+	--portal-danger-bg: #fee2e2;
+	--portal-empty-bg: #f1f5f9;
+	--portal-empty-stroke: #94a3b8;
+}
+/* Top portal header — Elite Mortgage Finder black bar */
+.portal-header-red,
+#portal-header.portal-header-red {
+	background-color: var(--portal-header-bg-bar);
+}
+
+.mortgage-portal {
+	font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+	font-size: 15px;
+	line-height: 1.6;
+	color: var(--portal-text);
+	box-sizing: border-box;
+}
+
+.mortgage-portal *,
+.mortgage-portal *::before,
+.mortgage-portal *::after {
+	box-sizing: border-box;
+}
+
+/* ----- Grid compat ----- */
+.mortgage-portal .row-fluid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -12px;
+	margin-right: -12px;
+	gap: 0;
+}
+
+.mortgage-portal .row-fluid::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.mortgage-portal .span2,
+.mortgage-portal .span3,
+.mortgage-portal .span4,
+.mortgage-portal .span5,
+.mortgage-portal .span6,
+.mortgage-portal .span9,
+.mortgage-portal .span10,
+.mortgage-portal .span12 {
+	min-height: 1px;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.mortgage-portal .span2 { width: 16.666%; }
+.mortgage-portal .span3 { width: 25%; }
+.mortgage-portal .span4 { width: 33.333%; }
+.mortgage-portal .span5 { width: 41.666%; }
+.mortgage-portal .span6 { width: 50%; }
+.mortgage-portal .span9 { width: 75%; }
+.mortgage-portal .span10 { width: 83.333%; }
+.mortgage-portal .span12 { width: 100%; }
+
+.mortgage-portal .offset3 { margin-left: 25%; }
+
+@media (max-width: 767px) {
+	.mortgage-portal .span2,
+	.mortgage-portal .span3,
+	.mortgage-portal .span4,
+	.mortgage-portal .span5,
+	.mortgage-portal .span6,
+	.mortgage-portal .span9,
+	.mortgage-portal .span10,
+	.mortgage-portal .span12 {
+		width: 100%;
+	}
+	.mortgage-portal .offset3 { margin-left: 0; }
+}
+
+/* Three-column row: even distribution, full width (Conversions, Today's Ping, Today's Post) */
+.mortgage-portal .dashboard-three-cols {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+.mortgage-portal .dashboard-three-cols__item {
+	flex: 1 1 calc(33.333% - 0.67rem);
+	min-width: 0;
+	max-width: none;
+	width: auto;
+	padding-left: 12px;
+	padding-right: 12px;
+	box-sizing: border-box;
+}
+.mortgage-portal .dashboard-three-cols__item > .portlet {
+	width: 100%;
+	min-width: 0;
+}
+@media (max-width: 767px) {
+	.mortgage-portal .dashboard-three-cols__item {
+		flex: 1 1 100%;
+	}
+}
+
+/* ----- Buttons ----- */
+.mortgage-portal .btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.5rem 1rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 1.5;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 8px;
+	transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.mortgage-portal .btn-primary {
+	color: #fff;
+	background-color: var(--portal-primary);
+	border-color: var(--portal-primary);
+}
+
+.mortgage-portal .btn-primary:hover {
+	background-color: var(--portal-primary-hover);
+	border-color: var(--portal-primary-hover);
+}
+
+.mortgage-portal .btn-default {
+	color: var(--portal-text);
+	background-color: #f1f5f9;
+	border-color: var(--portal-border);
+}
+
+.mortgage-portal .btn-default:hover {
+	background-color: #e2e8f0;
+}
+
+.mortgage-portal .btn:focus-visible,
+.mortgage-portal .dashboard-apply-btn:focus-visible,
+.mortgage-portal .dashboard-clear-btn:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--portal-surface-card), 0 0 0 4px var(--portal-primary);
+}
+
+/* ----- Portlets: card-based, light header (no red bar) ----- */
+.mortgage-portal .portlet {
+	margin-bottom: 1.5rem;
+	background: var(--portal-surface-card);
+	border: 1px solid var(--portal-border);
+	border-radius: 12px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+	overflow: hidden;
+}
+
+.mortgage-portal .portlet > .portlet-decoration {
+	background-color: var(--portal-header-bg);
+	color: var(--portal-text);
+	padding: 1rem 1.25rem;
+	font-size: 1rem;
+	font-weight: 600;
+	border-bottom: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .portlet > .portlet-decoration .icon-picture,
+.mortgage-portal .portlet > .portlet-decoration .icon-th-list,
+.mortgage-portal .portlet > .portlet-decoration .icon-info-sign {
+	opacity: 0.7;
+	margin-right: 0.35rem;
+}
+
+.mortgage-portal .portlet > .portlet-content {
+	padding: 1.25rem;
+	overflow-x: auto;
+}
+
+.mortgage-portal .portlet .portlet-title {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+/* ----- Tables: clear hierarchy, easy to scan ----- */
+.mortgage-portal .table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.875rem;
+}
+
+.mortgage-portal .table th,
+.mortgage-portal .table td {
+	padding: 0.75rem 1rem;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.mortgage-portal .table thead th {
+	background-color: var(--portal-header-bg);
+	color: var(--portal-text);
+	font-weight: 600;
+	font-size: 0.8125rem;
+	text-transform: none;
+	letter-spacing: 0;
+	border-bottom: 2px solid var(--portal-border);
+}
+
+.mortgage-portal .table.table-bordered th,
+.mortgage-portal .table.table-bordered td {
+	border: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .table.table-condensed th,
+.mortgage-portal .table.table-condensed td {
+	padding: 0.5rem 0.75rem;
+}
+
+.mortgage-portal .table.table-striped tbody tr:nth-child(odd) {
+	background-color: #fafafa;
+}
+
+.mortgage-portal .table.table-hover tbody tr:hover {
+	background-color: #f1f5f9;
+}
+
+.mortgage-portal .table tbody td {
+	border-bottom: 1px solid var(--portal-border);
+	color: var(--portal-text);
+}
+
+.mortgage-portal .table tfoot th {
+	background-color: var(--portal-header-bg);
+	font-weight: 600;
+	border-top: 2px solid var(--portal-border);
+	padding: 0.75rem 1rem;
+}
+
+/* ----- Page structure ----- */
+.mortgage-dashboard-main {
+	max-width: 1440px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mortgage-portal .dashboard-page-title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.25;
+	color: var(--portal-text);
+	margin: 0 0 1.5rem;
+	padding-top: 1rem;
+}
+
+.mortgage-portal .dashboard-section {
+	margin-bottom: 2rem;
+}
+
+.mortgage-portal .dashboard-section-title {
+	font-size: 1.25rem;
+	font-weight: 600;
+	line-height: 1.25;
+	color: var(--portal-text);
+	margin: 0 0 1rem;
+}
+
+.mortgage-portal .dashboard-filters-section {
+	margin-bottom: 1.5rem;
+}
+
+.mortgage-portal .dashboard-clear-btn {
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.mortgage-portal .dashboard-clear-btn:hover {
+	text-decoration: none;
+	color: var(--portal-text);
+}
+
+/* ----- Breadcrumb ----- */
+.mortgage-portal .dashboard-breadcrumb {
+	margin-bottom: 0.5rem;
+}
+
+.mortgage-portal .dashboard-breadcrumb-list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.25rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 0.875rem;
+}
+
+.mortgage-portal .dashboard-breadcrumb-list a {
+	color: var(--portal-primary);
+	text-decoration: none;
+}
+
+.mortgage-portal .dashboard-breadcrumb-list a:hover {
+	text-decoration: underline;
+}
+
+/* Layout breadcrumb (Yii CBreadcrumbs) - for non-dashboard pages */
+.mortgage-portal #content > .mortgage-portal-breadcrumb,
+.mortgage-portal .mortgage-portal-breadcrumb {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.25rem;
+	list-style: none;
+	margin: 0 0 0.5rem;
+	padding: 0;
+	font-size: 0.875rem;
+}
+
+.mortgage-portal #content > .mortgage-portal-breadcrumb a,
+.mortgage-portal .mortgage-portal-breadcrumb a {
+	color: var(--portal-primary);
+	text-decoration: none;
+}
+
+.mortgage-portal #content > .mortgage-portal-breadcrumb a:hover,
+.mortgage-portal .mortgage-portal-breadcrumb a:hover {
+	text-decoration: underline;
+}
+
+/* ----- Summary KPI grid (top) ----- */
+.mortgage-portal .dashboard-summary-kpi {
+	margin-bottom: 1.5rem;
+}
+
+.mortgage-portal .dashboard-kpi-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+	.mortgage-portal .dashboard-kpi-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 480px) {
+	.mortgage-portal .dashboard-kpi-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.mortgage-portal .dashboard-kpi-card {
+	background: var(--portal-surface-card);
+	border: 1px solid var(--portal-border);
+	border-radius: 12px;
+	padding: 1.25rem;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+	transition: box-shadow 0.2s;
+}
+
+.mortgage-portal .dashboard-kpi-card:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.mortgage-portal .dashboard-kpi-label {
+	font-size: 0.8125rem;
+	font-weight: 500;
+	color: var(--portal-text-muted);
+	margin: 0 0 0.25rem;
+}
+
+.mortgage-portal .dashboard-kpi-value {
+	font-size: 1.75rem;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0;
+}
+
+.mortgage-portal .dashboard-kpi-value-neutral {
+	color: var(--portal-primary);
+}
+
+.mortgage-portal .dashboard-kpi-value-success {
+	color: var(--portal-success);
+}
+
+.mortgage-portal .dashboard-kpi-value-danger {
+	color: var(--portal-danger);
+}
+
+.mortgage-portal .dashboard-kpi-meta {
+	font-size: 0.75rem;
+	color: var(--portal-text-muted);
+	margin: 0.25rem 0 0;
+}
+
+/* ----- Toolbar: presets, date picker, Apply, meta ----- */
+.mortgage-portal .dashboard-toolbar-card {
+	background: var(--portal-surface-card);
+	border: 1px solid var(--portal-border);
+	border-radius: 12px;
+	padding: 1.25rem 1.5rem;
+	margin-bottom: 1.5rem;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.mortgage-portal .dashboard-toolbar-inner {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.mortgage-portal .dashboard-toolbar-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1rem;
+}
+
+.mortgage-portal .dashboard-toolbar-row-main {
+	align-items: flex-end;
+	gap: 1.25rem;
+}
+
+.mortgage-portal .dashboard-toolbar-group {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.mortgage-portal .dashboard-toolbar-label {
+	font-size: 0.8125rem;
+	font-weight: 600;
+	color: var(--portal-text-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	margin: 0;
+}
+
+.mortgage-portal .dashboard-date-presets {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.375rem;
+}
+
+.mortgage-portal .dashboard-preset-btn {
+	padding: 0.5rem 0.875rem;
+	font-size: 0.8125rem;
+	font-weight: 500;
+	color: var(--portal-text);
+	background: var(--portal-surface);
+	border: 1px solid var(--portal-border);
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.mortgage-portal .dashboard-preset-btn:hover {
+	background: var(--portal-header-bg);
+	border-color: #cbd5e1;
+}
+
+.mortgage-portal .dashboard-preset-btn.active {
+	background: var(--portal-primary);
+	color: #fff;
+	border-color: var(--portal-primary);
+}
+
+.mortgage-portal .dashboard-toolbar-picker-wrap {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	flex: 1;
+	min-width: 0;
+}
+
+.mortgage-portal .dashboard-toolbar-picker-wrap .dashboard-date-input,
+.mortgage-portal .dashboard-toolbar-picker-wrap .inputClass {
+	min-width: 220px;
+	max-width: 280px;
+}
+
+.mortgage-portal .dashboard-apply-btn {
+	padding: 0.5rem 1.25rem;
+	font-size: 0.875rem;
+	font-weight: 600;
+	color: #fff;
+	background: var(--portal-primary);
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: background 0.15s, transform 0.1s;
+}
+
+.mortgage-portal .dashboard-apply-btn:hover {
+	background: var(--portal-primary-hover);
+}
+
+.mortgage-portal .dashboard-apply-btn:active {
+	transform: scale(0.98);
+}
+
+/* Toolbar action buttons: text-only by default; if icon is added, use .btn-icon-left (icon left of text only) */
+.mortgage-portal .dashboard-toolbar-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+.mortgage-portal .dashboard-toolbar-btn .btn-icon {
+	flex-shrink: 0;
+	order: -1;
+}
+
+.mortgage-portal .dashboard-toolbar-row-meta {
+	padding-top: 0.75rem;
+	border-top: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .dashboard-filter-chip {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.375rem 0.625rem;
+	font-size: 0.8125rem;
+	color: var(--portal-text-muted);
+	background: var(--portal-surface);
+	border: 1px solid var(--portal-border);
+	border-radius: 6px;
+}
+
+.mortgage-portal .dashboard-meta-btn {
+	padding: 0.375rem 0.625rem;
+	font-size: 0.8125rem;
+	font-weight: 500;
+	color: var(--portal-text-muted);
+	background: transparent;
+	border: 1px solid var(--portal-border);
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.mortgage-portal .dashboard-meta-btn:hover {
+	background: var(--portal-surface);
+	color: var(--portal-text);
+	border-color: #cbd5e1;
+}
+
+.mortgage-portal .dashboard-refresh-btn {
+	color: var(--portal-primary);
+	border-color: var(--portal-primary);
+}
+
+.mortgage-portal .dashboard-refresh-btn:hover {
+	background: var(--portal-primary);
+	color: #fff;
+}
+
+.mortgage-portal .dashboard-last-updated {
+	font-size: 0.8125rem;
+	color: var(--portal-text-muted);
+	margin-left: auto;
+}
+
+.mortgage-portal .dashboard-date-input {
+	min-width: 220px;
+}
+
+/* Date range picker: Prev | date range | Next */
+.mortgage-portal .dashboard-toolbar-picker-wrap > div {
+	display: flex;
+	align-items: stretch;
+	gap: 0;
+	min-width: 220px;
+	width: auto;
+	max-width: 320px;
+	height: 2.25rem;
+	background: var(--portal-surface);
+	border: 1px solid var(--portal-border);
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+.mortgage-portal .dashboard-toolbar-picker-wrap .ui-daterangepicker-prev {
+	order: 1;
+	position: static;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	min-width: 2.5rem;
+	padding: 0;
+	margin: 0;
+	background: var(--portal-header-bg);
+	border: none;
+	border-right: 1px solid var(--portal-border);
+	color: var(--portal-text);
+	font-size: 0.75rem;
+	text-decoration: none;
+	transition: background 0.15s, color 0.15s;
+}
+.mortgage-portal .dashboard-toolbar-picker-wrap .ui-daterangepicker-next {
+	order: 3;
+	position: static;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	min-width: 2.5rem;
+	padding: 0;
+	margin: 0;
+	background: var(--portal-header-bg);
+	border: none;
+	border-left: 1px solid var(--portal-border);
+	color: var(--portal-text);
+	font-size: 0.75rem;
+	text-decoration: none;
+	transition: background 0.15s, color 0.15s;
+}
+.mortgage-portal .dashboard-toolbar-picker-wrap .ui-daterangepicker-prev:hover,
+.mortgage-portal .dashboard-toolbar-picker-wrap .ui-daterangepicker-next:hover {
+	background: var(--portal-border);
+	color: var(--portal-text);
+}
+.mortgage-portal .dashboard-toolbar-picker-wrap .ui-daterangepicker-prev .ui-icon,
+.mortgage-portal .dashboard-toolbar-picker-wrap .ui-daterangepicker-next .ui-icon {
+	display: inline;
+	background-image: none;
+	text-indent: 0;
+	width: auto;
+	height: auto;
+	margin: 0;
+}
+.mortgage-portal .dashboard-toolbar-picker-wrap .ui-rangepicker-input,
+.mortgage-portal .dashboard-toolbar-picker-wrap .inputClass.ui-rangepicker-input {
+	order: 2;
+	flex: 1;
+	min-width: 0;
+	width: auto;
+	height: 100%;
+	margin: 0;
+	padding: 0.375rem 0.75rem;
+	border: none;
+	border-left: 1px solid var(--portal-border);
+	border-right: 1px solid var(--portal-border);
+	background: transparent;
+	font-size: 0.875rem;
+	color: var(--portal-text);
+}
+.mortgage-portal .dashboard-toolbar-picker-wrap .ui-rangepicker-input:focus,
+.mortgage-portal .dashboard-toolbar-picker-wrap .inputClass.ui-rangepicker-input:focus {
+	outline: none;
+}
+
+.mortgage-portal .dashboard-toolbar-card .table {
+	margin-bottom: 0;
+}
+
+.mortgage-portal .dashboard-toolbar-card .table td {
+	border: none;
+	padding: 0.5rem 0;
+	vertical-align: middle;
+}
+
+.mortgage-portal .dashboard-toolbar-card .table thead td {
+	font-weight: 600;
+	color: var(--portal-text);
+	background: transparent;
+}
+
+/* ----- Dashboard metrics sidebar: prominent stats ----- */
+.mortgage-portal .dashboard-metrics {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.mortgage-portal .dashboard-metrics .metric-card {
+	background: var(--portal-surface-card);
+	border: 1px solid var(--portal-border);
+	border-radius: 12px;
+	padding: 1.25rem;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* ----- Metrics row (full-width cards) ----- */
+.mortgage-portal .dashboard-metrics-row {
+	margin-bottom: 1.5rem;
+}
+
+.mortgage-portal .dashboard-metrics-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+@media (max-width: 768px) {
+	.mortgage-portal .dashboard-metrics-list {
+		grid-template-columns: 1fr;
+	}
+}
+
+.mortgage-portal .metric-card-with-sparkline {
+	display: flex;
+	flex-direction: column;
+}
+
+.mortgage-portal .metric-card-main {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.75rem;
+}
+
+.mortgage-portal .metric-card-content {
+	flex: 1;
+	min-width: 0;
+}
+
+.mortgage-portal .metric-change {
+	display: block;
+	font-size: 0.75rem;
+	font-weight: 500;
+	margin-top: 0.25rem;
+}
+
+.mortgage-portal .metric-change-neutral {
+	color: var(--portal-text-muted);
+}
+
+.mortgage-portal .metric-change-positive {
+	color: var(--portal-success);
+}
+
+.mortgage-portal .metric-change-negative {
+	color: var(--portal-danger);
+}
+
+.mortgage-portal .metric-sparkline {
+	height: 4px;
+	background: var(--portal-border);
+	border-radius: 2px;
+	margin-top: 0.75rem;
+	overflow: hidden;
+}
+
+.mortgage-portal .metric-sparkline-bar {
+	display: block;
+	height: 100%;
+	background: var(--portal-primary);
+	border-radius: 2px;
+	transition: width 0.3s;
+}
+
+.mortgage-portal .dashboard-metrics .metric-card .summary-number {
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--portal-primary);
+	line-height: 1.2;
+	display: block;
+	margin-bottom: 0.25rem;
+}
+
+.mortgage-portal .dashboard-metrics .metric-card .summary-title {
+	font-size: 0.8125rem;
+	color: var(--portal-text-muted);
+	font-weight: 500;
+}
+
+.mortgage-portal .summary ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.mortgage-portal .summary ul li {
+	height: auto;
+	float: none;
+	width: 100%;
+	padding: 0;
+	margin-bottom: 1rem;
+	border: none;
+}
+
+.mortgage-portal .summary ul li:last-child {
+	margin-bottom: 0;
+}
+
+.mortgage-portal .summary-number {
+	font-weight: 700;
+	color: var(--portal-primary);
+}
+
+.mortgage-portal .summary-title {
+	display: block;
+	color: var(--portal-text-muted);
+	font-size: 0.8125rem;
+	margin-top: 0.25rem;
+}
+
+.mortgage-portal .summary-icon {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 0.5rem;
+}
+
+.mortgage-portal .summary-icon img {
+	display: block;
+	opacity: 0.9;
+}
+
+/* ----- Empty states: helpful, actionable ----- */
+.mortgage-portal .dashboard-empty-state {
+	text-align: center;
+	padding: 3rem 2rem;
+	background: var(--portal-surface);
+	border-radius: 12px;
+	border: 1px dashed var(--portal-border);
+}
+
+.mortgage-portal .dashboard-empty-state-enhanced {
+	background: linear-gradient(135deg, var(--portal-surface) 0%, #f1f5f9 100%);
+	background-image: linear-gradient(135deg, var(--portal-surface) 0%, #f1f5f9 100%);
+	position: relative;
+}
+
+.mortgage-portal .dashboard-empty-state-enhanced::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: 12px;
+	background-image: radial-gradient(circle at 20% 80%, rgba(36, 78, 106, 0.06) 0%, transparent 50%),
+		radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.04) 0%, transparent 50%);
+	pointer-events: none;
+}
+
+.mortgage-portal .dashboard-empty-state-illus {
+	margin: 0 auto 1.25rem;
+}
+
+.mortgage-portal .dashboard-empty-state-illus svg {
+	display: block;
+	margin: 0 auto;
+}
+
+.mortgage-portal .dashboard-empty-state-icon {
+	width: 48px;
+	height: 48px;
+	margin: 0 auto 1rem;
+	background: var(--portal-border);
+	border-radius: 50%;
+	opacity: 0.6;
+}
+
+.mortgage-portal .dashboard-empty-state-title {
+	font-size: 1.125rem;
+	font-weight: 700;
+	color: var(--portal-text);
+	margin: 0 0 0.5rem;
+}
+
+.mortgage-portal .dashboard-empty-state-hint {
+	font-size: 0.875rem;
+	color: var(--portal-text-muted);
+	margin: 0 0 1rem;
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 1.5;
+}
+
+.mortgage-portal .dashboard-empty-state-action {
+	margin-top: 0.5rem;
+}
+
+/* ----- Campaign table: sortable, profit colors, margin bar ----- */
+.mortgage-portal .dashboard-table-wrap {
+	overflow-x: auto;
+}
+
+/* ----- Browse Vendor / Lender Transaction page ----- */
+.mortgage-portal .brows-vendor-lender-transaction-page .lenders-page-header {
+	margin-bottom: 1.25rem;
+}
+.mortgage-portal .brows-vendor-lender-transaction-page .row-fluid.brows-vendor-lender-transaction {
+	margin-bottom: 1.25rem;
+}
+.mortgage-portal .brows-vendor-lender-transaction-page .portlet--filters-collapsible {
+	border-left: 4px solid var(--portal-primary);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.mortgage-portal .brows-vendor-lender-transaction-page .brows-transaction-results .portlet {
+	margin-bottom: 0;
+}
+.mortgage-portal .brows-vendor-lender-transaction-page .brows-transaction-results .portlet-content {
+	padding: 1rem 1.25rem;
+}
+.mortgage-portal .brows-vendor-lender-transaction-page .grid-view table th,
+.mortgage-portal .brows-vendor-lender-transaction-page .grid-view table td {
+	font-size: 0.875rem;
+	padding: 0.5rem 0.75rem;
+}
+.mortgage-portal .brows-vendor-lender-transaction-page .grid-view table th {
+	background-color: var(--portal-header-bg);
+	font-weight: 600;
+}
+
+.mortgage-portal .dashboard-table {
+	font-size: 0.875rem;
+}
+
+.mortgage-portal .dashboard-table .text-right,
+.mortgage-portal .dashboard-table td.text-right,
+.mortgage-portal .dashboard-table th.text-right {
+	font-variant-numeric: tabular-nums;
+}
+
+.mortgage-portal .dashboard-th {
+	white-space: nowrap;
+	cursor: pointer;
+	user-select: none;
+	padding-right: 1.5rem;
+	position: relative;
+}
+
+.mortgage-portal .dashboard-th .sort-indicator {
+	position: absolute;
+	right: 0.5rem;
+	top: 50%;
+	transform: translateY(-50%);
+	opacity: 0.4;
+	font-size: 0.75rem;
+}
+
+.mortgage-portal .dashboard-th[aria-sort="ascending"] .sort-indicator::after {
+	content: "↑";
+	opacity: 1;
+}
+
+.mortgage-portal .dashboard-th[aria-sort="descending"] .sort-indicator::after {
+	content: "↓";
+	opacity: 1;
+}
+
+.mortgage-portal .profit-positive {
+	color: var(--portal-success);
+	font-weight: 600;
+}
+
+.mortgage-portal .profit-negative {
+	color: var(--portal-danger);
+	font-weight: 600;
+}
+
+.mortgage-portal .dashboard-margin-cell {
+	min-width: 100px;
+}
+
+.mortgage-portal .dashboard-margin-bar-wrap {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.mortgage-portal .dashboard-margin-bar {
+	height: 6px;
+	min-width: 4px;
+	background: var(--portal-success);
+	border-radius: 3px;
+	flex: 0 1 60px;
+	max-width: 80px;
+}
+
+.mortgage-portal .dashboard-margin-bar-wrap .dashboard-margin-bar[style*="width: 0"] {
+	background: var(--portal-border);
+}
+
+.mortgage-portal tr[data-profit][data-profit="-0"] .dashboard-margin-bar,
+.mortgage-portal tr[data-profit^="-"] .dashboard-margin-bar {
+	background: var(--portal-danger);
+}
+
+.mortgage-portal .dashboard-margin-pct {
+	font-size: 0.8125rem;
+	font-weight: 500;
+	color: var(--portal-text);
+}
+
+.mortgage-portal .dashboard-tfoot-row th {
+	font-weight: 700;
+}
+
+.mortgage-portal .text-right {
+	text-align: right;
+}
+
+/* ----- Loading skeleton ----- */
+.mortgage-portal .dashboard-skeleton {
+	pointer-events: none;
+}
+
+.mortgage-portal .dashboard-skeleton .dashboard-kpi-card,
+.mortgage-portal .dashboard-skeleton .metric-card {
+	position: relative;
+	overflow: hidden;
+}
+
+.mortgage-portal .dashboard-skeleton .dashboard-kpi-value,
+.mortgage-portal .dashboard-skeleton .summary-number {
+	visibility: hidden;
+}
+
+.mortgage-portal .dashboard-skeleton .skeleton-shimmer::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+	animation: dashboard-shimmer 1.5s infinite;
+}
+
+@keyframes dashboard-shimmer {
+	0% { transform: translateX(-100%); }
+	100% { transform: translateX(100%); }
+}
+
+/* ----- Tooltips and help ----- */
+.mortgage-portal [title] {
+	cursor: help;
+}
+
+.mortgage-portal .dashboard-help-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1rem;
+	height: 1rem;
+	margin-left: 0.25rem;
+	font-size: 0.75rem;
+	color: var(--portal-text-muted);
+	background: var(--portal-surface);
+	border: 1px solid var(--portal-border);
+	border-radius: 50%;
+	text-decoration: none;
+	cursor: help;
+}
+
+.mortgage-portal .dashboard-help-icon:hover {
+	color: var(--portal-primary);
+	border-color: var(--portal-primary);
+}
+
+/* ----- Dashboard header (see dashboard-header-footer.mdc) ----- */
+.dashboard-header {
+	min-height: 3.5rem;
+}
+
+@media (min-width: 768px) {
+	.dashboard-header {
+		min-height: 4.5rem;
+	}
+}
+
+/* Content area: ensure all mortgage pages inherit portal branding */
+.mortgage-portal .mortgage-portal-content {
+	/* inherits .mortgage-portal from body; all portlets/tables use portal vars */
+}
+
+/* Main content area: top padding so breadcrumb and content have space below header */
+.mortgage-portal .main-body {
+	padding-top: 1.5rem;
+}
+
+/* Page headers and portlets on non-dashboard pages (Leads, Affiliates, Lenders, Feeds, etc.) */
+.mortgage-portal .page-header h1,
+.mortgage-portal .portlet .portlet-decoration {
+	color: var(--portal-text);
+}
+
+.mortgage-portal .page-header small {
+	color: var(--portal-text-muted);
+}
+
+/* Lenders login and other portlet-based forms: use portal colours */
+.mortgage-portal .row.rememberMe {
+	margin-bottom: 1rem;
+}
+.mortgage-portal .row.rememberMe > label {
+	display: inline;
+}
+.mortgage-portal .form .row.buttons .btn-primary {
+	background-color: var(--portal-primary);
+	border-color: var(--portal-primary);
+}
+.mortgage-portal .form .row.buttons .btn-primary:hover {
+	background-color: var(--portal-primary-hover);
+	border-color: var(--portal-primary-hover);
+}
+
+.dashboard-header-inner {
+	max-width: 1440px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.dashboard-header-nav a:focus-visible,
+.dashboard-header-nav .portal-dropdown-trigger:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+/* ----- Footer: Elite Mortgage Finder navy, minimal ----- */
+.mortgage-portal .mortgage-portal-footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1030;
+	background-color: var(--portal-primary);
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	min-height: 56px;
+}
+
+.mortgage-portal-footer-inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem 1.5rem;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0.875rem 1.5rem;
+	box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+	.mortgage-portal-footer-inner {
+		justify-content: flex-start;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
+
+.mortgage-portal-footer-links {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0 1rem;
+	margin: 0;
+}
+
+.mortgage-portal-footer-links a {
+	color: rgba(255, 255, 255, 0.92);
+	text-decoration: none;
+	font-size: 0.875rem;
+}
+
+.mortgage-portal-footer-links a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.mortgage-portal-footer-links a:focus-visible,
+.mortgage-portal-footer-copy a:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+	border-radius: 4px;
+}
+
+.mortgage-portal-footer-copy {
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 0.8125rem;
+	line-height: 1.5;
+	margin: 0;
+}
+
+.mortgage-portal-footer-copy a {
+	color: #93c5fd;
+	text-decoration: none;
+}
+
+.mortgage-portal-footer-copy a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.mortgage-portal-footer-tagline {
+	color: rgba(255, 255, 255, 0.65);
+	font-size: 0.75rem;
+	line-height: 1.4;
+	margin: 0;
+}
+
+.mortgage-portal a.morelink {
+	color: var(--portal-primary);
+}
+
+/* ----- Fullwidth portlet ----- */
+.mortgage-portal .fullwidth {
+	width: 100%;
+}
+
+.mortgage-portal .fullwidth > .portlet > .portlet-content {
+	overflow: auto;
+	padding: 1.25rem;
+}
+
+/* ----- Form / date picker input ----- */
+.mortgage-portal .inputClass {
+	padding: 0.5rem 0.75rem;
+	border: 1px solid var(--portal-border);
+	border-radius: 8px;
+	font-size: 0.875rem;
+	min-width: 200px;
+}
+
+.mortgage-portal .inputClass:focus {
+	outline: none;
+	border-color: var(--portal-primary);
+	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.mortgage-portal .inputClass:focus-visible,
+.mortgage-portal .dashboard-toolbar-picker-wrap .inputClass:focus-visible {
+	outline: none;
+	border-color: var(--portal-primary);
+	box-shadow: 0 0 0 2px var(--portal-surface-card), 0 0 0 4px rgba(36, 78, 106, 0.25);
+}
+
+/* ----- Dashboard page spacing ----- */
+.mortgage-portal .dashboard-page-spacer {
+	clear: both;
+	height: 1rem;
+}
+
+.mortgage-portal .stat_title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--portal-text);
+	margin-top: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.mortgage-portal .affiliate_report a {
+	color: var(--portal-primary);
+	text-decoration: none;
+}
+
+.mortgage-portal .affiliate_report a:hover {
+	text-decoration: underline;
+}
+
+/* ----- Grid view (Yii CGridView) ----- */
+/* Table filter row: collapsed by default; show when .grid-view--filters-visible is on the grid */
+/* Match both table.items and any table (when itemsCssClass overrides and table has no .items) */
+.mortgage-portal .grid-view table.items tr.filters,
+.mortgage-portal .grid-view table tr.filters {
+	display: none;
+}
+.mortgage-portal .grid-view.grid-view--filters-visible table.items tr.filters,
+.mortgage-portal .grid-view.grid-view--filters-visible table tr.filters {
+	display: table-row;
+}
+.mortgage-portal .grid-view .grid-view-filters-toggle {
+	display: inline-block;
+	margin-bottom: 0.5rem;
+	font-size: 0.8125rem;
+	color: var(--portal-primary);
+	background: none;
+	border: none;
+	cursor: pointer;
+	text-decoration: underline;
+	padding: 0;
+}
+.mortgage-portal .grid-view .grid-view-filters-toggle:hover {
+	text-decoration: none;
+}
+.mortgage-portal .grid-view table.items th {
+	background-color: var(--portal-header-bg);
+	color: var(--portal-text);
+	text-align: center;
+	word-break: break-word;
+	font-weight: 600;
+}
+
+.mortgage-portal .grid-view table.items td {
+	font-size: 0.875rem;
+	border: 1px solid var(--portal-border);
+	padding: 0.5rem 0.75rem;
+	word-break: break-word;
+}
+
+.mortgage-portal .grid-view table.items tr.odd {
+	background-color: #fafafa;
+}
+
+.mortgage-portal .grid-view table.items tr.even {
+	background-color: #fff;
+}
+
+.mortgage-portal .grid-view table.items tr.selected {
+	background-color: #dbeafe;
+}
+
+/* ----- Grid action column: View / Update / Delete icon buttons ----- */
+/* Keep icons in one row: button column cell */
+.mortgage-portal .grid-view table.items td.button-column,
+.mortgage-portal .grid-view td.button-column {
+	white-space: nowrap;
+	display: table-cell;
+	vertical-align: middle;
+}
+.mortgage-portal .grid-view table.items td.button-column a,
+.mortgage-portal .grid-view td.button-column a {
+	display: inline-flex;
+	vertical-align: middle;
+}
+/* Match both table.items (default) and td.button-column when table has no .items (itemsCssClass override) */
+.mortgage-portal .grid-view table.items td a.view,
+.mortgage-portal .grid-view table.items td a.update,
+.mortgage-portal .grid-view table.items td a.delete,
+.mortgage-portal .grid-view td.button-column a.view,
+.mortgage-portal .grid-view td.button-column a.update,
+.mortgage-portal .grid-view td.button-column a.delete {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	margin: 0 0.125rem;
+	padding: 0;
+	border-radius: 6px;
+	color: var(--portal-text-muted);
+	text-decoration: none;
+	transition: color 0.15s, background-color 0.15s;
+}
+.mortgage-portal .grid-view table.items td a.view:hover,
+.mortgage-portal .grid-view table.items td a.update:hover,
+.mortgage-portal .grid-view table.items td a.delete:hover,
+.mortgage-portal .grid-view td.button-column a.view:hover,
+.mortgage-portal .grid-view td.button-column a.update:hover,
+.mortgage-portal .grid-view td.button-column a.delete:hover {
+	color: var(--portal-primary);
+	background-color: var(--portal-header-bg);
+}
+.mortgage-portal .grid-view table.items td a.view:focus-visible,
+.mortgage-portal .grid-view table.items td a.update:focus-visible,
+.mortgage-portal .grid-view table.items td a.delete:focus-visible,
+.mortgage-portal .grid-view td.button-column a.view:focus-visible,
+.mortgage-portal .grid-view td.button-column a.update:focus-visible,
+.mortgage-portal .grid-view td.button-column a.delete:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--portal-primary);
+}
+/* Hide default label/image; show icon via mask */
+.mortgage-portal .grid-view table.items td a.view img,
+.mortgage-portal .grid-view table.items td a.update img,
+.mortgage-portal .grid-view table.items td a.delete img,
+.mortgage-portal .grid-view td.button-column a.view img,
+.mortgage-portal .grid-view td.button-column a.update img,
+.mortgage-portal .grid-view td.button-column a.delete img {
+	display: none;
+}
+.mortgage-portal .grid-view table.items td a.view,
+.mortgage-portal .grid-view table.items td a.update,
+.mortgage-portal .grid-view table.items td a.delete,
+.mortgage-portal .grid-view td.button-column a.view,
+.mortgage-portal .grid-view td.button-column a.update,
+.mortgage-portal .grid-view td.button-column a.delete {
+	font-size: 0;
+	overflow: hidden;
+}
+.mortgage-portal .grid-view table.items td a.view::before,
+.mortgage-portal .grid-view table.items td a.update::before,
+.mortgage-portal .grid-view table.items td a.delete::before,
+.mortgage-portal .grid-view td.button-column a.view::before,
+.mortgage-portal .grid-view td.button-column a.update::before,
+.mortgage-portal .grid-view td.button-column a.delete::before {
+	content: "";
+	display: block;
+	width: 1.125rem;
+	height: 1.125rem;
+	background-color: currentColor;
+	-webkit-mask-size: 1.125rem 1.125rem;
+	mask-size: 1.125rem 1.125rem;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-position: center;
+	flex-shrink: 0;
+}
+/* View: eye icon */
+.mortgage-portal .grid-view table.items td a.view::before,
+.mortgage-portal .grid-view td.button-column a.view::before {
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
+	mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
+	background-size: 1.125rem 1.125rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+/* Update: pencil icon */
+.mortgage-portal .grid-view table.items td a.update::before,
+.mortgage-portal .grid-view td.button-column a.update::before {
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7'/%3E%3Cpath d='M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z'/%3E%3C/svg%3E");
+	mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7'/%3E%3Cpath d='M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7'/%3E%3Cpath d='M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z'/%3E%3C/svg%3E");
+	background-size: 1.125rem 1.125rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+/* Delete: trash icon */
+.mortgage-portal .grid-view table.items td a.delete::before,
+.mortgage-portal .grid-view td.button-column a.delete::before {
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='3 6 5 6 21 6'/%3E%3Cpath d='M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2'/%3E%3Cline x1='10' y1='11' x2='10' y2='17'/%3E%3Cline x1='14' y1='11' x2='14' y2='17'/%3E%3C/svg%3E");
+	mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='3 6 5 6 21 6'/%3E%3Cpath d='M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2'/%3E%3Cline x1='10' y1='11' x2='10' y2='17'/%3E%3Cline x1='14' y1='11' x2='14' y2='17'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='3 6 5 6 21 6'/%3E%3Cpath d='M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2'/%3E%3Cline x1='10' y1='11' x2='10' y2='17'/%3E%3Cline x1='14' y1='11' x2='14' y2='17'/%3E%3C/svg%3E");
+	background-size: 1.125rem 1.125rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+/* Fallback when links don't have .view/.update/.delete class: use nth-child in action column */
+.mortgage-portal .grid-view table.items td.button-column a:nth-child(1)::before {
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
+	mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
+	-webkit-mask-size: 1.125rem 1.125rem;
+	mask-size: 1.125rem 1.125rem;
+}
+.mortgage-portal .grid-view table.items td.button-column a:nth-child(2)::before {
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7'/%3E%3Cpath d='M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z'/%3E%3C/svg%3E");
+	mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7'/%3E%3Cpath d='M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z'/%3E%3C/svg%3E");
+	-webkit-mask-size: 1.125rem 1.125rem;
+	mask-size: 1.125rem 1.125rem;
+}
+.mortgage-portal .grid-view table.items td.button-column a:nth-child(3)::before {
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='3 6 5 6 21 6'/%3E%3Cpath d='M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2'/%3E%3Cline x1='10' y1='11' x2='10' y2='17'/%3E%3Cline x1='14' y1='11' x2='14' y2='17'/%3E%3C/svg%3E");
+	mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='3 6 5 6 21 6'/%3E%3Cpath d='M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2'/%3E%3Cline x1='10' y1='11' x2='10' y2='17'/%3E%3Cline x1='14' y1='11' x2='14' y2='17'/%3E%3C/svg%3E");
+	-webkit-mask-size: 1.125rem 1.125rem;
+	mask-size: 1.125rem 1.125rem;
+}
+.mortgage-portal .grid-view table.items td.button-column a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	margin: 0 0.125rem;
+	padding: 0;
+	border-radius: 6px;
+	color: var(--portal-text-muted);
+	text-decoration: none;
+	font-size: 0;
+	overflow: hidden;
+}
+.mortgage-portal .grid-view table.items td.button-column a img {
+	display: none;
+}
+.mortgage-portal .grid-view table.items td.button-column a::before {
+	content: "";
+	display: block;
+	width: 1.125rem;
+	height: 1.125rem;
+	background-color: currentColor;
+	flex-shrink: 0;
+}
+.mortgage-portal .grid-view table.items td.button-column a:hover {
+	color: var(--portal-primary);
+	background-color: var(--portal-header-bg);
+}
+.mortgage-portal .grid-view table.items td.button-column a:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--portal-primary);
+}
+
+/* ----- Login page: centered card, clean form ----- */
+.mortgage-portal .login-page {
+	max-width: 420px;
+	margin: 2rem auto 4rem;
+	padding: 0 1rem;
+}
+
+.mortgage-portal .login-card {
+	background: var(--portal-surface-card);
+	border: 1px solid var(--portal-border);
+	border-radius: 16px;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+	overflow: hidden;
+}
+
+.mortgage-portal .login-card-header {
+	padding: 1.75rem 1.5rem 0;
+	text-align: center;
+	border-bottom: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .login-card-title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--portal-text);
+	margin: 0 0 0.25rem;
+}
+
+.mortgage-portal .login-card-subtitle {
+	font-size: 0.875rem;
+	color: var(--portal-text-muted);
+	margin: 0 0 1.25rem;
+}
+
+.mortgage-portal .login-card-body {
+	padding: 1.5rem 1.5rem 1.75rem;
+}
+
+.mortgage-portal .login-card-intro {
+	font-size: 0.875rem;
+	color: var(--portal-text-muted);
+	margin: 0 0 1.25rem;
+}
+
+.mortgage-portal .login-form {
+	display: block;
+}
+
+.mortgage-portal .login-form-row {
+	margin-bottom: 1.25rem;
+}
+
+.mortgage-portal .login-form-row:last-of-type {
+	margin-bottom: 0;
+}
+
+.mortgage-portal .login-label {
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: var(--portal-text);
+	margin-bottom: 0.375rem;
+}
+
+.mortgage-portal .login-input {
+	display: block;
+	width: 100%;
+	padding: 0.625rem 0.75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: var(--portal-text);
+	background: #fff;
+	border: 1px solid var(--portal-border);
+	border-radius: 8px;
+	transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.mortgage-portal .login-input:hover {
+	border-color: #cbd5e1;
+}
+
+.mortgage-portal .login-input:focus {
+	outline: none;
+	border-color: var(--portal-primary);
+	box-shadow: 0 0 0 3px rgba(36, 78, 106, 0.15);
+}
+
+.mortgage-portal .login-input::placeholder {
+	color: #94a3b8;
+}
+
+.mortgage-portal .login-error {
+	font-size: 0.8125rem;
+	color: #dc2626;
+	margin-top: 0.375rem;
+}
+
+.mortgage-portal .login-form-row-remember {
+	margin-bottom: 1rem;
+}
+
+.mortgage-portal .login-remember {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 0.875rem;
+	color: var(--portal-text);
+	cursor: pointer;
+	margin: 0;
+}
+
+.mortgage-portal .login-checkbox {
+	width: 1rem;
+	height: 1rem;
+	margin: 0;
+	accent-color: var(--portal-primary);
+}
+
+.mortgage-portal .login-form-row-submit {
+	margin-top: 1.5rem;
+	margin-bottom: 0;
+}
+
+.mortgage-portal .login-submit {
+	width: 100%;
+	padding: 0.75rem 1rem;
+	font-size: 1rem;
+	font-weight: 500;
+	border-radius: 8px;
+}
+
+.mortgage-portal .login-links {
+	margin-top: 1.5rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .login-link-block {
+	font-size: 0.875rem;
+	color: var(--portal-text-muted);
+	margin: 0 0 0.75rem;
+}
+
+.mortgage-portal .login-link-block:last-child {
+	margin-bottom: 0;
+}
+
+.mortgage-portal .login-link-external {
+	color: var(--portal-text-muted);
+	text-decoration: none;
+}
+
+.mortgage-portal .login-link-external:hover {
+	color: var(--portal-primary);
+	text-decoration: underline;
+}
+
+.mortgage-portal .login-link-primary {
+	color: var(--portal-primary);
+	font-weight: 500;
+	text-decoration: none;
+	margin-left: 0.25rem;
+}
+
+.mortgage-portal .login-link-primary:hover {
+	text-decoration: underline;
+}
+
+/* ----- Affiliates page: setup list, actions, card ----- */
+.mortgage-portal .affiliates-page {
+	margin-bottom: 2rem;
+}
+
+.mortgage-portal .affiliates-page-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .affiliates-page-header-inner {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.mortgage-portal .affiliates-page-title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.25;
+	color: var(--portal-text);
+	margin: 0 0 0.25rem;
+}
+
+.mortgage-portal .affiliates-page-subtitle {
+	font-size: 0.875rem;
+	color: var(--portal-text-muted);
+	margin: 0;
+	line-height: 1.5;
+}
+
+.mortgage-portal .affiliates-page-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+	flex-shrink: 0;
+}
+
+.mortgage-portal .affiliates-page-btn-primary {
+	font-weight: 600;
+}
+
+.mortgage-portal .affiliates-page-btn-secondary {
+	margin-right: 0.25rem;
+}
+
+.mortgage-portal .affiliates-page-card.portlet {
+	margin-bottom: 0;
+}
+
+.mortgage-portal .affiliates-grid-wrap {
+	margin-top: 0;
+}
+
+.mortgage-portal .affiliates-grid.grid-view table.items th,
+.mortgage-portal .affiliates-grid.grid-view table.items td {
+	vertical-align: middle;
+}
+
+.mortgage-portal .affiliates-col-type {
+	min-width: 7rem;
+}
+
+.mortgage-portal .affiliates-promo-link {
+	color: var(--portal-primary);
+	text-decoration: none;
+	border-bottom: 1px dashed var(--portal-primary);
+	transition: color 0.15s, border-color 0.15s;
+}
+
+.mortgage-portal .affiliates-promo-link:hover {
+	color: var(--portal-primary-hover);
+	border-bottom-color: var(--portal-primary-hover);
+}
+
+.mortgage-portal .affiliates-promo-link:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--portal-surface-card), 0 0 0 4px var(--portal-primary);
+	border-radius: 4px;
+}
+
+.mortgage-portal .affiliates-actions-cell .btn {
+	min-width: 2rem;
+}
+
+@media (max-width: 640px) {
+	.mortgage-portal .affiliates-page-header {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.mortgage-portal .affiliates-page-actions {
+		justify-content: stretch;
+	}
+	.mortgage-portal .affiliates-page-actions .btn {
+		flex: 1;
+	}
+}
+
+/* ----- Suppression List page ----- */
+.mortgage-portal .supression-list-section {
+	margin-bottom: 2rem;
+}
+
+.mortgage-portal .supression-list-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .supression-list-title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--portal-text);
+	margin: 0 0 0.25rem;
+}
+
+.mortgage-portal .supression-list-subtitle {
+	font-size: 0.875rem;
+	color: var(--portal-text-muted);
+	margin: 0;
+}
+
+.mortgage-portal .supression-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.mortgage-portal .supression-actions .btn {
+	min-height: 44px;
+	padding: 0.5rem 1rem;
+	font-weight: 500;
+}
+
+.mortgage-portal .supression-form-card {
+	background: var(--portal-surface-card);
+	border: 1px solid var(--portal-border);
+	border-radius: 12px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+	padding: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.mortgage-portal .supression-form-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 1rem;
+	margin-bottom: 1.25rem;
+}
+
+.mortgage-portal .supression-form-row:last-child {
+	margin-bottom: 0;
+}
+
+.mortgage-portal .supression-form-label {
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 600;
+	color: var(--portal-text);
+	margin-bottom: 0.375rem;
+	min-width: 200px;
+}
+
+.mortgage-portal .supression-form-field {
+	flex: 1;
+	min-width: 220px;
+}
+
+.mortgage-portal .supression-form-field textarea {
+	width: 100%;
+	min-height: 80px;
+	padding: 0.625rem 0.75rem;
+	font-size: 0.875rem;
+	border: 1px solid var(--portal-border);
+	border-radius: 8px;
+	resize: vertical;
+}
+
+.mortgage-portal .supression-form-field textarea:focus {
+	outline: none;
+	border-color: var(--portal-primary);
+	box-shadow: 0 0 0 3px rgba(36, 78, 106, 0.15);
+}
+
+.mortgage-portal .supression-success-msg {
+	font-size: 0.9375rem;
+	color: var(--portal-success);
+	margin: 0 0 1rem;
+	padding: 0.75rem 1rem;
+	background: var(--portal-success-bg);
+	border-radius: 8px;
+}
+
+/* ----- Creatives & Email Creatives pages ----- */
+.mortgage-portal .affiliates-creatives-section {
+	margin-bottom: 2rem;
+}
+
+.mortgage-portal .creatives-form-card {
+	background: var(--portal-surface-card);
+	border: 1px solid var(--portal-border);
+	border-radius: 12px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+	padding: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.mortgage-portal .creatives-form-row {
+	margin-bottom: 1.25rem;
+}
+
+.mortgage-portal .creatives-form-row:last-of-type {
+	margin-bottom: 0;
+}
+
+.mortgage-portal .creatives-form-label {
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 600;
+	color: var(--portal-text);
+	margin-bottom: 0.375rem;
+}
+
+.mortgage-portal .creatives-form-input,
+.mortgage-portal .creatives-form-input input[type="text"],
+.mortgage-portal .creatives-form-input textarea {
+	width: 100%;
+	max-width: 400px;
+	padding: 0.5rem 0.75rem;
+	font-size: 0.875rem;
+	border: 1px solid var(--portal-border);
+	border-radius: 8px;
+}
+
+.mortgage-portal .creatives-form-input:focus,
+.mortgage-portal .creatives-form-input input:focus,
+.mortgage-portal .creatives-form-input textarea:focus {
+	outline: none;
+	border-color: var(--portal-primary);
+	box-shadow: 0 0 0 3px rgba(36, 78, 106, 0.15);
+}
+
+.mortgage-portal .creatives-error-block {
+	background: #fef3c7;
+	border: 1px solid #d97706;
+	border-radius: 8px;
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+
+.mortgage-portal .creatives-error-block p {
+	margin: 0 0 0.5rem;
+	font-size: 0.875rem;
+	color: #92400e;
+}
+
+.mortgage-portal .creatives-error-block p:last-child {
+	margin-bottom: 0;
+}
+
+.mortgage-portal .creatives-display-card {
+	background: var(--portal-surface-card);
+	border: 1px solid var(--portal-border);
+	border-radius: 12px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+	margin-bottom: 1.5rem;
+}
+
+/* Same padding as other portlets: decoration 1rem 1.25rem, content 1.25rem */
+.mortgage-portal .creatives-display-card .portlet-decoration {
+	padding: 1rem 1.25rem;
+	margin-bottom: 0;
+	border-bottom: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .creatives-display-card .portlet-content {
+	padding: 1.25rem;
+}
+
+/* Email subject lines + from lines: side by side above banner grid */
+.mortgage-portal .creatives-lines-row {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+@media (max-width: 767px) {
+	.mortgage-portal .creatives-lines-row {
+		grid-template-columns: 1fr;
+	}
+}
+
+.mortgage-portal .creatives-lines-row .creatives-display-card {
+	margin-bottom: 0;
+}
+
+.mortgage-portal .creatives-banner-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+	gap: 1rem;
+}
+
+.mortgage-portal .creatives-banner-list li {
+	margin: 0;
+	border: 2px solid var(--portal-border);
+	border-radius: 8px;
+	overflow: hidden;
+	transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.mortgage-portal .creatives-banner-list li:hover {
+	border-color: var(--portal-primary);
+	box-shadow: 0 2px 8px rgba(36, 78, 106, 0.15);
+}
+
+.mortgage-portal .creatives-banner-list a {
+	display: block;
+	line-height: 0;
+}
+
+.mortgage-portal .creatives-banner-list img {
+	width: 100%;
+	height: 100px;
+	object-fit: cover;
+	display: block;
+}
+
+.mortgage-portal .creatives-promo-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.25rem;
+}
+
+@media (max-width: 767px) {
+	.mortgage-portal .creatives-promo-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.mortgage-portal .creatives-promo-card {
+	background: var(--portal-surface-card);
+	border: 1px solid var(--portal-border);
+	border-radius: 12px;
+	padding: 1.25rem;
+	margin-bottom: 0;
+}
+
+.mortgage-portal .creatives-code-block {
+	display: block;
+	white-space: pre-wrap;
+	word-break: break-all;
+	font-family: ui-monospace, monospace;
+	font-size: 0.8125rem;
+	background: var(--portal-header-bg);
+	border: 1px solid var(--portal-border);
+	border-radius: 8px;
+	padding: 1rem;
+	margin: 0.75rem 0 0;
+	overflow-x: auto;
+	color: var(--portal-text);
+}
+
+.mortgage-portal .creatives-display-title {
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--portal-text);
+	margin: 0 0 1rem;
+}
+
+.mortgage-portal .creatives-lines-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.mortgage-portal .creatives-lines-list .creatives-line-item {
+	padding: 0.5rem 0;
+	border-bottom: 1px solid var(--portal-border);
+	font-size: 0.875rem;
+	color: var(--portal-text);
+}
+
+.mortgage-portal .creatives-line-item:last-child {
+	border-bottom: none;
+}
+
+.mortgage-portal .creatives-form-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+	.mortgage-portal .creatives-form-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Back-to-top: visible after scroll, fixed bottom-right; above footer (footer z-index 1030) */
+.mortgage-portal .scroll-to-top {
+	position: fixed;
+	bottom: 5.5rem;
+	right: 1.5rem;
+	z-index: 1040;
+	width: 2.75rem;
+	height: 2.75rem;
+	padding: 0;
+	border: 1px solid var(--portal-border);
+	border-radius: 50%;
+	background: var(--portal-surface-card);
+	color: var(--portal-primary);
+	font-size: 1.25rem;
+	line-height: 1;
+	cursor: pointer;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+	transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.mortgage-portal .scroll-to-top:hover {
+	background: var(--portal-primary);
+	color: #fff;
+	box-shadow: 0 4px 12px rgba(36, 78, 106, 0.3);
+}
+
+.mortgage-portal .scroll-to-top:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--portal-primary);
+}
+
+/* ----- View Email Creative (single preview + embed code) ----- */
+.mortgage-portal .view-email-creative-page {
+	margin-bottom: 2rem;
+}
+
+.mortgage-portal .view-email-creative-preview-inner {
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	color: var(--portal-text);
+}
+
+.mortgage-portal .view-email-creative-preview-inner a {
+	color: var(--portal-primary);
+	text-decoration: none;
+}
+
+.mortgage-portal .view-email-creative-preview-inner a:hover {
+	text-decoration: underline;
+}
+
+.mortgage-portal .view-email-creative-preview-inner img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0.5rem 0;
+}
+
+.mortgage-portal .view-email-creative-code {
+	display: block;
+	white-space: pre-wrap;
+	word-break: break-all;
+	font-family: ui-monospace, monospace;
+	font-size: 0.8125rem;
+	background: var(--portal-header-bg);
+	border: 1px solid var(--portal-border);
+	border-radius: 8px;
+	padding: 1rem;
+	margin: 0 0 1rem;
+	overflow-x: auto;
+	color: var(--portal-text);
+	max-height: 20rem;
+	overflow-y: auto;
+}
+
+.mortgage-portal .view-email-creative-embed-source {
+	position: absolute;
+	left: -9999px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.mortgage-portal .view-email-creative-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+}
+
+.mortgage-portal .view-email-creative-copy-feedback {
+	font-size: 0.875rem;
+	color: var(--portal-text-muted);
+}
+
+.mortgage-portal .view-email-creative-copy-feedback.view-email-creative-copy-ok {
+	color: var(--portal-success);
+	font-weight: 500;
+}
+
+/* ----- Leads pages: Browse Transaction, Lender Transaction, Export Leads, Browse Leads, Return Leads ----- */
+.mortgage-portal .leads-section {
+	margin-bottom: 2rem;
+}
+
+.mortgage-portal .leads-page-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .leads-page-title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.25;
+	color: var(--portal-text);
+	margin: 0 0 0.25rem;
+}
+
+.mortgage-portal .leads-page-subtitle {
+	font-size: 0.875rem;
+	color: var(--portal-text-muted);
+	margin: 0;
+	line-height: 1.5;
+}
+
+/* ----- Leads search section: dedicated filter card ----- */
+.mortgage-portal .leads-toolbar-card .portlet {
+	border-left: 4px solid var(--portal-primary);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.mortgage-portal .leads-toolbar-card .portlet .portlet-decoration {
+	background: linear-gradient(to bottom, var(--portal-header-bg) 0%, #f8fafc 100%);
+	padding: 0.75rem 1.25rem;
+	font-size: 1rem;
+}
+
+.mortgage-portal .leads-toolbar-card .portlet .portlet-content,
+.mortgage-portal .leads-toolbar-card.portlet .portlet-content {
+	padding: 1rem 1.25rem;
+	background: #fafbfc;
+}
+
+/* Collapsible: hidden by default in CSS to avoid flicker on load; JS toggles .leads-filter--expanded */
+.mortgage-portal .leads-toolbar-card .portlet .portlet-content {
+	display: none;
+}
+.mortgage-portal .leads-toolbar-card .portlet.leads-filter--expanded .portlet-content {
+	display: block;
+}
+
+.mortgage-portal .leads-toolbar-card .portlet .portlet-decoration {
+	cursor: pointer;
+	padding-right: 2.5rem;
+	position: relative;
+	user-select: none;
+}
+
+.mortgage-portal .leads-toolbar-card .portlet .portlet-decoration[role="button"]:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--portal-surface-card), 0 0 0 4px var(--portal-primary);
+	border-radius: 4px;
+}
+
+.mortgage-portal .leads-toolbar-card .portlet .portlet-decoration[role="button"]::after {
+	content: "\25BC";
+	position: absolute;
+	right: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: transform 0.2s ease;
+	color: var(--portal-primary);
+	font-size: 0.75rem;
+	line-height: 1;
+}
+
+.mortgage-portal .leads-toolbar-card .portlet.leads-filter--expanded .portlet-decoration[role="button"]::after {
+	transform: translateY(-50%) rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.mortgage-portal .leads-toolbar-card .portlet .portlet-decoration[role="button"]::after {
+		transition: none;
+	}
+}
+
+.mortgage-portal .leads-toolbar-card .table td {
+	vertical-align: middle;
+}
+
+.mortgage-portal .leads-toolbar-card .table thead td {
+	font-weight: 600;
+	color: var(--portal-text);
+	background: transparent;
+}
+
+/* ----- Generic collapsible Filters portlet (collapsed by default) ----- */
+.mortgage-portal .portlet--filters-collapsible .portlet-content {
+	display: none;
+}
+.mortgage-portal .portlet--filters-collapsible.portlet--expanded .portlet-content {
+	display: block;
+}
+.mortgage-portal .portlet--filters-collapsible .portlet-decoration {
+	cursor: pointer;
+	padding-right: 2.5rem;
+	position: relative;
+	user-select: none;
+	background: linear-gradient(to bottom, var(--portal-header-bg) 0%, #f8fafc 100%);
+}
+.mortgage-portal .portlet--filters-collapsible .portlet-decoration[role="button"]:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--portal-surface-card), 0 0 0 4px var(--portal-primary);
+	border-radius: 4px;
+}
+.mortgage-portal .portlet--filters-collapsible .portlet-decoration[role="button"]::after {
+	content: "\25BC";
+	position: absolute;
+	right: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: transform 0.2s ease;
+	color: var(--portal-primary);
+	font-size: 0.75rem;
+	line-height: 1;
+}
+.mortgage-portal .portlet--filters-collapsible.portlet--expanded .portlet-decoration[role="button"]::after {
+	transform: translateY(-50%) rotate(180deg);
+}
+
+/* ----- Lender detail view (view page) ----- */
+.mortgage-portal .lenders-view-page .lenders-page-header {
+	margin-bottom: 1.5rem;
+}
+.mortgage-portal .lenders-view-header .lenders-page-header-inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 0.5rem 1rem;
+}
+.mortgage-portal .lenders-view-header .lenders-page-title {
+	margin-right: 0.5rem;
+}
+.mortgage-portal .lenders-view-header .lenders-page-subtitle {
+	width: 100%;
+	margin: 0.25rem 0 0;
+}
+.mortgage-portal .lender-status-badge {
+	display: inline-block;
+	padding: 0.25rem 0.625rem;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	line-height: 1.3;
+	border-radius: 6px;
+}
+.mortgage-portal .lender-status-badge--active {
+	background: var(--portal-success-bg);
+	color: var(--portal-success);
+}
+.mortgage-portal .lender-status-badge--inactive {
+	background: var(--portal-header-bg);
+	color: var(--portal-text-muted);
+}
+
+.mortgage-portal .lenders-view-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2rem;
+}
+.mortgage-portal .lenders-view-grid .lenders-view-card--full {
+	grid-column: 1 / -1;
+}
+@media (max-width: 767px) {
+	.mortgage-portal .lenders-view-grid {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+}
+.mortgage-portal .lenders-view-card.portlet {
+	border: 1px solid var(--portal-border);
+	border-radius: 10px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+	overflow: hidden;
+}
+.mortgage-portal .lenders-view-card .portlet-decoration {
+	background: linear-gradient(to bottom, var(--portal-header-bg) 0%, #f8fafc 100%);
+	padding: 1rem 1.5rem;
+	font-weight: 600;
+	font-size: 1rem;
+	border-bottom: 1px solid var(--portal-border);
+}
+.mortgage-portal .lenders-view-card .portlet-content {
+	padding: 1.5rem 1.75rem;
+}
+
+.mortgage-portal .lenders-detail-card .detail-view,
+.mortgage-portal .lenders-detail-card .lenders-detail-view table,
+.mortgage-portal .lenders-view-card .detail-view,
+.mortgage-portal .lenders-view-card .lenders-detail-view table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+	font-size: 0.9375rem;
+	line-height: 1.5;
+}
+.mortgage-portal .lenders-detail-card .detail-view th,
+.mortgage-portal .lenders-detail-card .lenders-detail-view table th,
+.mortgage-portal .lenders-view-card .detail-view th,
+.mortgage-portal .lenders-view-card .lenders-detail-view table th {
+	width: 36%;
+	min-width: 8.5rem;
+	text-align: left;
+	padding: 0.75rem 1rem 0.75rem 0;
+	background: transparent;
+	color: var(--portal-text-muted);
+	font-weight: 500;
+	font-size: 0.875rem;
+	border: none;
+	border-bottom: 1px solid var(--portal-border);
+	vertical-align: top;
+	line-height: 1.5;
+}
+.mortgage-portal .lenders-detail-card .detail-view td,
+.mortgage-portal .lenders-detail-card .lenders-detail-view table td,
+.mortgage-portal .lenders-view-card .detail-view td,
+.mortgage-portal .lenders-view-card .lenders-detail-view table td {
+	padding: 0.75rem 0 0.75rem 1rem;
+	border: none;
+	border-bottom: 1px solid var(--portal-border);
+	word-break: break-word;
+	color: var(--portal-text);
+	vertical-align: top;
+	line-height: 1.5;
+}
+.mortgage-portal .lenders-view-card .detail-view tr,
+.mortgage-portal .lenders-view-card .lenders-detail-view table tr {
+	transition: background-color 0.1s ease;
+}
+.mortgage-portal .lenders-view-card .detail-view tbody tr:hover th,
+.mortgage-portal .lenders-view-card .detail-view tbody tr:hover td,
+.mortgage-portal .lenders-view-card .lenders-detail-view table tbody tr:hover th,
+.mortgage-portal .lenders-view-card .lenders-detail-view table tbody tr:hover td {
+	background: rgba(0, 0, 0, 0.02);
+}
+.mortgage-portal .lenders-detail-card .detail-view tr:last-child th,
+.mortgage-portal .lenders-detail-card .detail-view tr:last-child td,
+.mortgage-portal .lenders-detail-card .lenders-detail-view table tr:last-child th,
+.mortgage-portal .lenders-detail-card .lenders-detail-view table tr:last-child td,
+.mortgage-portal .lenders-view-card .detail-view tr:last-child th,
+.mortgage-portal .lenders-view-card .detail-view tr:last-child td,
+.mortgage-portal .lenders-view-card .lenders-detail-view table tr:last-child th,
+.mortgage-portal .lenders-view-card .lenders-detail-view table tr:last-child td {
+	border-bottom: none;
+}
+.mortgage-portal .lenders-detail-card .detail-view tr:nth-child(even) td,
+.mortgage-portal .lenders-detail-card .lenders-detail-view table tr:nth-child(even) td {
+	background: #fafafa;
+}
+.mortgage-portal .lenders-view-card .lenders-detail-view--urls td:last-child {
+	font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
+	font-size: 0.8125rem;
+	word-break: break-all;
+}
+
+/* ----- Lenders update/create form ----- */
+.mortgage-portal .lenders-update-page .lenders-page-header,
+.mortgage-portal .lenders-create-page .lenders-page-header {
+	margin-bottom: 1.5rem;
+}
+.mortgage-portal .lenders-form-card.portlet {
+	border: 1px solid var(--portal-border);
+	border-radius: 10px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+	overflow: hidden;
+}
+.mortgage-portal .lenders-form-card .portlet-decoration {
+	background: linear-gradient(to bottom, var(--portal-header-bg) 0%, #f8fafc 100%);
+	padding: 0.75rem 1.25rem;
+	font-weight: 600;
+	font-size: 0.9375rem;
+	border-bottom: 1px solid var(--portal-border);
+}
+.mortgage-portal .lenders-form-card .portlet-content {
+	padding: 1.25rem;
+}
+
+.mortgage-portal .lenders-form {
+	font-size: 0.9375rem;
+}
+.mortgage-portal .lenders-form .errorSummary {
+	margin-bottom: 1rem;
+	padding: 0.75rem 1rem;
+	background: var(--portal-danger-bg);
+	color: var(--portal-danger);
+	border-radius: 8px;
+	list-style: none;
+}
+.mortgage-portal .lenders-form-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+.mortgage-portal .lenders-form-section--full {
+	grid-column: 1 / -1;
+}
+@media (max-width: 767px) {
+	.mortgage-portal .lenders-form-grid {
+		grid-template-columns: 1fr;
+	}
+}
+.mortgage-portal .lenders-form-section-title {
+	margin: 0 0 0.75rem;
+	padding-bottom: 0.5rem;
+	font-size: 0.9375rem;
+	font-weight: 600;
+	color: var(--portal-text);
+	border-bottom: 1px solid var(--portal-border);
+}
+.mortgage-portal .lenders-form-section .row {
+	display: block;
+	width: 100%;
+	margin-bottom: 0.75rem;
+	float: none;
+}
+.mortgage-portal .lenders-form-section .row label {
+	display: block;
+	margin-bottom: 0.25rem;
+	font-weight: 500;
+	color: var(--portal-text);
+	font-size: 0.875rem;
+}
+.mortgage-portal .lenders-form-section .row .form-control,
+.mortgage-portal .lenders-form-section .row input[type="text"],
+.mortgage-portal .lenders-form-section .row select,
+.mortgage-portal .lenders-form-section .row textarea {
+	width: 100%;
+	max-width: 100%;
+	padding: 0.5rem 0.75rem;
+	font-size: 0.9375rem;
+	border: 1px solid var(--portal-border);
+	border-radius: 6px;
+	box-sizing: border-box;
+}
+.mortgage-portal .lenders-form-section .row .lenders-form-input-url {
+	font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
+	font-size: 0.8125rem;
+	word-break: break-all;
+}
+.mortgage-portal .lenders-form-section .row .lenders-form-textarea {
+	min-height: 100px;
+	resize: vertical;
+}
+.mortgage-portal .lenders-form-section .row .errorMessage {
+	display: block;
+	margin-top: 0.25rem;
+	font-size: 0.8125rem;
+	color: var(--portal-danger);
+}
+.mortgage-portal .lenders-form .btn-group {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+	margin-bottom: 0.5rem;
+}
+.mortgage-portal .lenders-form .btn-group .btn {
+	margin: 0;
+}
+.mortgage-portal .lenders-form [data-toggle="buttons"] > .btn input[type="radio"],
+.mortgage-portal .lenders-form [data-toggle="buttons"] > .btn input[type="checkbox"] {
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+	pointer-events: none;
+}
+.mortgage-portal .lenders-form .row.buttons {
+	border-top: 1px solid var(--portal-border);
+	padding-top: 1.25rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0;
+	text-align: left;
+	width: 100%;
+}
+.mortgage-portal .lenders-form .row.buttons .save {
+	min-width: 120px;
+}
+
+.mortgage-portal .leads-summary {
+	font-size: 0.9375rem;
+	font-weight: 600;
+	color: var(--portal-text);
+	margin: 0 0 1rem;
+}
+
+.mortgage-portal .leads-table-wrap {
+	overflow-x: auto;
+	margin-bottom: 1.5rem;
+}
+
+/* Leads section data table: card container + table UI refresh */
+.mortgage-portal .leads-section .leads-table-wrap {
+	background: var(--portal-surface-card);
+	border: 1px solid var(--portal-border);
+	border-radius: 12px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+	overflow-x: auto;
+}
+
+.mortgage-portal .leads-section .grid-view {
+	padding: 0;
+	margin: 0;
+}
+
+.mortgage-portal .leads-section .leads-table-wrap .summary {
+	padding: 0.75rem 1rem;
+	font-size: 0.8125rem;
+	color: var(--portal-text-muted);
+	border-bottom: 1px solid var(--portal-border);
+}
+
+/* ----- Pager: Go to page: 1 2 3 Next > Last >> — single row, centred, portal-wide ----- */
+.mortgage-portal .pager {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem 1rem;
+	margin: 1rem 0;
+	padding: 0.75rem 1rem;
+	border-top: 1px solid var(--portal-border);
+	font-size: 0.875rem;
+	text-align: center;
+}
+
+.mortgage-portal .pager ul.yiiPager,
+.mortgage-portal .pager ul {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 0.25rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+	border-radius: 0;
+}
+
+.mortgage-portal .pager ul li {
+	display: inline-block;
+	float: none;
+	margin: 0;
+}
+
+.mortgage-portal .pager ul li a,
+.mortgage-portal .pager ul li span {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2.25rem;
+	height: 2.25rem;
+	padding: 0 0.5rem;
+	border: 1px solid var(--portal-border);
+	border-radius: 8px;
+	background: var(--portal-surface-card);
+	color: var(--portal-text);
+	text-decoration: none;
+	font-size: 0.8125rem;
+	font-weight: 500;
+	line-height: 1;
+	transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.mortgage-portal .pager ul li a:hover {
+	background: var(--portal-header-bg);
+	border-color: var(--portal-primary);
+	color: var(--portal-primary);
+}
+
+.mortgage-portal .pager ul li a:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--portal-primary);
+}
+
+.mortgage-portal .pager ul li.selected span,
+.mortgage-portal .pager ul li.active span,
+.mortgage-portal .pager ul li span:not([href]) {
+	background: var(--portal-primary);
+	border-color: var(--portal-primary);
+	color: #fff;
+	cursor: default;
+}
+
+.mortgage-portal .pager ul li.first a,
+.mortgage-portal .pager ul li.last a,
+.mortgage-portal .pager ul li.first span,
+.mortgage-portal .pager ul li.last span {
+	border-radius: 8px;
+}
+
+.mortgage-portal .pager ul li.hidden {
+	display: none;
+}
+
+.mortgage-portal .leads-section .leads-table-wrap .pager {
+	padding: 0.75rem 1rem;
+}
+
+/* Test Auto Lenders: pager alignment — single row, centred (Go to page: << First ... Next > Last >>) */
+.mortgage-portal .test-auto-lender-page .pager {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem 1rem;
+	padding: 0.75rem 1rem;
+	text-align: center;
+}
+
+.mortgage-portal .test-auto-lender-page .pager ul.yiiPager,
+.mortgage-portal .test-auto-lender-page .pager ul {
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 0.25rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.mortgage-portal .test-auto-lender-page .pager > ul {
+}
+
+.mortgage-portal .leads-section .grid-view table.items {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.875rem;
+	border: none;
+}
+
+.mortgage-portal .leads-section .grid-view table.items thead th {
+	background: var(--portal-header-bg);
+	color: var(--portal-text);
+	font-weight: 600;
+	font-size: 0.8125rem;
+	text-align: left;
+	padding: 0.75rem 1rem;
+	border: none;
+	border-bottom: 2px solid var(--portal-border);
+	white-space: nowrap;
+}
+
+.mortgage-portal .leads-section .grid-view table.items tbody td {
+	padding: 0.75rem 1rem;
+	border: none;
+	border-bottom: 1px solid var(--portal-border);
+	color: var(--portal-text);
+	vertical-align: top;
+}
+
+.mortgage-portal .leads-section .grid-view table.items tbody td.comment {
+	max-width: 320px;
+	word-break: break-word;
+}
+
+.mortgage-portal .leads-section .grid-view table.items tbody tr.odd {
+	background-color: var(--portal-surface-card);
+}
+
+.mortgage-portal .leads-section .grid-view table.items tbody tr.even {
+	background-color: #fafbfc;
+}
+
+.mortgage-portal .leads-section .grid-view table.items tbody tr:hover {
+	background-color: #f1f5f9;
+}
+
+.mortgage-portal .leads-section .grid-view table.items tbody tr.selected {
+	background-color: #dbeafe;
+}
+
+/* Status badges in leads tables (Ping Status, Post Status) */
+.mortgage-portal .leads-section .leads-status {
+	display: inline-block;
+	padding: 0.25rem 0.5rem;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	border-radius: 6px;
+	white-space: nowrap;
+}
+
+.mortgage-portal .leads-section .leads-status--accepted {
+	background: var(--portal-success-bg);
+	color: var(--portal-success);
+}
+
+.mortgage-portal .leads-section .leads-status--rejected {
+	background: var(--portal-danger-bg);
+	color: var(--portal-danger);
+}
+
+.mortgage-portal .leads-section .leads-status--error {
+	background: #fef3c7;
+	color: #b45309;
+}
+
+/* Column widths for lender transaction (and similar) tables */
+.mortgage-portal .leads-section .grid-view table.items .leads-col-date { min-width: 140px; }
+.mortgage-portal .leads-section .grid-view table.items .leads-col-id { min-width: 100px; }
+.mortgage-portal .leads-section .grid-view table.items .leads-col-lender { min-width: 120px; }
+.mortgage-portal .leads-section .grid-view table.items .leads-col-status { min-width: 100px; }
+.mortgage-portal .leads-section .grid-view table.items .leads-col-price { min-width: 90px; }
+
+.mortgage-portal .leads-nodata {
+	text-align: center;
+	color: var(--portal-danger);
+	font-size: 0.9375rem;
+	padding: 1rem;
+}
+
+.mortgage-portal .leads-success-msg {
+	font-size: 0.9375rem;
+	color: var(--portal-success);
+	margin: 0 0 1rem;
+	padding: 0.75rem 1rem;
+	background: var(--portal-success-bg);
+	border-radius: 8px;
+}
+
+.mortgage-portal .leads-error-block {
+	display: block;
+	background: #fef3c7;
+	border: 1px solid #d97706;
+	border-radius: 8px;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	width: 100%;
+	max-width: 600px;
+}
+
+.mortgage-portal .leads-error-block p {
+	margin: 0 0 0.5rem;
+	font-size: 0.875rem;
+	color: #92400e;
+}
+
+.mortgage-portal .leads-error-block p:last-child {
+	margin-bottom: 0;
+}
+
+.mortgage-portal .leads-notify-card {
+	margin-top: 1.5rem;
+	padding: 1.25rem;
+	background: var(--portal-header-bg);
+	border: 1px solid var(--portal-border);
+	border-radius: 12px;
+}
+
+.mortgage-portal .leads-notify-card .reason {
+	margin: 0 0.5rem 0 0;
+	width: 100%;
+	max-width: 500px;
+	padding: 0.5rem 0.75rem;
+	border: 1px solid var(--portal-border);
+	border-radius: 8px;
+	font-size: 0.875rem;
+}
+
+.mortgage-portal .leads-datehide {
+	display: none;
+}
+
+.mortgage-portal .leads-datehide.visible {
+	display: block;
+}
+
+/* ----- Leads filter form: card grid, labels, actions bar ----- */
+.mortgage-portal .leads-filter-form {
+	padding: 0;
+}
+
+.mortgage-portal .leads-filter-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 0.75rem 1rem;
+	align-items: start;
+}
+
+@media (min-width: 900px) {
+	.mortgage-portal .leads-filter-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (min-width: 1200px) {
+	.mortgage-portal .leads-filter-grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.mortgage-portal .leads-filter-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.375rem;
+	min-width: 0;
+}
+
+.mortgage-portal .leads-filter-group.leads-filter-group--wide {
+	grid-column: 1 / -1;
+}
+
+.mortgage-portal .leads-filter-label {
+	font-size: 0.8125rem;
+	font-weight: 600;
+	color: var(--portal-text);
+	margin: 0;
+	line-height: 1.3;
+	letter-spacing: 0.01em;
+}
+
+.mortgage-portal .leads-filter-field {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+	min-width: 0;
+}
+
+.mortgage-portal .leads-filter-field .inputClass {
+	min-width: 200px;
+	min-height: 2.5rem;
+}
+
+.mortgage-portal .leads-filter-field select,
+.mortgage-portal .leads-filter-field textarea {
+	width: 100%;
+	max-width: 240px;
+	min-height: 2.5rem;
+	padding: 0.5rem 0.75rem;
+	font-size: 0.875rem;
+	border: 1px solid var(--portal-border);
+	border-radius: 8px;
+	background: var(--portal-surface-card);
+	color: var(--portal-text);
+}
+
+.mortgage-portal .leads-filter-field select:focus,
+.mortgage-portal .leads-filter-field textarea:focus {
+	outline: none;
+	border-color: var(--portal-primary);
+	box-shadow: 0 0 0 2px rgba(36, 78, 106, 0.2);
+}
+
+.mortgage-portal .leads-filter-field textarea {
+	min-height: 72px;
+	resize: vertical;
+}
+
+.mortgage-portal .leads-filter-field input[type="text"] {
+	width: 100%;
+	max-width: 140px;
+	min-height: 2.5rem;
+	padding: 0.5rem 0.75rem;
+	font-size: 0.875rem;
+	border: 1px solid var(--portal-border);
+	border-radius: 8px;
+	background: var(--portal-surface-card);
+}
+
+.mortgage-portal .leads-filter-field input[type="text"]:focus {
+	outline: none;
+	border-color: var(--portal-primary);
+	box-shadow: 0 0 0 2px rgba(36, 78, 106, 0.2);
+}
+
+/* Radio groups in filter form */
+.mortgage-portal .leads-filter-radios {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1rem;
+	align-items: center;
+}
+
+.mortgage-portal .leads-filter-radios label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	font-size: 0.875rem;
+	font-weight: 400;
+	color: var(--portal-text);
+	cursor: pointer;
+	margin: 0;
+}
+
+.mortgage-portal .leads-filter-radios input[type="radio"] {
+	accent-color: var(--portal-primary);
+	margin: 0;
+	width: 1rem;
+	height: 1rem;
+}
+
+/* Action row: full-width bar with primary CTA */
+.mortgage-portal .leads-filter-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 0.75rem;
+	margin: 1rem -1.25rem -1rem -1.25rem;
+	padding: 0.75rem 1.25rem;
+	background: var(--portal-header-bg);
+	border-top: 1px solid var(--portal-border);
+	border-radius: 0 0 12px 12px;
+}
+
+.mortgage-portal .leads-filter-actions .btn {
+	min-height: 2.5rem;
+	padding: 0.5rem 1.25rem;
+	font-weight: 500;
+}
+
+.mortgage-portal .leads-filter-actions .btn-primary {
+	padding: 0.5rem 1.5rem;
+}
+
+.mortgage-portal .leads-filter-actions .leads-filter-hint {
+	font-size: 0.8125rem;
+	color: var(--portal-text-muted);
+	margin: 0 0 0 0.5rem;
+}
+
+@media (min-width: 768px) {
+	.mortgage-portal .leads-filter-actions .leads-filter-hint {
+		margin-left: auto;
+	}
+}
+
+/* Date range picker inside filter form */
+.mortgage-portal .leads-filter-form .dashboard-toolbar-picker-wrap,
+.mortgage-portal .leads-filter-form .ui-daterangepicker-container {
+	display: flex;
+	align-items: stretch;
+	gap: 0;
+	min-width: 200px;
+	max-width: 280px;
+}
+
+.mortgage-portal .leads-filter-form .inputClass.ui-rangepicker-input {
+	min-width: 0;
+}
+
+/* Listbox / multi-select in filter */
+.mortgage-portal .leads-filter-field select[multiple],
+.mortgage-portal .leads-filter-field select[size] {
+	min-height: 6rem;
+}
+
+.mortgage-portal .leads-filter-field select + select {
+	margin-left: 0.5rem;
+}
+
+@media (max-width: 767px) {
+	.mortgage-portal .leads-page-header {
+		flex-direction: column;
+	}
+	.mortgage-portal .leads-filter-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ----- Test Auto Lenders page: form card + results table ----- */
+.mortgage-portal .test-auto-lender-card .portlet {
+	border-left: 4px solid var(--portal-primary);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Test parameters: hidden by default in CSS to avoid flicker on load; JS toggles .test-params--expanded */
+.mortgage-portal .test-auto-lender-card .portlet .portlet-content {
+	display: none;
+}
+.mortgage-portal .test-auto-lender-card .portlet.test-params--expanded .portlet-content {
+	display: block;
+}
+
+.mortgage-portal .test-auto-lender-card .portlet .portlet-decoration {
+	background: linear-gradient(to bottom, var(--portal-header-bg) 0%, #f8fafc 100%);
+	padding: 0.75rem 1.25rem;
+	font-size: 1rem;
+	cursor: pointer;
+	position: relative;
+	user-select: none;
+	padding-right: 2.5rem;
+}
+
+.mortgage-portal .test-auto-lender-card .portlet .portlet-decoration[role="button"]:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--portal-surface-card), 0 0 0 4px var(--portal-primary);
+	border-radius: 4px;
+}
+
+.mortgage-portal .test-auto-lender-card .portlet .portlet-decoration[role="button"]::after {
+	content: "\25BC";
+	position: absolute;
+	right: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: transform 0.2s ease;
+	color: var(--portal-primary);
+	font-size: 0.75rem;
+	line-height: 1;
+}
+
+.mortgage-portal .test-auto-lender-card .portlet.test-params--expanded .portlet-decoration[role="button"]::after {
+	transform: translateY(-50%) rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.mortgage-portal .test-auto-lender-card .portlet .portlet-decoration[role="button"]::after {
+		transition: none;
+	}
+}
+
+.mortgage-portal .test-auto-lender-card .portlet .portlet-content {
+	padding: 1rem 1.25rem;
+	background: #fafbfc;
+}
+
+.mortgage-portal .test-auto-lender-form {
+	padding: 0;
+}
+
+.mortgage-portal .test-auto-lender-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.75rem 1.25rem;
+	align-items: start;
+}
+
+@media (max-width: 991px) {
+	.mortgage-portal .test-auto-lender-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 575px) {
+	.mortgage-portal .test-auto-lender-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.mortgage-portal .test-auto-lender-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.375rem;
+}
+
+.mortgage-portal .test-auto-lender-group label {
+	font-size: 0.8125rem;
+	font-weight: 600;
+	color: var(--portal-text);
+	margin: 0;
+}
+
+.mortgage-portal .test-auto-lender-group .inputClass,
+.mortgage-portal .test-auto-lender-group input[type="text"],
+.mortgage-portal .test-auto-lender-group select {
+	min-height: 2.25rem;
+	width: 100%;
+	max-width: 100%;
+}
+
+.mortgage-portal .test-auto-lender-inline {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+}
+
+.mortgage-portal .test-auto-lender-inline .date {
+	flex: 1;
+	min-width: 0;
+	max-width: 33%;
+}
+
+.mortgage-portal .test-auto-lender-inline .address_length,
+.mortgage-portal .test-auto-lender-inline .emp_duration {
+	flex: 1;
+	min-width: 0;
+	max-width: 50%;
+}
+
+.mortgage-portal .test-auto-lender-radios {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	align-items: center;
+}
+
+.mortgage-portal .test-auto-lender-radios .radio-inline {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.375rem;
+	font-size: 0.875rem;
+	font-weight: 400;
+	color: var(--portal-text);
+	cursor: pointer;
+	margin: 0;
+}
+
+.mortgage-portal .test-auto-lender-actions {
+	margin-top: 1rem;
+	padding-top: 1rem;
+	border-top: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .testcash_lender_label {
+	color: var(--portal-text-muted);
+	font-size: 0.75rem;
+	font-weight: 400;
+}
+
+/* Test Auto Lenders results table */
+.mortgage-portal .test-auto-lender-page .leads-table-wrap {
+	background: var(--portal-surface-card);
+	border: 1px solid var(--portal-border);
+	border-radius: 12px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+	overflow-x: auto;
+	margin-top: 1.5rem;
+}
+
+/* Hide infinite-scroll "next" block when using CLinkPager */
+.mortgage-portal .test-auto-lender-page .infinite_navigation {
+	display: none;
+}
+
+.mortgage-portal .test-auto-lender-page .test-auto-lender-results {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.875rem;
+}
+
+.mortgage-portal .test-auto-lender-page .test-auto-lender-results thead th {
+	background: var(--portal-header-bg);
+	color: var(--portal-text);
+	font-weight: 600;
+	font-size: 0.8125rem;
+	text-align: left;
+	padding: 0.75rem 1rem;
+	border-bottom: 2px solid var(--portal-border);
+	border-right: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .test-auto-lender-page .test-auto-lender-results thead th:last-child {
+	border-right: none;
+}
+
+.mortgage-portal .test-auto-lender-page .test-auto-lender-results tbody td {
+	border-right: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .test-auto-lender-page .test-auto-lender-results tbody td:last-child {
+	border-right: none;
+}
+
+.mortgage-portal .test-auto-lender-page .test-auto-lender-count {
+	font-weight: 500;
+	color: var(--portal-text-muted);
+	font-size: 0.8125rem;
+}
+
+.mortgage-portal .test-auto-lender-page .test-auto-lender-results tbody td {
+	padding: 0.75rem 1rem;
+	border-bottom: 1px solid var(--portal-border);
+	color: var(--portal-text);
+	vertical-align: top;
+}
+
+.mortgage-portal .test-auto-lender-page .test-auto-lender-results tbody tr:hover {
+	background-color: #f8fafc;
+}
+
+.mortgage-portal .test-auto-lender-page .test-auto-lender-results p {
+	margin: 0 0 0.5rem;
+	font-size: 0.875rem;
+}
+
+.mortgage-portal .test-auto-lender-page .test-auto-lender-results p:last-child {
+	margin-bottom: 0;
+}
+
+.mortgage-portal .test-auto-lender-page .test-auto-lender-results .comment,
+.mortgage-portal .test-auto-lender-page .test-auto-lender-results p[style*="word-wrap"] {
+	max-width: 320px;
+	word-break: break-word;
+}
+
+.mortgage-portal .test-auto-lender-page .test-auto-lender-results table.table {
+	margin: 0.5rem 0;
+	font-size: 0.8125rem;
+}
+
+.mortgage-portal .test-auto-lender-page .test-auto-lender-results table.table td {
+	padding: 0.5rem 0.75rem;
+	border: 1px solid var(--portal-border);
+}
+
+/* Transaction block: status first, then collapsible payloads (UX: scan outcome, expand for detail) */
+.mortgage-portal .test-auto-lender-page .txn-block {
+	margin: 0;
+	padding: 0;
+}
+
+.mortgage-portal .test-auto-lender-page .txn-status-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1rem 1.5rem;
+	margin-bottom: 0.75rem;
+	padding-bottom: 0.75rem;
+	border-bottom: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .test-auto-lender-page .txn-status-item {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.375rem;
+	font-size: 0.875rem;
+}
+
+.mortgage-portal .test-auto-lender-page .txn-status-item strong {
+	font-weight: 600;
+	color: var(--portal-text-muted);
+}
+
+.mortgage-portal .test-auto-lender-page .txn-detail {
+	margin-bottom: 0.5rem;
+	border: 1px solid var(--portal-border);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.mortgage-portal .test-auto-lender-page .txn-detail summary {
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 0.75rem;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	color: var(--portal-text);
+	background: var(--portal-header-bg);
+	cursor: pointer;
+	list-style: none;
+	user-select: none;
+}
+
+.mortgage-portal .test-auto-lender-page .txn-detail summary::-webkit-details-marker {
+	display: none;
+}
+
+.mortgage-portal .test-auto-lender-page .txn-detail summary::before {
+	content: "";
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-right: 0.5rem;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 6px solid var(--portal-primary);
+	transition: transform 0.2s;
+}
+
+.mortgage-portal .test-auto-lender-page .txn-detail[open] summary::before {
+	transform: rotate(90deg);
+}
+
+/* Status badges: coloured in Test Auto Lenders (same as leads-section) */
+.mortgage-portal .test-auto-lender-page .leads-status {
+	display: inline-block;
+	padding: 0.25rem 0.5rem;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	border-radius: 6px;
+	white-space: nowrap;
+}
+
+.mortgage-portal .test-auto-lender-page .leads-status--accepted {
+	background: var(--portal-success-bg);
+	color: var(--portal-success);
+}
+
+.mortgage-portal .test-auto-lender-page .leads-status--rejected {
+	background: var(--portal-danger-bg);
+	color: var(--portal-danger);
+}
+
+.mortgage-portal .test-auto-lender-page .leads-status--error {
+	background: #fef3c7;
+	color: #b45309;
+}
+
+.mortgage-portal .test-auto-lender-page .txn-payload {
+	padding: 0.75rem 1rem;
+	font-size: 0.8125rem;
+	line-height: 1.5;
+	word-break: break-word;
+	white-space: pre-wrap;
+	font-family: ui-monospace, "SF Mono", "Cascadia Code", "Consolas", monospace;
+	background: var(--portal-header-bg);
+	border-top: 1px solid var(--portal-border);
+	max-height: 12rem;
+	overflow-y: auto;
+	border-radius: 0 0 8px 8px;
+}
+
+/* Lender cards: name + badges + price on one line; details in collapsible sections */
+.mortgage-portal .test-auto-lender-page .txn-lenders {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.mortgage-portal .test-auto-lender-page .txn-lender-card {
+	border: 1px solid var(--portal-border);
+	border-radius: 10px;
+	overflow: hidden;
+	background: #fafbfc;
+}
+
+/* Lender card header: portable layout — name + badges (main) | price (right); wraps on narrow */
+.mortgage-portal .test-auto-lender-page .txn-lender-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem 1rem;
+	padding: 0.625rem 1rem;
+	background: var(--portal-header-bg);
+	border-bottom: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .test-auto-lender-page .txn-lender-header-main {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 0.75rem;
+	min-width: 0;
+	flex: 1 1 0%;
+}
+
+.mortgage-portal .test-auto-lender-page .txn-lender-name {
+	font-weight: 600;
+	font-size: 0.9375rem;
+	color: var(--portal-text);
+	flex-shrink: 0;
+}
+
+.mortgage-portal .test-auto-lender-page .txn-lender-badges {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 0.75rem;
+}
+
+/* Promo code: distinct colour so it scans as "code" */
+.mortgage-portal .test-auto-lender-page .txn-affiliate-name {
+	color: var(--portal-text);
+}
+
+.mortgage-portal .test-auto-lender-page .txn-promo-code {
+	color: var(--portal-accent);
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+}
+
+/* Ping/Post price: distinct "money" colour */
+.mortgage-portal .test-auto-lender-page .txn-lender-price {
+	flex: 0 0 auto;
+	margin-left: auto;
+	font-weight: 700;
+	font-size: 0.875rem;
+	font-variant-numeric: tabular-nums;
+	color: var(--portal-success);
+}
+
+.mortgage-portal .test-auto-lender-page .txn-lender-details {
+	padding: 0.5rem 1rem 0.75rem;
+}
+
+.mortgage-portal .test-auto-lender-page .txn-lender-details .txn-detail {
+	margin-bottom: 0.375rem;
+}
+
+.mortgage-portal .test-auto-lender-page .txn-lender-details .txn-detail:last-child {
+	margin-bottom: 0;
+}
+
+/* ----- Stats / Report filter and table cards (Affiliate Stats, Lender Stats, Lender Report) ----- */
+.mortgage-portal .stats-filter-card.portlet {
+	border-left: 4px solid var(--portal-primary);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.mortgage-portal .stats-filter-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 1rem 1.25rem;
+	align-items: end;
+}
+
+@media (min-width: 768px) {
+	.mortgage-portal .stats-filter-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.mortgage-portal .stats-filter-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.375rem;
+	min-width: 0;
+}
+
+.mortgage-portal .stats-filter-group.stats-filter-actions {
+	align-items: flex-start;
+}
+
+.mortgage-portal .stats-filter-label {
+	font-size: 0.8125rem;
+	font-weight: 600;
+	color: var(--portal-text);
+	margin: 0;
+	line-height: 1.3;
+}
+
+.mortgage-portal .stats-filter-field {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+	min-width: 0;
+}
+
+.mortgage-portal .stats-filter-field .inputClass {
+	min-width: 200px;
+	min-height: 2.25rem;
+}
+
+.mortgage-portal .stats-filter-field select[multiple] {
+	min-height: 5rem;
+}
+
+.mortgage-portal .stats-table-card {
+	margin-top: 1.5rem;
+}
+
+.mortgage-portal .stats-table {
+	font-size: 0.875rem;
+}
+
+.mortgage-portal .stats-table th,
+.mortgage-portal .stats-table td {
+	vertical-align: middle;
+}
+
+.mortgage-portal .stats-table-empty {
+	text-align: center;
+	color: var(--portal-text-muted);
+	padding: 2rem 1rem;
+	font-size: 0.9375rem;
+}
+
+/* ----- Lenders page: header, card, grid ----- */
+.mortgage-portal .lenders-page {
+	margin-bottom: 2rem;
+}
+
+.mortgage-portal .lenders-page-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .lenders-page-header-inner {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.mortgage-portal .lenders-page-title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.25;
+	color: var(--portal-text);
+	margin: 0 0 0.25rem;
+}
+
+.mortgage-portal .lenders-page-subtitle {
+	font-size: 0.875rem;
+	color: var(--portal-text-muted);
+	margin: 0;
+	line-height: 1.5;
+}
+
+.mortgage-portal .lenders-page-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+	flex-shrink: 0;
+}
+
+.mortgage-portal .lenders-page-card.portlet {
+	margin-bottom: 0;
+}
+
+.mortgage-portal .lenders-grid-wrap {
+	margin-top: 0;
+}
+
+.mortgage-portal .lenders-grid.grid-view table.items th,
+.mortgage-portal .lenders-grid.grid-view table.items td {
+	vertical-align: middle;
+}
+
+@media (max-width: 640px) {
+	.mortgage-portal .lenders-page-header {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.mortgage-portal .lenders-page-actions {
+		justify-content: stretch;
+	}
+	.mortgage-portal .lenders-page-actions .btn {
+		flex: 1;
+	}
+}
+
+/* ----- Lender Affiliate Settings: form card + list card ----- */
+.mortgage-portal .lender-affiliate-settings-page {
+	margin-bottom: 2rem;
+}
+
+.mortgage-portal .settings-form-card.portlet {
+	margin-bottom: 1.5rem;
+	border-left: 4px solid var(--portal-primary);
+}
+
+.mortgage-portal .settings-form-note {
+	font-size: 0.8125rem;
+	color: var(--portal-text-muted);
+	margin: 0 0 1rem;
+}
+
+.mortgage-portal .settings-form-grid.stats-filter-grid {
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+@media (min-width: 900px) {
+	.mortgage-portal .settings-form-grid.stats-filter-grid {
+		grid-template-columns: 1fr 1fr 120px auto;
+	}
+}
+
+.mortgage-portal .settings-cap-input.inputClass {
+	width: 80px;
+	min-width: 80px;
+}
+
+.mortgage-portal .settings-list-card.portlet {
+	margin-bottom: 0;
+}
+ight: 1.3;
+}
+
+.mortgage-portal .stats-filter-field {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+	min-width: 0;
+}
+
+.mortgage-portal .stats-filter-field .inputClass {
+	min-width: 200px;
+	min-height: 2.25rem;
+}
+
+.mortgage-portal .stats-filter-field select[multiple] {
+	min-height: 5rem;
+}
+
+.mortgage-portal .stats-table-card {
+	margin-top: 1.5rem;
+}
+
+.mortgage-portal .stats-table {
+	font-size: 0.875rem;
+}
+
+.mortgage-portal .stats-table th,
+.mortgage-portal .stats-table td {
+	vertical-align: middle;
+}
+
+.mortgage-portal .stats-table-empty {
+	text-align: center;
+	color: var(--portal-text-muted);
+	padding: 2rem 1rem;
+	font-size: 0.9375rem;
+}
+
+/* ----- Lenders page: header, card, grid ----- */
+.mortgage-portal .lenders-page {
+	margin-bottom: 2rem;
+}
+
+.mortgage-portal .lenders-page-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--portal-border);
+}
+
+.mortgage-portal .lenders-page-header-inner {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.mortgage-portal .lenders-page-title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.25;
+	color: var(--portal-text);
+	margin: 0 0 0.25rem;
+}
+
+.mortgage-portal .lenders-page-subtitle {
+	font-size: 0.875rem;
+	color: var(--portal-text-muted);
+	margin: 0;
+	line-height: 1.5;
+}
+
+.mortgage-portal .lenders-page-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+	flex-shrink: 0;
+}
+
+.mortgage-portal .lenders-page-card.portlet {
+	margin-bottom: 0;
+}
+
+.mortgage-portal .lenders-grid-wrap {
+	margin-top: 0;
+}
+
+.mortgage-portal .lenders-grid.grid-view table.items th,
+.mortgage-portal .lenders-grid.grid-view table.items td {
+	vertical-align: middle;
+}
+
+@media (max-width: 640px) {
+	.mortgage-portal .lenders-page-header {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.mortgage-portal .lenders-page-actions {
+		justify-content: stretch;
+	}
+	.mortgage-portal .lenders-page-actions .btn {
+		flex: 1;
+	}
+}
+
+/* ----- Lender Affiliate Settings: form card + list card ----- */
+.mortgage-portal .lender-affiliate-settings-page {
+	margin-bottom: 2rem;
+}
+
+.mortgage-portal .settings-form-card.portlet {
+	margin-bottom: 1.5rem;
+	border-left: 4px solid var(--portal-primary);
+}
+
+.mortgage-portal .settings-form-note {
+	font-size: 0.8125rem;
+	color: var(--portal-text-muted);
+	margin: 0 0 1rem;
+}
+
+.mortgage-portal .settings-form-grid.stats-filter-grid {
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+@media (min-width: 900px) {
+	.mortgage-portal .settings-form-grid.stats-filter-grid {
+		grid-template-columns: 1fr 1fr 120px auto;
+	}
+}
+
+.mortgage-portal .settings-cap-input.inputClass {
+	width: 80px;
+	min-width: 80px;
+}
+
+.mortgage-portal .settings-list-card.portlet {
+	margin-bottom: 0;
+}

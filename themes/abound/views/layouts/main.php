@@ -67,7 +67,7 @@ $cs->registerScriptFile($baseUrl.'/js/styleswitcher.js');
 <?php require_once('tpl_navigation.php')?>
 </section>
 <section class="main-body">
-<div class="container-fluid">
+<div class="container site-container">
 <?php echo $content; ?>
 </div>
 </section>

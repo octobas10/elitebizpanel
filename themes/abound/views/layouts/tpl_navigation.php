@@ -1,12 +1,12 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="navbar-inner">
-		<div class="container">
+		<div class="container site-container">
 			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</a>
-			<a class="brand" style="margin-left: 0px;" href="#">Elite Leads Management Publisher Portal</a>
+			<a class="brand brand-visible" style="margin-left: 0px;" href="#">Elite Leads Management Publisher Portal</a>
 			<div class="nav-collapse">
 			<?php
 			$urlauto = !Yii::app()->user->isGuest ? 'auto/default/' : 'auto/affiliates/login';
@@ -40,6 +40,6 @@
 </div>
 <div class="subnav navbar navbar-fixed-top">
 	<div class="navbar-inner">
-		<div class="container"></div>
+		<div class="container site-container"></div>
 	</div>
 </div>

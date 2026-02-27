@@ -283,7 +283,7 @@ class LenderTransactions extends MortgageActive{
 		$where = array_filter($where);
 		$where = (count($where) > 0) ? ''.implode(' AND ', $where) : '';
 		$groupby = "lender_id,mortgage_lead_type,lender_lead_price";
-		$orderby = "sub_date DESC";
+		$orderby = "MAX(a.sub_date) DESC";
 		$dbCommand = Yii::app()->dbMortgage->createCommand()
 		->select('lender_id as lender_name,count(a.id) as leads,a.mortgage_lead_type, a.lender_lead_price as lead_price,SUM(CASE WHEN `is_returned` = 1 THEN 1 ELSE 0 END ) AS returned')
 		->from('mortgage_submissions as a')
@@ -326,7 +326,7 @@ class LenderTransactions extends MortgageActive{
 		->from('mortgage_lender_transactions')
 		->where("lender_id = '".$lender_id."' AND `date` BETWEEN '".$sdate."' AND '".$edate."'")
 		->group("DATE(date)")
-		->order("date DESC");
+		->order("DATE(date) DESC");
 		$dbRows = $dbCommand->queryAll();
 		if($dbRows){
 			return $dbRows;
@@ -398,9 +398,9 @@ class LenderTransactions extends MortgageActive{
 		$groupby[] = "DATE(date)";
 		$groupby = array_filter($groupby);
 		$groupby = (count($groupby) > 0) ? ''.implode(' , ', $groupby) : '';
-		$orderby = "date DESC";
+		$orderby = "DATE(date) DESC";
 		$dbCommand = Yii::app()->dbMortgage->createCommand()
-		->select("lender_name , DATE(date) AS date , COUNT(id) AS ping_sent , SUM(ping_status=1) as ping_accepted , SUM(post_request!='') as post_sent , SUM(post_status=1) as post_accepted , SUM(is_returned=1) as lead_returned , SUM(IF((post_status=1 AND (is_returned=0 OR is_returned IS NULL)), ping_price , 0)) as revenue , (SUM(ping_price) / SUM(ping_status=1)) AS average_ping_price")
+		->select("DATE(date) AS date , COUNT(id) AS ping_sent , SUM(ping_status=1) AS ping_accepted , SUM(post_request!='') AS post_sent , SUM(post_status=1) AS post_accepted , SUM(is_returned=1) AS lead_returned , SUM(IF((post_status=1 AND (is_returned=0 OR is_returned IS NULL)), ping_price , 0)) AS revenue , (SUM(ping_price) / NULLIF(SUM(ping_status=1), 0)) AS average_ping_price")
 		->from('mortgage_lender_transactions')
 		->where($where)
 		->group($groupby)

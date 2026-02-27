@@ -152,6 +152,28 @@ class AffiliateDailyCounts extends MortgageActive
 		}
 	}
 	/**
+	 * Conversions (Accepted) of Last 15 Days — XML for Graph module (no Flash).
+	 */
+	public function conversionsoflast15days() {
+		$sdate = date('Y-m-d', mktime(0, 0, 0, date('m'), date('d') - 15, date('Y')));
+		$edate = date('Y-m-d');
+		$criteria = new CDbCriteria();
+		$criteria->select = 'date, SUM(post_accepted) AS post_accepted';
+		$criteria->condition = "`date` BETWEEN '" . $sdate . "' AND '" . $edate . "'";
+		$criteria->group = 'date';
+		$criteria->order = '`date` DESC';
+		$result = $this->findAll($criteria);
+		$xml_cat = "";
+		$xml_cat .= "<graph counttion='Conversions of Last 15 Days' rotateNames='1' xAxisName='Last 15 days' yAxisName='Units' decimalPrecision='0' formatNumberScale='0'>";
+		foreach ($result as $row) {
+			$rand = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
+			$color = '#' . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)];
+			$xml_cat .= '<set name="' . substr($row['date'], 0, 10) . '" value="' . (int)$row['post_accepted'] . '" color="' . $color . '"/>';
+		}
+		return $xml_cat . '</graph>';
+	}
+
+	/**
 	 * ALL Affiliate's Ping / Post Report Pie Chart for Last 15 Days(Displayed Affiliate Dashboard)
 	 */
 	public static function specific_affiliate_report_last_15days($promo_code = null){
@@ -159,11 +181,11 @@ class AffiliateDailyCounts extends MortgageActive
 		$sdate = date('Y-m-d H:i:s',mktime (0,0,0,date('m'),date('d')-$days,date('Y')));
 		$edate = date('Y-m-d').' 23:59:59';
 		$where[] = $promo_code ? "promo_code = ".$promo_code."" : '0';
-		$where[] = "date BETWEEN '".$sdate." 00:00:00' AND '".$edate." 23:59:59'";
+		$where[] = "date BETWEEN '".$sdate."' AND '".$edate."'";
 		$where = array_filter($where);
 		$where = (count($where) > 0) ? ''.implode(' AND ', $where) : '';
 		$criteria = new CDbCriteria();
-		$criteria->select="promo_code,date,SUM(ping_sent) AS ping_sent,SUM(ping_duplicate) AS ping_duplicate,SUM(ping_accepted) AS ping_accepted,SUM(post_sent) AS post_sent,SUM(post_duplicate) AS post_duplicate,SUM(post_accepted) AS post_accepted";
+		$criteria->select="promo_code,MAX(date) AS date,SUM(ping_sent) AS ping_sent,SUM(ping_duplicate) AS ping_duplicate,SUM(ping_accepted) AS ping_accepted,SUM(post_sent) AS post_sent,SUM(post_duplicate) AS post_duplicate,SUM(post_accepted) AS post_accepted";
 		$criteria->condition = $where;
 		$criteria->group = 'promo_code';
 		$result = AffiliateDailyCounts::model()->findAll($criteria);

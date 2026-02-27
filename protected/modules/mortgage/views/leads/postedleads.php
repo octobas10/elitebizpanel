@@ -1,4 +1,5 @@
 <?php
+$this->breadcrumbs = array('Leads' => array('leads/browsetransaction'), 'Posted Leads');
 $filter_date = Yii::app()->getRequest()->getParam('filter_date','Today');
 $promo_code = Yii::app()->getRequest()->getParam('promo_code');
 ?>
@@ -8,13 +9,10 @@ $promo_code = Yii::app()->getRequest()->getParam('promo_code');
 <?php
 $this->beginWidget('zii.widgets.CPortlet', array('title'=>"Search",));
 $form=$this->beginWidget('CActiveForm', array('id' => 'return_leads_search', 'enableAjaxValidation' => false ));
-
-print_r($_POST);
-
 ?>
 <table class="table table-striped table-hover table-bordered table-condensed">
 <tr>
-	<td style="width:100px;"><b>Date Range : </b>
+	<td style="min-width:auto;"><b>Date Range : </b>
 	<?php 
 		$this->widget('ext.EDateRangePicker.EDateRangePicker',array(
 	    	'id'=>'Filter_date',

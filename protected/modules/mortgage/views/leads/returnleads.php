@@ -1,89 +1,90 @@
-<h4>Return Leads</h4>
-<div class="row-fluid">
-<div class="span12">
-<?php 
-$promo_code = Yii::app()->getRequest()->getParam('promo_code'); 
+<?php
+$this->breadcrumbs = array('Leads' => array('leads/browsetransaction'), 'Return Leads');
+$promo_code = Yii::app()->getRequest()->getParam('promo_code');
 $lenders = Yii::app()->getRequest()->getParam('lenders');
-$lead_status = Yii::app()->getRequest()->getParam('lead_status',1);
-$field = Yii::app()->getRequest()->getParam('field','email');
+$lead_status = Yii::app()->getRequest()->getParam('lead_status', 1);
+$field = Yii::app()->getRequest()->getParam('field', 'email');
 $field_value = Yii::app()->getRequest()->getParam('field_value');
-$time = Yii::app()->getRequest()->getParam('time','hour');
-$filter = Yii::app()->getRequest()->getParam('filter',date('m/d/Y'));
-
-$this->beginWidget('zii.widgets.CPortlet', array('title'=>"Search",));
-$form=$this->beginWidget('CActiveForm', array('id' => 'return_leads_search', 'enableAjaxValidation' => false ));
+$time = Yii::app()->getRequest()->getParam('time', 'hour');
+$filter = Yii::app()->getRequest()->getParam('filter', date('m/d/Y'));
 ?>
-<table class="table table-striped table-hover table-bordered table-condensed">
-<tr>
-	<td style="line-height:0px;width:150px;"><br/>
-	<?php echo CHtml::radioButtonList(
-			'time',''.$time.'',array(
-				'hour'=>'1 hour',
-				'day'=>'1 day',
-				'week'=>'1 week',
-				'month'=>'1 month',
-				'quarter'=>'3 months',
-				'specific_date'=>'Specific Date'
-			),array('labelOptions'=>array('style'=>'display:inline'))
-		);
-	?>
-	</td>
-	<td style="display:none;" class="datehide"><b>Date Range : </b>
-	<?php 
-		$this->widget('ext.EDateRangePicker.EDateRangePicker',array(
-	    	'id'=>'Filter_date',
-	    	'name'=>'filter',
-	    	'value'=>$filter,
-	    	'options'=>array('arrows'=>true,'closeOnSelect'=>true),
-	    	'htmlOptions'=>array('class'=>'inputClass'),
-    	));
-		?>
-	</td>
-	<td style="width:94px;"><b>Promo code :</b><br>
-	<?php echo CHtml::textField('promo_code', ''.$promo_code.'', array('style'=>'width:62px;')); ?>
-	</td>
-	<td><b>Lenders :</b><br>
-	<?php echo Chtml::listBox('lenders[]', $lenders,
-			CHtml::listData(LenderDetails::model()->findAll(),'name','name'),
-			array('style'=>'width: 190px;','empty'=>'All Lenders'));
-	?>
-	</td>
-	<td style="width:145px;"><b>Post Status :</b><br>
-	<?php echo CHtml::radioButtonList('lead_status', ''.$lead_status.'', 
-			/* array(''=>'ANYTHING' , '1' => ACCEPTED , '0' => REJECTED ,'-1' => ERROR , 'returned' => RETURNED), */
-			array('1' => ACCEPTED , 'returned' => RETURNED),
-			array('labelOptions'=>array('style'=>'display:inline')));
-	?>
-	</td>
-	<td style="width:130px;"><b>Fields :</b><br>
-	<?php echo CHtml::radioButtonList('field',''.$field.'', 
-			array('email'=>'Email','last_name' => 'First Name', 'last_name' => 'Last Name', 'ipaddress' => 'IP Address', 'ssn' => 'SS#'),	
-			array('labelOptions' => array('style'=>'display:inline')));
-	?>
-	</td>	
-	<td><b>Field Value:<b></b></b><br>
-	<?php echo(CHtml::textArea('field_value',''.$field_value.'')); ?>
-	</td>
-	<td><b>Action :</b><br>
-	<?php echo CHtml::submitButton('Search',array('class'=>'btn btn btn-primary')); ?><br><br>
-	<?php echo CHtml::submitButton('Export',array('class'=>'btn btn btn-primary','name'=>'export')); ?><br><br>
-	<?php echo CHtml::button('Reset',array('class'=>'btn btn btn-primary','id'=>'reset')); ?>
-	</td>
-</tr>
-</table><?php $this->endWidget();?>
-<?php $this->endWidget(); ?>
-</div>
-</div>
-<?php if(Yii::app()->user->hasFlash('success')):?>
-    <div class="success_msg">
-        <?php echo Yii::app()->user->getFlash('success'); ?>
-    </div>
-<?php endif; ?>
-<div class="row-fluid">
-<div class="span12">
-<?php $form=$this->beginWidget('CActiveForm', array('id' => 'return_leads')); ?>
-<div class="summary">Total Result: <?php echo $total; ?></div>
-<table id="posts" class="table table-striped table-hover table-bordered table-condensed">
+<section class="leads-section mortgage-dashboard-section">
+	<header class="leads-page-header">
+		<h1 class="leads-page-title">Return Leads</h1>
+		<p class="leads-page-subtitle">Search accepted or returned leads, then notify the affiliate of bad lead(s) with a reason.</p>
+	</header>
+	<div class="row-fluid leads-toolbar-card">
+		<div class="span12">
+			<?php
+			$this->beginWidget('zii.widgets.CPortlet', array('title' => 'Filters'));
+			$form = $this->beginWidget('CActiveForm', array('id' => 'return_leads_search', 'enableAjaxValidation' => false));
+			?>
+			<div class="leads-filter-form">
+				<div class="leads-filter-grid">
+					<div class="leads-filter-group">
+						<label class="leads-filter-label">Time range</label>
+						<div class="leads-filter-field leads-filter-radios">
+							<?php echo CHtml::radioButtonList('time', $time, array('hour' => '1 hour', 'day' => '1 day', 'week' => '1 week', 'month' => '1 month', 'quarter' => '3 months', 'specific_date' => 'Specific date'), array('labelOptions' => array('style' => 'display:inline'))); ?>
+						</div>
+					</div>
+					<div class="leads-filter-group datehide leads-datehide">
+						<label class="leads-filter-label" for="Filter_date">Date range</label>
+						<div class="leads-filter-field">
+							<?php $this->widget('ext.EDateRangePicker.EDateRangePicker', array('id' => 'Filter_date', 'name' => 'filter', 'value' => $filter, 'options' => array('arrows' => true, 'closeOnSelect' => true), 'htmlOptions' => array('class' => 'inputClass'))); ?>
+						</div>
+					</div>
+					<div class="leads-filter-group">
+						<label class="leads-filter-label" for="promo_code">Promo code</label>
+						<div class="leads-filter-field">
+							<?php echo CHtml::textField('promo_code', $promo_code, array('id' => 'promo_code')); ?>
+						</div>
+					</div>
+					<div class="leads-filter-group">
+						<label class="leads-filter-label" for="lenders">Lenders</label>
+						<div class="leads-filter-field">
+							<?php echo CHtml::listBox('lenders[]', $lenders, CHtml::listData(LenderDetails::model()->findAll(), 'name', 'name'), array('empty' => 'All Lenders', 'id' => 'lenders')); ?>
+						</div>
+					</div>
+					<div class="leads-filter-group">
+						<label class="leads-filter-label">Post status</label>
+						<div class="leads-filter-field leads-filter-radios">
+							<?php echo CHtml::radioButtonList('lead_status', $lead_status, array('1' => ACCEPTED, 'returned' => RETURNED), array('labelOptions' => array('style' => 'display:inline'))); ?>
+						</div>
+					</div>
+					<div class="leads-filter-group">
+						<label class="leads-filter-label">Search by field</label>
+						<div class="leads-filter-field leads-filter-radios">
+							<?php echo CHtml::radioButtonList('field', $field, array('email' => 'Email', 'first_name' => 'First name', 'last_name' => 'Last name', 'ipaddress' => 'IP address', 'ssn' => 'SS#'), array('labelOptions' => array('style' => 'display:inline'))); ?>
+						</div>
+					</div>
+					<div class="leads-filter-group">
+						<label class="leads-filter-label" for="field_value">Field value</label>
+						<div class="leads-filter-field">
+							<?php echo CHtml::textArea('field_value', $field_value, array('id' => 'field_value')); ?>
+						</div>
+					</div>
+				</div>
+				<div class="leads-filter-actions">
+					<?php echo CHtml::submitButton('Search', array('class' => 'btn btn-primary')); ?>
+					<?php echo CHtml::submitButton('Export', array('class' => 'btn btn-default', 'name' => 'export')); ?>
+					<?php echo CHtml::button('Reset', array('class' => 'btn btn-default', 'id' => 'reset')); ?>
+				</div>
+			</div>
+			<?php $this->endWidget(); ?>
+			<?php $this->endWidget(); ?>
+		</div>
+	</div>
+	<?php if (Yii::app()->user->hasFlash('success')): ?>
+		<div class="leads-success-msg">
+			<?php echo Yii::app()->user->getFlash('success'); ?>
+		</div>
+	<?php endif; ?>
+	<div class="row-fluid">
+		<div class="span12">
+			<?php $form = $this->beginWidget('CActiveForm', array('id' => 'return_leads')); ?>
+			<p class="leads-summary">Total Result: <?php echo (int) $total; ?></p>
+			<div class="leads-table-wrap">
+				<table id="posts" class="table table-striped table-hover table-bordered table-condensed">
 <thead>
 <tr>
 	<th><input type="checkbox" id="selectall" title="Select All"></th>
@@ -114,50 +115,42 @@ foreach ($posts as $sub_leads) { ?>
 	<td><?php echo $sub_leads['sub_date'];?></td>
 	</tr>
 <?php } ?>
-</tbody>
-</table>
-<?php if(count($posts)){?>
-<div class="notify">
-<p class="reson_and_submit">Reason for Returned Lead : <input type="text" name="reason" class="reason" id="reason">&nbsp;&nbsp;
-<?php echo CHtml::submitButton('Notify Affiliate of Bad Lead(s)',array('class'=>'btn btn btn-primary','id'=>'return_leads_submit')); ?><br><br>
-</p>
-<!-- Display PHP Errors -->
-<?php if(isset($errors) && !empty($errors)){?>
-	<div id="error" style="display: block !important;">
-	<?php foreach($errors as $error){?>
-		<p class='error'><?php echo $error;?></p>
-	<?php }?>
+				</tbody>
+			</table>
+			</div>
+			<?php if (count($posts)): ?>
+			<div class="leads-notify-card">
+				<p class="reson_and_submit">Reason for Returned Lead : <input type="text" name="reason" class="reason" id="reason">&nbsp;&nbsp;
+				<?php echo CHtml::submitButton('Notify Affiliate of Bad Lead(s)', array('class' => 'btn btn-primary', 'id' => 'return_leads_submit')); ?><br><br>
+				</p>
+				<?php if (isset($errors) && !empty($errors)): ?>
+					<div id="error" class="leads-error-block" style="display: block;">
+						<?php foreach ($errors as $error): ?>
+							<p class="error"><?php echo CHtml::encode($error); ?></p>
+						<?php endforeach; ?>
+					</div>
+				<?php endif; ?>
+				<div id="error" class="leads-error-block" style="display:none;"></div>
+			</div>
+			<?php endif;
+			$this->endWidget();
+			?>
+		</div>
 	</div>
-<?php } ?>
-<!-- Display Jquery Validation Errors -->
-<div id="error"></div>
-</div>
-<?php }
-$this->endWidget();
-?>
-</div>
-</div>
-<?php
-/**Generate Paggination Link*/
-/* $this->widget('CLinkPager', array('pages' => $pages)); */
-?>
+</section>
 <style>
 .morecontent span { display: none; }
 .comment { width: 400px; }
-textarea#field_value {width: 220px;}
-#reset { width: 78px;}
-.datehide{display:none;}
-.infinite_navigation{display: none;}
-.summary {font-size: 14px; margin: 0 0 5px 5px;font-weight: bold;}
-input[type="text"].reason{margin: 0;width: 500px;}
-p.reson_and_submit{text-align: center;}
-.error{color:red;}
-div#error {display:none;background: none repeat scroll 0 0 lightyellow;border: 1px solid red;margin-bottom: 15px;width: 50%;margin-left: 35px;}
-p.error {margin: 0;padding: 1px 13px;font-size: 15px;}
-.success_msg{font-size: 16px;color:green;margin: 10px 0;}
+.mortgage-portal textarea#field_value { width: 220px; }
+.mortgage-portal #reset { width: 78px; }
+.infinite_navigation { display: none; }
+p.reson_and_submit { text-align: center; }
+.mortgage-portal .error { color: var(--portal-danger); }
+.mortgage-portal div#error.leads-error-block { margin-left: 0; }
+.mortgage-portal p.error { margin: 0; padding: 1px 13px; font-size: 0.9375rem; }
 </style>
 <?php
-Yii::app()->clientScript->registerScript('myHideEffect','$(".success_msg").animate({opacity: 1.0}, 2000).fadeOut("slow");',CClientScript::POS_READY);
+Yii::app()->clientScript->registerScript('myHideEffect', '$(".leads-success-msg").animate({opacity: 1.0}, 2000).fadeOut("slow");', CClientScript::POS_READY);
 ?>
 <script>
 $(document).ready(function() {
@@ -186,12 +179,12 @@ $(document).ready(function() {
 		$(this).prev().toggle();
 		return false;
 	});
-	if('<?php echo $time;?>'=='specific_date') $('.datehide').show();
+	if('<?php echo addslashes($time); ?>'=='specific_date') $('.datehide').addClass('visible').show();
 	$("input[name=time]").click(function(){
 		if(jQuery(this).val()=='specific_date'){
-			$('.datehide').show();
+			$('.datehide').addClass('visible').show();
 		}else{
-			$('.datehide').hide();
+			$('.datehide').removeClass('visible').hide();
 		}
 	});
 	$("#reset").click(function(){

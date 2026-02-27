@@ -1,4 +1,5 @@
 <?php
+$this->breadcrumbs = array('Support');
 $promo_code = Yii::app()->user->id;
 if(isset($_POST['spport_submit']) && $_POST['support_question']!=''){
 	extract($_POST);

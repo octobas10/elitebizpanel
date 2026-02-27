@@ -32,7 +32,8 @@ return array(
 				'::1'
 			)
 		),
-		'auto'
+		'auto',
+		'mortgage'
 	),
 	// application components
 	'components' => array(
@@ -45,6 +46,8 @@ return array(
 		'urlManager' => array(
 			'urlFormat' => 'path',
 			'rules' => array(
+				'api/pingpost' => 'mortgage/api/pingpost',
+				'api/index' => 'mortgage/api/index',
 				'<controller:\w+>/<id:\d+>' => '<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
 				'<controller:\w+>/<action:\w+>' => '<controller>/<action>',
@@ -59,6 +62,14 @@ return array(
 		// http://staging.axiombpm.com/phpMyAdmin
 		'db' => array(
 			'connectionString' => 'mysql:host=localhost;dbname=staginga_elitepanel',
+			'emulatePrepare' => true,
+			'username' => 'staginga_elitepe',
+			'password' => 'killme69',
+			'charset' => 'utf8'
+		),
+		'dbMortgage' => array(
+			'class' => 'CDbConnection',
+			'connectionString' => 'mysql:host=localhost;dbname=staginga_elitemortgage', // mortgage tables; create DB or set dbname to existing
 			'emulatePrepare' => true,
 			'username' => 'staginga_elitepe',
 			'password' => 'killme69',

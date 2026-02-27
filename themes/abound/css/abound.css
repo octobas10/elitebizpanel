@@ -6,6 +6,51 @@ section.main-body{/*min-height: 700px;*/min-height: 650px;}
 .container-fluid {
     padding-top: 20px;
 }
+/* Align main body container with header/footer */
+section.main-body .container {
+    padding-top: 20px;
+}
+
+/* Unified site container: same width for header, main, footer (Bootstrap 2 breakpoints) */
+.site-container {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+/* Default: 940px (Bootstrap 2 default) */
+@media (min-width: 980px) {
+    .site-container {
+        max-width: 940px;
+    }
+}
+/* Large: 1170px */
+@media (min-width: 1200px) {
+    .site-container {
+        max-width: 1170px;
+    }
+}
+/* Tablet: 724px */
+@media (min-width: 768px) and (max-width: 979px) {
+    .site-container {
+        max-width: 724px;
+    }
+}
+/* Mobile: full width, reduced padding */
+@media (max-width: 767px) {
+    .site-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+@media (max-width: 480px) {
+    .site-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
 a.editable {} .grid-view table.items tbody tr:hover {
     background: none repeat scroll 0 0 #DFECFA !important;
 }
@@ -21,6 +66,13 @@ a.editable {} .grid-view table.items tbody tr:hover {
     font-weight: 200;
     padding: 10px 20px;
     margin-left: -15px;
+}
+/* Ensure logo/brand text is visible on dark header */
+.navbar-inverse .brand,
+.navbar-inverse .brand.brand-visible,
+.navbar-inverse .brand:hover {
+    color: #fff !important;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
 }
 .navbar .nav > li > a {
     float: none;
@@ -521,18 +573,6 @@ footer {
     filter: progid: dximagetransform.microsoft.gradient(enabled=false);
 }
 
-.inputClass.ui-rangepicker-input.ui-widget-content {
-   width: 170px;
-}
-.ui-daterangepicker-next.ui-corner-all {
-   top: 4px;
-}
-.ui-daterangepicker-prev.ui-corner-all {
-   top: 4px;
-}
-.ui-daterangepicker-arrows.ui-widget.ui-widget-header.ui-helper-clearfix.ui-corner-all {
-   width: 220px;
-}
 .errorSummary {
    color: red;
 }

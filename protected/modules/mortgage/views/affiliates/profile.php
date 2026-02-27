@@ -1,3 +1,6 @@
+<?php
+$this->breadcrumbs = array('Affiliate User List' => array('index'), 'Profile');
+?>
 <style>
 .info{font-size: 18px;color:red;margin: 10px 0;}
 </style>

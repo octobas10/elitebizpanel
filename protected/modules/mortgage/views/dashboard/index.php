@@ -1,151 +1,306 @@
-<style>
-.grid-view table.items td {
-	font-family: Carrois Gothic, sans-serif;
-	font-size: 1em;
-}
-.portlet-title {
-	font-size: 16px;
-}
-.stat_title {
-	font-size: 24px;
-	margin-top: 25px;
-	margin-bottom: 20px;
-}
-.summary ul li {
-	height: 52px;
-	float: left;
-	width: 100%;
-}
-.affiliate_report a {
-  color: #08c;
-  text-decoration: none;
-}
-.fullwidth>.portlet>.portlet-content{
-	float:left;overflow: auto; padding: 5px;
-	/* width:890px; */
-}
-.fullwidth{
-	/* width:890px; */
-	width: 100%;
-}
-</style>
 <?php
+$this->breadcrumbs = array('Dashboard');
 $this->pageTitle = Yii::app()->name;
 $baseUrl = Yii::app()->theme->baseUrl;
-$name = 	Yii::app()->user->name;
+$name = Yii::app()->user->name;
+
+// Precompute summary totals for admin dashboard
+$summary_lead_total = $summary_revenue_buyer = $summary_revenue_seller = $summary_profit_total = 0;
+if (isset($leads) && is_array($leads) && !empty($leads) && isset($revenue_buyer) && isset($revenue_seller) && isset($profit)) {
+	foreach ($leads as $date => $lead) {
+		$summary_lead_total += !empty($leads[$date]) ? (int)$leads[$date] : 0;
+		$summary_revenue_seller += isset($revenue_seller[$date]) ? (float)$revenue_seller[$date] : 0;
+		$summary_revenue_buyer += isset($revenue_buyer[$date]) ? (float)$revenue_buyer[$date] : 0;
+		$summary_profit_total += isset($profit[$date]) ? (float)$profit[$date] : 0;
+	}
+}
+$summary_roi = $summary_revenue_buyer > 0 ? round(($summary_profit_total / $summary_revenue_buyer) * 100, 1) : 0;
+
 // IF LOGGED IN USER IS ADMIN
 if(Yii::app()->user->getState('roles')=='1'){
+	$default_date = date('Y-m-d', strtotime("-7 day")) . ' - ' . date('Y-m-d');
+	$date_filter = Yii::app()->getRequest()->getParam('date_filter', $default_date);
 ?>
-<div style="clear: both; height: 15px;"></div>
-<div class="row-fluid">
-	<div class="span9">
-		<?php $form=$this->beginWidget('CActiveForm',array('id' => 'campaign_reports','enableAjaxValidation' => false)); ?>
-		<table class="table table-striped table-hover table-bordered table-condensed">
-			<thead>
-				<tr>
-					<td style="width: 100px"><b>Date Range :</b>
-						<?php
-							$default_date = date('Y-m-d', strtotime("-7 day")) . ' - ' . date('Y-m-d');
-							$date_filter = Yii::app()->getRequest()->getParam('date_filter',$default_date);
-							$this->widget('ext.EDateRangePicker.EDateRangePicker',array(
-								'id' => 'Filter_date',
-								'name' => 'date_filter',
-								'value' => ''.$date_filter.'',
-								'options' => array(
-									'arrows' => true,
-									'closeOnSelect' => true
-								),
-								'htmlOptions' => array(
-									'class' => 'inputClass'
-								)
-							));
-							?>
-					</td>
-					<td><b>Action :</b><br>
-						<?php echo CHtml::submitButton('Search',array( 'class'=>'btn btn btn-primary')); ?>
-					</td>
-				</tr>
-			</thead>
-		</table>
-		<?php $this->endWidget();?>
-	</div>
-	<div class="span3">
-		<div class="summary">
-			<ul>
-				<li>
-					<span class="summary-icon"> <img src="<?php echo $baseUrl ;?>/img/group.png" width="36" height="36" alt="Active Members"></span>
-					<span class="summary-number"><?php //echo number_format($week_submissions); ?></span>
-					<span class="summary-title">Last 7 Days Submission</span>
-					<br>
-					<span class="summary-icon"> <img src="<?php echo $baseUrl ;?>/img/group.png" width="36" height="36" alt="Active Members"></span>
-					<span class="summary-number"><?php //echo number_format($week_accepted); ?></span>
-					<span class="summary-title">Last 30 Days Submission</span>
-					<br>
-					<span class="summary-icon"> <img src="<?php echo $baseUrl ;?>/img/group.png" width="36" height="36" alt="Active Members"></span>
-					<span class="summary-number"><?php /*echo number_format(Submissions::model()->count());*/ ?></span>
-					<span class="summary-title">Total Submission Till Today</span>
-				</li> 
-			</ul>
+<main id="mortgage-dashboard-admin" class="mortgage-dashboard-main">
+	<h1 class="dashboard-page-title">Dashboard</h1>
+
+	<section class="dashboard-summary-kpi" aria-label="Overview metrics">
+	<div class="dashboard-kpi-grid">
+		<div class="dashboard-kpi-card">
+			<p class="dashboard-kpi-label">Total revenue</p>
+			<p class="dashboard-kpi-value dashboard-kpi-value-neutral">$<?php echo number_format($summary_revenue_buyer, 2); ?></p>
+			<p class="dashboard-kpi-meta">Lender price / revenue</p>
+		</div>
+		<div class="dashboard-kpi-card">
+			<p class="dashboard-kpi-label">Total cost</p>
+			<p class="dashboard-kpi-value dashboard-kpi-value-neutral">$<?php echo number_format($summary_revenue_seller, 2); ?></p>
+			<p class="dashboard-kpi-meta">Affiliate price / cost</p>
+		</div>
+		<div class="dashboard-kpi-card">
+			<p class="dashboard-kpi-label">Net profit</p>
+			<p class="dashboard-kpi-value <?php echo $summary_profit_total >= 0 ? 'dashboard-kpi-value-success' : 'dashboard-kpi-value-danger'; ?>">$<?php echo number_format($summary_profit_total, 2); ?></p>
+			<p class="dashboard-kpi-meta">After costs</p>
+		</div>
+		<div class="dashboard-kpi-card">
+			<p class="dashboard-kpi-label">ROI</p>
+			<p class="dashboard-kpi-value <?php echo $summary_roi >= 0 ? 'dashboard-kpi-value-success' : 'dashboard-kpi-value-danger'; ?>"><?php echo $summary_roi; ?>%</p>
+			<p class="dashboard-kpi-meta">Return on revenue</p>
 		</div>
 	</div>
-</div>
-<div class="row-fluid">
-	<div class="span9">
-		<?php
-			$this->beginWidget('zii.widgets.CPortlet',array('title' => '<span class="icon-picture"></span>Campaign Performance - Mortgage / Refinance'));
-			if(is_array($leads)){?>
-		<table id="myTable" class="tablesorter table table-striped table-hover table-bordered table-condensed">
-			<thead>
-				<tr>
-					<th>Date</th>
-					<th>Leads</th>
-					<th>Lender Price/Revenue</th>
-					<th>Affiliate Price/Cost</th>
-					<th>Profit</th>
-					<th>Profit Margin</th>
-				</tr>
-			</thead>
-			<tbody> 
-				<?php
-					$lead_total = $revenue_seller_total = $revenue_buyer_total = $profit_total = $margin_total = $margin = '0';
-					foreach($leads as $date => $lead){
-						if($revenue_buyer[$date]!=0){
-							$margin = number_format(($profit[$date]/$revenue_buyer[$date])*100,2);
-						}
-						if($leads[$date]){
-							echo '<tr>
-									<td>'.$date.'</td>
-									<td align="right">'.(!empty($leads[$date]) ? $leads[$date] : 0).'</td>
-									<td align="right">$'.(!empty($revenue_buyer[$date]) ? number_format($revenue_buyer[$date],2) : '0.00').'</td>
-									<td align="right">$'.(!empty($revenue_seller[$date]) ? number_format($revenue_seller[$date],2) : '0.00').'</td>
-									<td align="right">$'.number_format($profit[$date],2).'</td>
-									<td align="right">'.$margin.'%</td>	
-								</tr>';
-						}
-						$lead_total += !empty($leads[$date]) ? $leads[$date] : 0;
-						$revenue_seller_total += $revenue_seller[$date];
-						$revenue_buyer_total += $revenue_buyer[$date];
-						$profit_total += $profit[$date];
-						$margin_total = ($profit_total/$revenue_seller_total)*100;
-					}
-					?>
-			</tbody>
-			<tfoot>
-				<tr>
-					<th class="header" colspan="">Total</th>
-					<th class="header" align="right"><?=number_format($lead_total); ?></th>
-					<th class="header" align="right">$<?=number_format($revenue_buyer_total,2); ?></th>
-					<th class="header" align="right">$<?=number_format($revenue_seller_total,2); ?></th>
-					<th class="header" align="right">$<?=number_format($profit_total,2); ?></th>
-					<th class="header" align="right"><?=round($margin_total,2); ?>%</th>
-				</tr>
-			</tfoot>
-		</table>
-		<?php
-			}else{echo 'No Data Found';}
-			$this->endWidget(); ?>
+</section>
+
+<section class="dashboard-filters-section" aria-label="Filters">
+	<div class="dashboard-toolbar-card">
+		<?php $form = $this->beginWidget('CActiveForm', array('id' => 'campaign_reports', 'enableAjaxValidation' => false)); ?>
+		<div class="dashboard-toolbar-inner">
+			<div class="dashboard-toolbar-row dashboard-toolbar-row-main">
+				<div class="dashboard-toolbar-group">
+					<label class="dashboard-toolbar-label" id="filter-date-label" for="Filter_date">Date range</label>
+					<div class="dashboard-toolbar-picker-wrap">
+						<?php
+						$this->widget('ext.EDateRangePicker.EDateRangePicker', array(
+							'id' => 'Filter_date',
+							'name' => 'date_filter',
+							'value' => $date_filter,
+							'options' => array('arrows' => true, 'closeOnSelect' => true),
+							'htmlOptions' => array('class' => 'inputClass', 'aria-describedby' => 'filter-date-label'),
+						));
+						?>
+					</div>
+				</div>
+				<?php echo CHtml::submitButton('Apply filters', array('name' => 'apply_filter', 'class' => 'btn btn-primary dashboard-apply-btn dashboard-toolbar-btn')); ?>
+				<a href="<?php echo Yii::app()->createUrl('mortgage/dashboard/index'); ?>" class="btn btn-default dashboard-clear-btn dashboard-toolbar-btn">Clear</a>
+				<button type="button" class="btn btn-default dashboard-toolbar-btn" id="dashboard-export-csv" aria-label="Export table as CSV">Export CSV</button>
+			</div>
+		</div>
+		<?php $this->endWidget(); ?>
 	</div>
-</div>
+</section>
+
+<section class="dashboard-metrics-row" aria-label="Submission metrics">
+	<div class="dashboard-metrics summary">
+		<ul class="dashboard-metrics-list">
+			<li class="metric-card metric-card-with-sparkline">
+				<div class="metric-card-main">
+					<span class="summary-icon" aria-hidden="true"><img src="<?php echo $baseUrl; ?>/img/group.png" width="32" height="32" alt=""></span>
+					<div class="metric-card-content">
+						<span class="summary-number"><?php // echo number_format($week_submissions); ?>—</span>
+						<span class="summary-title">Last 7 days submission</span>
+						<span class="metric-change metric-change-neutral" aria-label="Change">—</span>
+					</div>
+				</div>
+				<div class="metric-sparkline" aria-hidden="true"><span class="metric-sparkline-bar" style="width: 60%;"></span></div>
+			</li>
+			<li class="metric-card metric-card-with-sparkline">
+				<div class="metric-card-main">
+					<span class="summary-icon" aria-hidden="true"><img src="<?php echo $baseUrl; ?>/img/group.png" width="32" height="32" alt=""></span>
+					<div class="metric-card-content">
+						<span class="summary-number"><?php // echo number_format($week_accepted); ?>—</span>
+						<span class="summary-title">Last 30 days submission</span>
+						<span class="metric-change metric-change-neutral" aria-label="Change">—</span>
+					</div>
+				</div>
+				<div class="metric-sparkline" aria-hidden="true"><span class="metric-sparkline-bar" style="width: 75%;"></span></div>
+			</li>
+			<li class="metric-card metric-card-with-sparkline">
+				<div class="metric-card-main">
+					<span class="summary-icon" aria-hidden="true"><img src="<?php echo $baseUrl; ?>/img/group.png" width="32" height="32" alt=""></span>
+					<div class="metric-card-content">
+						<span class="summary-number"><?php // echo number_format(Submissions::model()->count()); ?>—</span>
+						<span class="summary-title">Total submission to date</span>
+						<span class="metric-change metric-change-neutral" aria-label="Change">—</span>
+					</div>
+				</div>
+				<div class="metric-sparkline" aria-hidden="true"><span class="metric-sparkline-bar" style="width: 90%;"></span></div>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<section class="dashboard-section dashboard-section-campaign" aria-labelledby="campaign-performance-heading">
+	<h2 id="campaign-performance-heading" class="dashboard-section-title">Campaign performance</h2>
+	<div class="row-fluid">
+		<div class="span12">
+			<?php
+			$this->beginWidget('zii.widgets.CPortlet', array(
+				'title' => '<span class="portlet-icon" aria-hidden="true">📊</span> Mortgage / Refinance',
+			));
+			if (is_array($leads) && !empty($leads)) {
+			$lead_total = $revenue_seller_total = $revenue_buyer_total = $profit_total = 0;
+			$margin_total = 0;
+		?>
+		<div class="dashboard-table-wrap">
+			<table id="campaign-performance-table" class="dashboard-table dashboard-table-sortable table table-striped table-hover table-bordered" data-export-title="Campaign Performance">
+				<thead>
+					<tr>
+						<th class="dashboard-th sortable" data-sort="date" aria-sort="none">Date <span class="sort-indicator" aria-hidden="true"></span></th>
+						<th class="dashboard-th sortable" data-sort="num" aria-sort="none">Leads <span class="sort-indicator" aria-hidden="true"></span></th>
+						<th class="dashboard-th sortable" data-sort="num" aria-sort="none">Lender Price/Revenue <span class="sort-indicator" aria-hidden="true"></span></th>
+						<th class="dashboard-th sortable" data-sort="num" aria-sort="none">Affiliate Price/Cost <span class="sort-indicator" aria-hidden="true"></span></th>
+						<th class="dashboard-th sortable" data-sort="profit" aria-sort="none">Profit <span class="sort-indicator" aria-hidden="true"></span></th>
+						<th class="dashboard-th sortable" data-sort="num" aria-sort="none">Profit Margin <span class="sort-indicator" aria-hidden="true"></span></th>
+					</tr>
+				</thead>
+				<tbody>
+				<?php
+					$margin = '0';
+					foreach ($leads as $date => $lead) {
+						if (isset($revenue_buyer[$date]) && $revenue_buyer[$date] != 0 && isset($profit[$date])) {
+							$margin = number_format(($profit[$date] / $revenue_buyer[$date]) * 100, 2);
+						}
+						$row_profit = isset($profit[$date]) ? (float)$profit[$date] : 0;
+						$row_margin_pct = isset($revenue_buyer[$date]) && $revenue_buyer[$date] != 0 ? min(100, max(0, ($row_profit / $revenue_buyer[$date]) * 100)) : 0;
+						if (!empty($leads[$date])) {
+							echo '<tr data-profit="' . (float)$row_profit . '" data-margin="' . (float)$row_margin_pct . '">';
+							echo '<td>' . htmlspecialchars($date) . '</td>';
+							echo '<td class="text-right">' . (int)$leads[$date] . '</td>';
+							echo '<td class="text-right">$' . number_format(isset($revenue_buyer[$date]) ? $revenue_buyer[$date] : 0, 2) . '</td>';
+							echo '<td class="text-right">$' . number_format(isset($revenue_seller[$date]) ? $revenue_seller[$date] : 0, 2) . '</td>';
+							echo '<td class="text-right ' . ($row_profit >= 0 ? 'profit-positive' : 'profit-negative') . '">$' . number_format($row_profit, 2) . '</td>';
+							echo '<td class="dashboard-margin-cell"><div class="dashboard-margin-bar-wrap"><div class="dashboard-margin-bar" style="width:' . (float)$row_margin_pct . '%;" role="presentation"></div><span class="dashboard-margin-pct">' . $margin . '%</span></div></td>';
+							echo '</tr>';
+						}
+						$lead_total += !empty($leads[$date]) ? (int)$leads[$date] : 0;
+						$revenue_seller_total += isset($revenue_seller[$date]) ? (float)$revenue_seller[$date] : 0;
+						$revenue_buyer_total += isset($revenue_buyer[$date]) ? (float)$revenue_buyer[$date] : 0;
+						$profit_total += $row_profit;
+					}
+					$margin_total = $revenue_buyer_total > 0 ? ($profit_total / $revenue_buyer_total) * 100 : 0;
+				?>
+				</tbody>
+				<tfoot>
+					<tr class="dashboard-tfoot-row">
+						<th>Total</th>
+						<th class="text-right"><?php echo number_format($lead_total); ?></th>
+						<th class="text-right">$<?php echo number_format($revenue_buyer_total, 2); ?></th>
+						<th class="text-right">$<?php echo number_format($revenue_seller_total, 2); ?></th>
+						<th class="text-right <?php echo $profit_total >= 0 ? 'profit-positive' : 'profit-negative'; ?>">$<?php echo number_format($profit_total, 2); ?></th>
+						<th class="text-right"><?php echo round($margin_total, 2); ?>%</th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		<?php
+		} else {
+			echo '<div class="dashboard-empty-state dashboard-empty-state-enhanced" role="status">
+				<div class="dashboard-empty-state-illus" aria-hidden="true">
+					<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="80" height="80" rx="40" fill="var(--portal-empty-bg)"/><path d="M40 24v32M28 40h24" stroke="var(--portal-empty-stroke)" stroke-width="2" stroke-linecap="round"/></svg>
+				</div>
+				<p class="dashboard-empty-state-title">No campaign data for this date range</p>
+				<p class="dashboard-empty-state-hint">Try selecting a different date range using the date picker above, or check back once leads are submitted.</p>
+				<button type="button" class="btn btn-default dashboard-empty-state-action" onclick="document.getElementById(\'Filter_date\').focus()">Change date range</button>
+			</div>';
+		}
+		$this->endWidget();
+		?>
+		</div>
+	</div>
+</section>
+
+<script>
+(function() {
+	var exportCsvBtn = document.getElementById('dashboard-export-csv');
+	var table = document.getElementById('campaign-performance-table');
+	var pickerWrap = document.querySelector('.mortgage-portal .dashboard-toolbar-picker-wrap');
+
+	// Prev/Next: parse input (Y-m-d), shift range, update value (plugin can fail on Y-m-d parse)
+	if (pickerWrap) {
+		pickerWrap.addEventListener('click', function(e) {
+			var link = e.target.closest('a');
+			if (!link || (!link.classList.contains('ui-daterangepicker-prev') && !link.classList.contains('ui-daterangepicker-next'))) return;
+			e.preventDefault();
+			e.stopPropagation();
+			var input = document.getElementById('Filter_date');
+			if (!input || !input.value) return;
+			var parts = input.value.split(/\s*-\s*/);
+			if (parts.length !== 2) return;
+			var startStr = parts[0].trim();
+			var endStr = parts[1].trim();
+			var start = parseYmd(startStr);
+			var end = parseYmd(endStr);
+			if (!start || !end) return;
+			var diffMs = end.getTime() - start.getTime();
+			var diffDays = Math.round(diffMs / 86400000) + 1;
+			var shift = link.classList.contains('ui-daterangepicker-prev') ? -diffDays : diffDays;
+			start.setDate(start.getDate() + shift);
+			end.setDate(end.getDate() + shift);
+			input.value = formatYmd(start) + ' - ' + formatYmd(end);
+			input.dispatchEvent(new Event('change', { bubbles: true }));
+		}, true);
+	}
+	function parseYmd(s) {
+		var m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+		if (!m) return null;
+		var d = new Date(parseInt(m[1], 10), parseInt(m[2], 10) - 1, parseInt(m[3], 10));
+		return isNaN(d.getTime()) ? null : d;
+	}
+	function formatYmd(d) {
+		var y = d.getFullYear();
+		var m = (d.getMonth() + 1);
+		var day = d.getDate();
+		return y + '-' + (m < 10 ? '0' : '') + m + '-' + (day < 10 ? '0' : '') + day;
+	}
+
+	if (exportCsvBtn && table) {
+		exportCsvBtn.addEventListener('click', function() {
+			var rows = table.querySelectorAll('tr');
+			var csv = [];
+			for (var i = 0; i < rows.length; i++) {
+				var cells = rows[i].querySelectorAll('th, td');
+				var row = [];
+				for (var j = 0; j < cells.length; j++) {
+					row.push('"' + (cells[j].textContent || '').replace(/"/g, '""') + '"');
+				}
+				csv.push(row.join(','));
+			}
+			var blob = new Blob([csv.join('\r\n')], { type: 'text/csv;charset=utf-8;' });
+			var a = document.createElement('a');
+			a.href = URL.createObjectURL(blob);
+			a.download = 'campaign-performance-' + (new Date().toISOString().slice(0,10)) + '.csv';
+			a.click();
+			URL.revokeObjectURL(a.href);
+		});
+	}
+
+	if (table && table.querySelectorAll('.dashboard-th.sortable').length) {
+		var thead = table.querySelector('thead tr');
+		thead.addEventListener('click', function(e) {
+			var th = e.target.closest('.sortable');
+			if (!th) return;
+			var col = Array.prototype.indexOf.call(thead.querySelectorAll('th'), th);
+			var tbody = table.querySelector('tbody');
+			var asc = th.getAttribute('aria-sort') !== 'ascending';
+			thead.querySelectorAll('th').forEach(function(h) {
+				h.setAttribute('aria-sort', h === th ? (asc ? 'ascending' : 'descending') : 'none');
+			});
+			var trs = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+			var sortType = th.getAttribute('data-sort');
+			trs.sort(function(a, b) {
+				var ac = a.children[col];
+				var bc = b.children[col];
+				var av, bv;
+				if (sortType === 'date') {
+					av = (ac && ac.textContent) ? ac.textContent.trim() : '';
+					bv = (bc && bc.textContent) ? bc.textContent.trim() : '';
+					return asc ? (av < bv ? -1 : av > bv ? 1 : 0) : (bv < av ? -1 : bv > av ? 1 : 0);
+				}
+				if (sortType === 'profit' && a.getAttribute && b.getAttribute) {
+					av = parseFloat(a.getAttribute('data-profit')) || 0;
+					bv = parseFloat(b.getAttribute('data-profit')) || 0;
+				} else {
+					av = parseFloat((ac && ac.textContent) ? ac.textContent.replace(/[$,%\s]/g, '') : 0) || 0;
+					bv = parseFloat((bc && bc.textContent) ? bc.textContent.replace(/[$,%\s]/g, '') : 0) || 0;
+				}
+				return asc ? (av - bv) : (bv - av);
+			});
+			trs.forEach(function(tr) { tbody.appendChild(tr); });
+		});
+	}
+})();
+</script>
+
+</main>
+
 <!-- Ping sent and Ping Accepted for Affiliates -->
 <div class="row-fluid">
 	<div class="span9 fullwidth">
@@ -204,7 +359,16 @@ if(Yii::app()->user->getState('roles')=='1'){
 			</tfoot>
 		</table>
 		<?php
-			}else{echo 'No Data Found';}
+			}else{
+				echo '<div class="dashboard-empty-state dashboard-empty-state-enhanced" role="status">
+				<div class="dashboard-empty-state-illus" aria-hidden="true">
+					<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="80" height="80" rx="40" fill="var(--portal-empty-bg)"/><path d="M40 24v32M28 40h24" stroke="var(--portal-empty-stroke)" stroke-width="2" stroke-linecap="round"/></svg>
+				</div>
+				<p class="dashboard-empty-state-title">No data for this period</p>
+				<p class="dashboard-empty-state-hint">Try selecting a different date range above, or check back once leads are submitted.</p>
+				<button type="button" class="btn btn-default dashboard-empty-state-action" onclick="document.getElementById(\'Filter_date\').focus()">Change date range</button>
+			</div>';
+			}
 			$this->endWidget(); ?>
 	</div>
 </div>
@@ -267,8 +431,15 @@ if(Yii::app()->user->getState('roles')=='1'){
 		</table>
 		<?php
 			}else{
-					echo 'No Data Found';
-				}
+				echo '<div class="dashboard-empty-state dashboard-empty-state-enhanced" role="status">
+				<div class="dashboard-empty-state-illus" aria-hidden="true">
+					<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="80" height="80" rx="40" fill="var(--portal-empty-bg)"/><path d="M40 24v32M28 40h24" stroke="var(--portal-empty-stroke)" stroke-width="2" stroke-linecap="round"/></svg>
+				</div>
+				<p class="dashboard-empty-state-title">No data for this period</p>
+				<p class="dashboard-empty-state-hint">Try selecting a different date range above, or check back once leads are submitted.</p>
+				<button type="button" class="btn btn-default dashboard-empty-state-action" onclick="document.getElementById(\'Filter_date\').focus()">Change date range</button>
+			</div>';
+			}
 			$this->endWidget(); ?>
 	</div>
 </div>
@@ -328,8 +499,15 @@ if(Yii::app()->user->getState('roles')=='1'){
 		</table>
 		<?php
 			}else{
-					echo 'No Data Found';
-				}
+				echo '<div class="dashboard-empty-state dashboard-empty-state-enhanced" role="status">
+				<div class="dashboard-empty-state-illus" aria-hidden="true">
+					<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="80" height="80" rx="40" fill="var(--portal-empty-bg)"/><path d="M40 24v32M28 40h24" stroke="var(--portal-empty-stroke)" stroke-width="2" stroke-linecap="round"/></svg>
+				</div>
+				<p class="dashboard-empty-state-title">No data for this period</p>
+				<p class="dashboard-empty-state-hint">Try selecting a different date range above, or check back once leads are submitted.</p>
+				<button type="button" class="btn btn-default dashboard-empty-state-action" onclick="document.getElementById(\'Filter_date\').focus()">Change date range</button>
+			</div>';
+			}
 			$this->endWidget(); ?>
 	</div>
 </div>
@@ -389,13 +567,20 @@ if(Yii::app()->user->getState('roles')=='1'){
 		</table>
 		<?php
 			}else{
-					echo 'No Data Found';
+				echo '<div class="dashboard-empty-state dashboard-empty-state-enhanced" role="status">
+				<div class="dashboard-empty-state-illus" aria-hidden="true">
+					<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="80" height="80" rx="40" fill="var(--portal-empty-bg)"/><path d="M40 24v32M28 40h24" stroke="var(--portal-empty-stroke)" stroke-width="2" stroke-linecap="round"/></svg>
+				</div>
+				<p class="dashboard-empty-state-title">No data for this period</p>
+				<p class="dashboard-empty-state-hint">Try selecting a different date range above, or check back once leads are submitted.</p>
+				<button type="button" class="btn btn-default dashboard-empty-state-action" onclick="document.getElementById(\'Filter_date\').focus()">Change date range</button>
+			</div>';
 			}
 			$this->endWidget(); ?>
 	</div>
 </div>
 <div class="row-fluid">
-	<div class="span9">
+	<div class="span12">
 		<?php
 		
 		$this->beginWidget('zii.widgets.CPortlet',array(
@@ -675,39 +860,36 @@ if(Yii::app()->user->getState('roles')=='1'){
 			}
 		}
 			</script>
-			<div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+			<div id="chartContainer" style="height: 370px; max-width: 100%; margin: 0 auto;"></div>
 		<?php $this->endWidget(); ?>
 	</div>
 </div>
-<div class="row-fluid">
-	<div class="span9">
+<div class="row-fluid dashboard-three-cols">
+	<div class="span4 dashboard-three-cols__item">
 		<?php
 			$this->beginWidget('zii.widgets.CPortlet',array(
 				'title' => "<i class='icon-info-sign'></i>Conversions(Accepted) of Last 15 days"
 			));
 			?>
-		<div id="chartContainer1" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+		<div id="chartContainer1" style="height: 370px; max-width: 100%; margin: 0 auto;"></div>
 		<?php $this->endWidget();?>
 	</div>
-</div>
-<div style="float: middle"></div>
-<div class="row-fluid">
-	<div class="span5">
+	<div class="span4 dashboard-three-cols__item">
 		<?php
 		$this->beginWidget('zii.widgets.CPortlet',array(
 			'title' => '<span class="icon-th-list"></span>Today&#39;s Ping Report',
 		));
 		?>
-		<div id="chartContainer3" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+		<div id="chartContainer3" style="height: 370px; max-width: 100%; margin: 0 auto;"></div>
 		<?php $this->endWidget(); ?>
 	</div>
-	<div class="span5">
+	<div class="span4 dashboard-three-cols__item">
 		<?php
 		$this->beginWidget('zii.widgets.CPortlet',array(
 			'title' => '<span class="icon-th-list"></span>Today&#39;s Post Report',
 		));
 		?>
-		<div id="chartContainer4" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+		<div id="chartContainer4" style="height: 370px; max-width: 100%; margin: 0 auto;"></div>
 		<?php $this->endWidget(); ?>
 	</div>
 </div>
@@ -744,7 +926,7 @@ if(Yii::app()->user->getState('roles')=='1'){
 							?>
 					</td>
 					<td><b>Action :</b><br>
-						<?php echo CHtml::submitButton('Search',array( 'class'=>'btn btn btn-primary')); ?>
+						<?php echo CHtml::submitButton('Search',array( 'class' => 'btn btn-primary')); ?>
 					</td>
 				</tr>
 			</thead>
@@ -945,7 +1127,7 @@ if(Yii::app()->user->getState('roles')=='1'){
 							?>
 					</td>
 					<td><b>Action :</b><br>
-						<?php echo CHtml::submitButton('Search',array( 'class'=>'btn btn btn-primary')); ?>
+						<?php echo CHtml::submitButton('Search',array( 'class' => 'btn btn-primary')); ?>
 					</td>
 				</tr>
 			</thead>

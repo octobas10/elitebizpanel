@@ -48,7 +48,7 @@ class FeedLenderTransactions extends MortgageActive {
 	public function browsefeedlendertransction(){
 		$feed_lender_name = Yii::app()->getRequest()->getParam('feed_lender_name');
 		$response = Yii::app()->getRequest()->getParam('response');
-		$filter = explode(' - ',Yii::app()->getRequest()->getParam('date'));
+		$filter = explode(' - ', (string) (Yii::app()->getRequest()->getParam('date') ?? ''));
 		$count =  count($filter);
 		
 		$start_date = count($filter) == 2 ?  strtotime($filter[0]." 00:00:00") :  strtotime('today midnight');;

@@ -1,0 +1,96 @@
+# EliteBizPanel — Yii 1.x + MySQL + Redis
+# Run: docker compose up -d
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: elitebizpanel-app
+    # Temporary: override entrypoint so container stays up; fix perms on host then remove this line
+    entrypoint: ["apache2-foreground"]
+    ports:
+      - "9190:80"
+    env_file:
+      - .env
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - YII_PATH=/opt/yii/framework/yii.php
+      - YII_DEBUG=1
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - elitebizpanel-network
+    restart: unless-stopped
+
+  db:
+    image: mysql:8.0
+    container_name: elitebizpanel-db
+    ports:
+      - "33062:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_CHARACTER_SET_SERVER=utf8mb4
+      - MYSQL_COLLATION_SERVER=utf8mb4_unicode_ci
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./docker/mysql-init:/docker-entrypoint-initdb.d:ro
+    networks:
+      - elitebizpanel-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  redis:
+    image: redis:7-alpine
+    container_name: elitebizpanel-redis
+    ports:
+      - "63792:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - elitebizpanel-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: elitebizpanel-phpmyadmin
+    ports:
+      - "9191:80"
+    environment:
+      - PMA_HOST=db
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - elitebizpanel-network
+    restart: unless-stopped
+
+networks:
+  elitebizpanel-network:
+    driver: bridge
+
+volumes:
+  db_data:
+  redis_data:

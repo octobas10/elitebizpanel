@@ -1,3 +1,6 @@
+<?php
+$this->breadcrumbs = array('View Report');
+?>
 <style>
 .left-column,.right-column {float: left;}
 .left-column {width: 30%;}

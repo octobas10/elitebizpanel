@@ -1,41 +1,52 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
-opcache_reset();
+if (function_exists('opcache_reset')) {
+	opcache_reset();
+}
 ini_set('display_errors', 1);
 // change the following paths if necessary
-require dirname(__FILE__) .'/vendor/autoload.php';
-$redisClient = new Predis\Client();
-$ip = $_SERVER['REMOTE_ADDR'];
-$reqCount = $redisClient->incr($ip);
-$ttl = $redisClient->ttl($ip);
-if($ttl == '-1') {
-	$redisClient->expire($ip,20);
+require dirname(__FILE__) . '/vendor/autoload.php';
+
+// Rate limiting via Redis (optional on localhost when Redis is not installed)
+$rateLimitOk = true;
+$redisHost = getenv('REDIS_HOST') ?: '127.0.0.1';
+$redisPort = (int) (getenv('REDIS_PORT') ?: 6379);
+try {
+	$redisClient = new Predis\Client(['host' => $redisHost, 'port' => $redisPort]);
+	$redisClient->connect();
+	$ip = $_SERVER['REMOTE_ADDR'];
+	$reqCount = $redisClient->incr($ip);
+	$ttl = $redisClient->ttl($ip);
+	if ($ttl == '-1') {
+		$redisClient->expire($ip, 20);
+	}
+	$rateLimitOk = $reqCount < 60000;
+} catch (Throwable $e) {
+	// Redis unavailable (e.g. XAMPP without Redis): skip rate limiting so app still runs
+	$rateLimitOk = true;
 }
-if($reqCount < 60000){
-	if($_SERVER['HTTP_HOST']=='192.168.4.164' || $_SERVER['HTTP_HOST']=='localhost'){
-		//$yii=dirname(__FILE__).'/../yiiframework/yii.php';
-		$yii=dirname(__FILE__).'/../yiiframework1.28/framework/yii.php';
-		$config=dirname(__FILE__).'/protected/config/main.php';
-	}else if($_SERVER['HTTP_HOST']=='staging.axiombpm.com'){
-		$yii=dirname(__FILE__).'/../yiiframework/yii.php';
-		$config=dirname(__FILE__).'/protected/config/stagingmain.php';
-	}else{
-		//$yii=dirname(__FILE__).'/../../yiiframework/yii.php';
-		$yii=dirname(__FILE__).'/../../yiiframework1.17/yii.php';
-		$config=dirname(__FILE__).'/protected/config/main.php';
+
+if ($rateLimitOk) {
+	$config = dirname(__FILE__) . '/protected/config/main.php';
+	if (getenv('YII_PATH')) {
+		$yii = getenv('YII_PATH');
+	} elseif ($_SERVER['HTTP_HOST'] === 'staging.axiombpm.com') {
+		$yii = dirname(__FILE__) . '/../yiiframework/yii.php';
+		$config = dirname(__FILE__) . '/protected/config/stagingmain.php';
+	} else {
+		$yiiVendor = dirname(__FILE__) . '/vendor/yiisoft/yii/framework/yii.php';
+		$yii = file_exists($yiiVendor) ? $yiiVendor : dirname(__FILE__) . '/../yiiframework1.28/framework/yii.php';
 	}
 
-	// remove the following lines when in production mode
-	defined('YII_DEBUG') or define('YII_DEBUG',true);
-	// specify how many levels of call stack should be shown in each log message
-	defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
-	require_once($yii);
+	defined('YII_DEBUG') or define('YII_DEBUG', true);
+	defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL', 3);
+	require_once $yii;
 	Yii::createWebApplication($config)->run();
-}else{
+} else {
 	$ttl = $redisClient->ttl($ip);
 	echo json_encode(['status' => "You have used up all your quota, Try again after {$ttl} seconds "]);
-	exit();
+	exit;
 }
 /*
 $protected = dirname(__FILE__);

@@ -1,0 +1,541 @@
+/**
+ * API documentation design system
+ * UX heuristics: visibility, clarity, consistency, feedback, accessibility (WCAG 2.1)
+ * Use with api_content_layout and API view semantic structure.
+ *
+ * Contrast: All text/background pairs meet WCAG 2.1 Level AA (4.5:1 normal text, 3:1 large).
+ * Muted and badge colours chosen for ≥4.5:1 on their backgrounds.
+ */
+
+/* -----------------------------------------------------------------------------
+ * DESIGN TOKENS (WCAG 2.1 AA contrast-safe)
+ * -------------------------------------------------------------------------- */
+:root {
+  --api-color-bg: #f8fafc;
+  --api-color-surface: #ffffff;
+  --api-color-border: #e2e8f0;
+  --api-color-border-strong: #cbd5e1;
+  /* Body/heading text on white/surface: ≥12:1 */
+  --api-color-text: #1e293b;
+  /* Muted text: ≥4.5:1 on bg/surface (was #64748b, darkened for AA) */
+  --api-color-text-muted: #475569;
+  --api-color-primary: #193e5b;
+  --api-color-primary-hover: #244a6d;
+  --api-color-accent: #0ea5e9;
+  /* Required badge: ≥4.5:1 on tinted bg */
+  --api-color-required: #b91c1c;
+  --api-color-required-bg: #fef2f2;
+  /* Preferred badge: ≥4.5:1 (darkened from #b45309) */
+  --api-color-preferred: #92400e;
+  --api-color-preferred-bg: #fffbeb;
+  /* Optional badge: ≥4.5:1 */
+  --api-color-optional: #075985;
+  --api-color-optional-bg: #f0f9ff;
+  --api-color-success: #15803d;
+  --api-color-success-bg: #f0fdf4;
+  /* Code block: light text on dark ≥10:1 */
+  --api-color-code-bg: #1e293b;
+  --api-color-code-text: #e2e8f0;
+  --api-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --api-font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+  --api-radius: 6px;
+  --api-radius-lg: 8px;
+  --api-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --api-shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
+  --api-space: 1rem;
+  --api-space-lg: 1.5rem;
+  --api-space-xl: 2rem;
+  --api-max-width: 960px;
+}
+
+/* -----------------------------------------------------------------------------
+ * LAYOUT & PAGE SHELL (override legacy body white)
+ * -------------------------------------------------------------------------- */
+html.api-doc-page,
+body.api-doc-page {
+  margin: 0;
+  padding: 0;
+  font-family: var(--api-font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--api-color-text);
+  background: var(--api-color-bg) !important;
+  min-height: 100vh;
+}
+
+.api-doc-page .api-skip-link {
+  position: absolute;
+  top: -2.5rem;
+  left: var(--api-space);
+  padding: 0.5rem 1rem;
+  background: var(--api-color-primary);
+  color: #fff;
+  border-radius: var(--api-radius);
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 100;
+  transition: top 0.2s ease;
+}
+.api-doc-page .api-skip-link:focus {
+  top: var(--api-space);
+  outline: 2px solid var(--api-color-accent);
+  outline-offset: 2px;
+}
+
+/* -----------------------------------------------------------------------------
+ * HEADER – sticky bar, inner container, WCAG AA contrast (white on dark)
+ * -------------------------------------------------------------------------- */
+.api-doc-page .api-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #152a45;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.api-doc-page .api-header__inner {
+  max-width: var(--api-max-width);
+  margin: 0 auto;
+  padding: 0.875rem var(--api-space-xl);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--api-space);
+}
+.api-doc-page .api-header__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+/* Title: solid white, override legacy h1 { width: 960px } so header stays one row */
+.api-doc-page .api-header__title {
+  margin: 0;
+  width: auto;
+  max-width: none;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  color: #ffffff;
+}
+/* Subtitle: high-contrast light grey (no opacity) ≥4.5:1 */
+.api-doc-page .api-header__sub {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #e2e8f0;
+}
+.api-doc-page .api-nav-tabs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.375rem;
+  flex: 0 0 auto;
+}
+/* Nav links: solid white text on dark, active = white bg + dark text */
+.api-doc-page .api-nav-tabs a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.15);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: var(--api-radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.api-doc-page .api-nav-tabs a:hover {
+  background: rgba(255,255,255,0.25);
+  color: #ffffff;
+}
+.api-doc-page .api-nav-tabs a.api-nav-tabs__active {
+  background: #ffffff;
+  color: #152a45;
+  border-color: #ffffff;
+}
+
+.api-doc-page .api-main {
+  max-width: var(--api-max-width);
+  margin: 0 auto;
+  padding: var(--api-space-xl) var(--api-space-lg);
+  background: transparent;
+}
+.api-doc-page .api-main > .api-section {
+  background: var(--api-color-surface);
+}
+.api-doc-page .api-main > section:first-child {
+  margin-top: 0;
+}
+
+/* -----------------------------------------------------------------------------
+ * SECTIONS & CARDS (information grouping)
+ * -------------------------------------------------------------------------- */
+.api-doc-page .api-section {
+  background: var(--api-color-surface);
+  border-radius: var(--api-radius-lg);
+  border: 1px solid var(--api-color-border);
+  padding: var(--api-space-lg);
+  margin-bottom: var(--api-space-xl);
+  box-shadow: var(--api-shadow);
+}
+.api-doc-page .api-section__title {
+  margin: 0 0 var(--api-space) 0;
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--api-color-primary);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--api-color-border);
+}
+.api-doc-page .api-section__intro {
+  color: var(--api-color-text-muted);
+  margin-bottom: var(--api-space);
+}
+
+/* -----------------------------------------------------------------------------
+ * BADGES (Required / Preferred / Optional) – replace GIF icons
+ * -------------------------------------------------------------------------- */
+.api-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2em 0.5em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.api-badge--required {
+  background: var(--api-color-required-bg);
+  color: var(--api-color-required);
+  border: 1px solid #fecaca;
+}
+.api-badge--preferred {
+  background: var(--api-color-preferred-bg);
+  color: var(--api-color-preferred);
+  border: 1px solid #fde68a;
+}
+.api-badge--optional {
+  background: var(--api-color-optional-bg);
+  color: var(--api-color-optional);
+  border: 1px solid #bae6fd;
+}
+
+/* -----------------------------------------------------------------------------
+ * TABLES (field reference)
+ * -------------------------------------------------------------------------- */
+.api-doc-page .api-table-wrap {
+  margin: var(--api-space) 0;
+  border-radius: var(--api-radius);
+  border: 1px solid var(--api-color-border);
+}
+.api-doc-page table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+.api-doc-page table.data th,
+.api-doc-page table.data td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--api-color-border);
+  vertical-align: top;
+}
+.api-doc-page table.data thead th {
+  background: var(--api-color-primary);
+  color: #fff;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 1px 0 0 var(--api-color-border);
+}
+/* When page header is sticky, table header sticks below it (approx header height) */
+.api-doc-page .api-header ~ .api-main table.data thead th {
+  top: 3.25rem;
+}
+.api-doc-page table.data thead th.txtcenter {
+  text-align: center;
+}
+.api-doc-page table.data tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+.api-doc-page table.data tbody tr.api-table-group {
+  background: #475569;
+  color: #fff;
+}
+.api-doc-page table.data tbody tr.api-table-group td {
+  padding: 0.75rem 1rem;
+  border-bottom: none;
+  font-weight: 600;
+}
+.api-doc-page table.data tbody tr.api-table-group h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: inherit;
+}
+.api-doc-page table.data tbody tr.api-table-sub {
+  background: #e0f2fe;
+}
+.api-doc-page table.data .mono {
+  font-family: var(--api-font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--api-color-primary);
+}
+.api-doc-page table.data td.txtcenter {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* -----------------------------------------------------------------------------
+ * CODE & PRE (examples and responses)
+ * -------------------------------------------------------------------------- */
+.api-doc-page .api-code-block {
+  background: var(--api-color-code-bg);
+  color: var(--api-color-code-text);
+  padding: var(--api-space-lg);
+  border-radius: var(--api-radius);
+  overflow-x: auto;
+  margin: var(--api-space) 0;
+  font-family: var(--api-font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+.api-doc-page .api-code-block code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border: none;
+  display: block;
+  white-space: pre;
+}
+.api-doc-page .api-response-card {
+  margin: var(--api-space) 0;
+  padding: var(--api-space);
+  border-radius: var(--api-radius);
+  border-left: 4px solid var(--api-color-border-strong);
+}
+.api-doc-page .api-response-card--accept {
+  border-left-color: var(--api-color-success);
+  background: var(--api-color-success-bg);
+}
+.api-doc-page .api-response-card--reject {
+  border-left-color: var(--api-color-required);
+  background: var(--api-color-required-bg);
+}
+.api-doc-page .api-response-card p {
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+}
+.api-doc-page .api-response-card pre {
+  margin: 0.5rem 0 0 0;
+  padding: var(--api-space);
+  background: var(--api-color-code-bg);
+  color: var(--api-color-code-text);
+  border-radius: 4px;
+  font-size: 0.8125rem;
+  overflow-x: auto;
+}
+
+/* -----------------------------------------------------------------------------
+ * TYPOGRAPHY & LEGEND
+ * -------------------------------------------------------------------------- */
+.api-doc-page .api-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: var(--api-space);
+  padding: 0.75rem 1rem;
+  background: #f1f5f9;
+  border-radius: var(--api-radius);
+  font-size: 0.875rem;
+}
+.api-doc-page .api-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.api-doc-page .api-main h2 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--api-color-primary);
+  margin: 0 0 var(--api-space) 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--api-color-border);
+  line-height: 1.3;
+}
+.api-doc-page .api-main h2:first-child {
+  margin-top: 0;
+}
+.api-doc-page .api-main h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--api-color-text);
+  margin: var(--api-space-lg) 0 var(--api-space) 0;
+  padding: 0;
+}
+.api-doc-page .api-main h4 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--api-color-text-muted);
+  margin: var(--api-space) 0 0.5rem 0;
+  padding: 0;
+}
+
+/* -----------------------------------------------------------------------------
+ * ON THIS PAGE (in-page nav / TOC)
+ * -------------------------------------------------------------------------- */
+.api-on-this-page {
+  margin: 0 0 var(--api-space-lg) 0;
+  padding: var(--api-space);
+  background: #f1f5f9;
+  border-radius: var(--api-radius);
+  border: 1px solid var(--api-color-border);
+}
+.api-on-this-page__label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--api-color-text-muted);
+  margin-bottom: 0.5rem;
+}
+.api-on-this-page ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+.api-on-this-page li {
+  margin-bottom: 0.25rem;
+}
+.api-on-this-page a {
+  font-size: 0.9375rem;
+}
+
+/* -----------------------------------------------------------------------------
+ * Response legend (exact vs variable text)
+ * -------------------------------------------------------------------------- */
+.api-response-legend {
+  padding: 0.15em 0.4em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 3px;
+  font-family: var(--api-font-mono);
+}
+.api-response-legend--exact {
+  background: var(--api-color-code-bg);
+  color: #fff;
+}
+.api-response-legend--variable {
+  background: var(--api-color-code-bg);
+  color: #94a3b8;
+}
+
+/* -----------------------------------------------------------------------------
+ * Code block – copyable (user-select, no fixed height)
+ * -------------------------------------------------------------------------- */
+.api-code-block--copyable {
+  user-select: text;
+  cursor: text;
+}
+.api-code-block--copyable code {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* -----------------------------------------------------------------------------
+ * Response card note (extra paragraph under pre)
+ * -------------------------------------------------------------------------- */
+.api-response-card__note {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.875rem;
+  color: var(--api-color-text-muted);
+  font-weight: 400;
+}
+.api-response-card__note .mono,
+.api-response-card__note code {
+  background: transparent;
+  padding: 0;
+}
+/* Subtitle before field tables – "Field names and acceptable values" */
+.api-doc-page .api-field-ref-intro {
+  font-size: 0.9375rem;
+  color: var(--api-color-text-muted);
+  margin: 0 0 var(--api-space) 0;
+  padding: 0;
+  font-weight: 400;
+}
+.api-doc-page .api-table-wrap + .api-field-ref-intro,
+.api-doc-page .api-field-ref-intro + .api-table-wrap {
+  margin-top: var(--api-space);
+}
+.api-doc-page .mono {
+  font-family: var(--api-font-mono);
+  font-size: 0.875em;
+  background: #f1f5f9;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+/* Links: ≥4.5:1 on surface/bg (WCAG AA) */
+.api-doc-page .api-main a:link,
+.api-doc-page .api-main a:visited {
+  color: #0369a1;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.api-doc-page .api-main a:hover,
+.api-doc-page .api-main a:focus {
+  color: #0c4a6e;
+  text-decoration: underline;
+}
+.api-doc-page ul {
+  margin: 0 0 var(--api-space) 0;
+  padding-left: 1.5rem;
+}
+.api-doc-page li {
+  margin-bottom: 0.35rem;
+}
+.api-doc-page hr {
+  border: none;
+  height: 1px;
+  background: var(--api-color-border);
+  margin: var(--api-space-xl) 0;
+}
+
+/* -----------------------------------------------------------------------------
+ * FOOTER
+ * -------------------------------------------------------------------------- */
+.api-doc-page .api-footer {
+  margin-top: var(--api-space-xl);
+  padding: var(--api-space-lg) var(--api-space-xl);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--api-color-text-muted);
+  border-top: 1px solid var(--api-color-border);
+  background: var(--api-color-bg);
+}
+
+/* -----------------------------------------------------------------------------
+ * RESPONSIVE
+ * -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .api-doc-page .api-main {
+    padding: var(--api-space) var(--api-space);
+  }
+  .api-doc-page .api-header {
+    padding: var(--api-space) var(--api-space);
+  }
+  .api-doc-page table.data th,
+  .api-doc-page table.data td {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}

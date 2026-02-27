@@ -29,6 +29,8 @@ return array(
 		  'urlFormat'=>'path',
 		  'showScriptName' => true,
 		  'rules'=>array(
+			'api/pingpost' => 'mortgage/api/pingpost',
+			'api/index' => 'mortgage/api/index',
 			'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 			'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 			'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',

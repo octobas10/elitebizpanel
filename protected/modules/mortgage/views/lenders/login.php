@@ -43,20 +43,11 @@ $this->breadcrumbs=array('Login');
 		</div>
 		<!-- form -->
 		<br>
-		<div class="register_link">
-			Are you a <a href="http://www.elitemortgagefinder.com" target="_blank" class="sitelink">elitemortgagefinder.com</a> Publisher <a href="../affiliates/login" class="affilaite_login"> Click Here</a>
+		<div class="login-links">
+			<p class="login-link-block">Are you a Publisher? <a href="<?php echo Yii::app()->createUrl('affiliates/login'); ?>" class="login-link-primary">Publisher login</a></p>
+			<p class="login-link-block"><a href="http://www.elitemortgagefinder.com" target="_blank" rel="noopener" class="login-link-external">elitemortgagefinder.com</a></p>
 		</div>
 		</div>
 		<?php $this->endWidget();?>
 	</div>
 </div>
-<style>
-.row.rememberMe {margin-bottom: 15px;}
-.row.rememberMe > input {margin-bottom: 5px;}
-.row.rememberMe > label {display: inline;}
-.register_link {color: red;font-size: 14px;}
-.register_link a {color: green;}
-.affilaite_login {color: red;font-size: 14px;}
-.affilaite_login a {color: green;}
-.affilaite_login {text-decoration: underline;}
-</style>

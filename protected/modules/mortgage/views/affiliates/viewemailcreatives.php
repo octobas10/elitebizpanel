@@ -1,103 +1,94 @@
-<style>
-.email_creative {
-	margin: 20px 0;
-	border: 1px solid;
-	padding: 10px;
+<?php
+$this->breadcrumbs = array('Email Creatives', 'Preview');
+$emailCreativesUrl = $this->createUrl('emailcreatives');
+// Live/base URL for email creative images (same logic as creatives.php)
+$backEnd = isset(Yii::app()->params['backEnd']) ? Yii::app()->params['backEnd'] : '';
+$httphost = isset(Yii::app()->params['httphost']) ? Yii::app()->params['httphost'] : '';
+if ($backEnd !== '' && preg_match('#^https?://#', $backEnd)) {
+	$assetsBaseUrl = rtrim($backEnd, '/');
+} elseif ($httphost !== '' && $backEnd !== '') {
+	$assetsBaseUrl = rtrim($httphost, '/') . '/' . ltrim($backEnd, '/');
+} else {
+	$assetsBaseUrl = Yii::app()->request->hostInfo . rtrim(Yii::app()->request->baseUrl, '/');
 }
-code {
-	display: block;
-/* 	white-space: nowrap; */
-/* 	color: #444; */
-/* 	background-color: #444; */
-	padding: 1em;
-	border: 1px solid #d1d1d1;
-	overflow: auto;
-	width: 97%;
-	height: auto;
-}
-.txtright {
-  text-align: right;
-}
-.title{
-	margin: 10px 0 10px 0; 
-	font-size: 18px;
-	font-weight: bold;
-	text-align: center;
-/* 	border-bottom: 1px solid; */
-}
-p.cut_and_paste {
-	margin: 0;
-}
-button#target-to-copy {
-  margin: 10px 0;
-  padding: 0 2px;
-  border-radius:
-}
-</style>
-<p class="title">Email Creatives</p>
-<div class="email_creative">
-	<p>
-		Find A New Or Used Car Loan Quickly&nbsp;
-		<a href="http://www.elitemortgagefinder.com">Click Here</a>
-	</p>
-	<p>
-		<a href="http://www.elitemortgagefinder.com" target="_blank">
-			<img alt="Get a payday advance up to $1500" src="<?php echo Yii::app()->params['httphost'].Yii::app()->params['backEnd']?>/email_creatives/<?php echo $creatives['image_name']?>">
-		</a>
-	</p>
-	<p>
-		Please apply at
-		<a href="http://www.elitemortgagefinder.com" target="_blank">http://www.elitemortgagefinder.com</a>
-		and we will match you with the best lender in the area that accepts your auto loan application.&nbsp;
-		<a href="http://www.elitemortgagefinder.com" target="_blank">Click Here</a>
-		<br>
-	</p>
-	<p>
-		elitemortgagefinder.com<br> 138-07 82nd Drive <br> Briarwood, NY 11435<br> Update Email Settings
-		<a style="text-decoration: underline; text-underline: single" href="http://www.elitecashwire.com/removeme.php">http://www.elitecashwire.com/removeme.php</a>
-	</p>
-	<br>
-</div>
+$imgSrc = $assetsBaseUrl . '/email_creatives/' . (isset($creatives['image_name']) ? $creatives['image_name'] : '');
+$embedSnippet = '<p>Find A New Or Used Car Loan Quickly&nbsp;<a href="http://www.elitemortgagefinder.com">Click Here</a></p>
+<p><a href="http://www.elitemortgagefinder.com" target="_blank"><img alt="Get a payday advance up to $1500" src="' . $imgSrc . '"></a></p>
+<p>Please apply at <a href="http://www.elitemortgagefinder.com" target="_blank">http://www.elitemortgagefinder.com</a> and we will match you with the best lender in the area that accepts your auto loan application.&nbsp;<a href="http://www.elitemortgagefinder.com" target="_blank">Click Here</a><br></p>
+<p>elitemortgagefinder.com<br> 138-07 82nd Drive <br> Briarwood, NY 11435<br> Update Email Settings <a style="text-decoration: underline; text-underline: single" href="http://www.elitecashwire.com/removeme.php">http://www.elitecashwire.com/removeme.php</a></p>';
+?>
+<section class="affiliates-creatives-section mortgage-dashboard-section view-email-creative-page">
+	<header class="affiliates-page-header">
+		<div class="affiliates-page-header-inner">
+			<h1 class="affiliates-page-title">Email creative preview</h1>
+			<p class="affiliates-page-subtitle">Preview and copy the HTML to paste into your email draft.</p>
+		</div>
+		<div class="affiliates-page-actions">
+			<a href="<?php echo CHtml::encode($emailCreativesUrl); ?>" class="btn btn-default">Back to Email Creatives</a>
+		</div>
+	</header>
 
-<p>Copy and paste below code on your email draft</p>
-<p class="cut_and_paste">
-<code name="clipboard-text" id="clipboard-text">
-&lt;p&gt;<br />
-Find A New Or Used Car Loan Quickly <br />
-&lt;a href="http://www.elitemortgagefinder.com"&gt;Click Here&lt;/a&gt;<br />
-&lt;/p&gt;<br />
-&lt;p&gt;<br />
-&lt;a href="http://www.elitemortgagefinder.com" target="_blank"&gt;<br />
-&lt;img alt="Get a payday advance up to $1500" src="<?php echo Yii::app()->params['httphost'].Yii::app()->params['backEnd']?>/email_creatives/<?php echo $creatives['image_name']?>"&gt;<br />
-&lt;/a&gt;<br />
-&lt;/p&gt;<br />
-&lt;p&gt;<br />
-Please apply at<br />
-&lt;a href="http://www.elitemortgagefinder.com" target="_blank"&gt;http://www.elitemortgagefinder.com&lt;/a&gt;<br />
-and we will match you with the best lender in the area that accepts your auto loan application. <br />
-&lt;a href="http://www.elitemortgagefinder.com" target="_blank"&gt;Click Here&lt;/a&gt;<br />
-&lt;br&gt;<br />
-&lt;/p&gt;<br />
-&lt;p&gt;<br />
-elitemortgagefinder.com&lt;br&gt; 138-07 82nd Drive &lt;br&gt; Briarwood, NY 11435&lt;br&gt; Update Email Settings<br />
-&lt;a style="text-decoration: underline; text-underline: single" href="http://www.elitecashwire.com/removeme.php"&gt;http://www.elitecashwire.com/removeme.php&lt;/a&gt;<br />
-&lt;/p&gt;<br />
-</code>
-</p>
-<button id="target-to-copy" data-clipboard-target="clipboard-text">Click To Copy</button><br/>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/zeroclipboard-2.2.0/ZeroClipboard.js"></script>
+	<?php if (empty($creatives) || !isset($creatives['image_name'])): ?>
+		<div class="portlet">
+			<div class="portlet-content">
+				<p class="dashboard-empty-state-hint">This creative could not be found.</p>
+			</div>
+		</div>
+	<?php else: ?>
+		<div class="view-email-creative-preview portlet">
+			<div class="portlet-decoration"><span class="portlet-title">Preview</span></div>
+			<div class="portlet-content">
+				<div class="view-email-creative-preview-inner">
+					<p>Find A New Or Used Car Loan Quickly&nbsp;<a href="http://www.elitemortgagefinder.com">Click Here</a></p>
+					<p><a href="http://www.elitemortgagefinder.com" target="_blank" rel="noopener"><img alt="Get a payday advance up to $1500" src="<?php echo CHtml::encode($imgSrc); ?>"></a></p>
+					<p>Please apply at <a href="http://www.elitemortgagefinder.com" target="_blank" rel="noopener">http://www.elitemortgagefinder.com</a> and we will match you with the best lender in the area that accepts your auto loan application.&nbsp;<a href="http://www.elitemortgagefinder.com" target="_blank" rel="noopener">Click Here</a><br></p>
+					<p>elitemortgagefinder.com<br> 138-07 82nd Drive <br> Briarwood, NY 11435<br> Update Email Settings <a style="text-decoration: underline; text-underline: single" href="http://www.elitecashwire.com/removeme.php">http://www.elitecashwire.com/removeme.php</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="view-email-creative-embed portlet">
+			<div class="portlet-decoration"><span class="portlet-title">Copy and paste into your email draft</span></div>
+			<div class="portlet-content">
+				<pre class="view-email-creative-code" id="view-email-creative-code" aria-label="Embed code"><?php echo CHtml::encode($embedSnippet); ?></pre>
+				<textarea id="view-email-creative-embed-source" class="view-email-creative-embed-source" readonly="readonly" aria-hidden="true"><?php echo CHtml::encode($embedSnippet); ?></textarea>
+				<div class="view-email-creative-actions">
+					<button type="button" class="btn btn-primary" id="view-email-creative-copy" data-clipboard-target="view-email-creative-embed-source">Copy to clipboard</button>
+					<span class="view-email-creative-copy-feedback" id="view-email-creative-copy-feedback" role="status" aria-live="polite"></span>
+				</div>
+			</div>
+		</div>
+	<?php endif; ?>
+</section>
 <script>
-$(document).ready(function(){
-	var clientTarget = new ZeroClipboard($("#target-to-copy"),{
-   	moviePath: "zeroclipboard-2.2.0/ZeroClipboard.swf",
-   	debug: false
-   });
-	clientTarget.on("load", function(clientTarget){
-		$('#flash-loaded').fadeIn();
-		clientTarget.on("complete", function(clientTarget, args){
-			clientTarget.setText(args.text);
-			$('#target-to-copy-text').fadeIn();
-		});
+(function() {
+	var btn = document.getElementById('view-email-creative-copy');
+	var source = document.getElementById('view-email-creative-embed-source');
+	var feedback = document.getElementById('view-email-creative-copy-feedback');
+	if (!btn || !source) return;
+	btn.addEventListener('click', function() {
+		var text = source.value;
+		if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+			navigator.clipboard.writeText(text).then(function() {
+				if (feedback) { feedback.textContent = 'Copied.'; feedback.classList.add('view-email-creative-copy-ok'); }
+				setTimeout(function() { if (feedback) { feedback.textContent = ''; feedback.classList.remove('view-email-creative-copy-ok'); } }, 2000);
+			}).catch(function() {
+				fallbackCopy();
+			});
+		} else {
+			fallbackCopy();
+		}
+		function fallbackCopy() {
+			source.select();
+			source.setSelectionRange(0, 99999);
+			try {
+				document.execCommand('copy');
+				if (feedback) { feedback.textContent = 'Copied.'; feedback.classList.add('view-email-creative-copy-ok'); }
+				setTimeout(function() { if (feedback) { feedback.textContent = ''; feedback.classList.remove('view-email-creative-copy-ok'); } }, 2000);
+			} catch (e) {
+				if (feedback) feedback.textContent = 'Copy failed. Select the code above and copy manually.';
+			}
+		}
 	});
-});
+})();
 </script>

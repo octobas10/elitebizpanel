@@ -1,6 +1,10 @@
 <?php
 class Submissions extends MortgageActive {
     public $dob_month, $dob_day, $dob_year, $new_car;
+    /** Virtual attributes for form defaults (test Auto Lender / leads); may also exist as DB columns. */
+    public $stay_in_year, $stay_in_month, $employment_in_year, $employment_in_month, $home_pay;
+    /** Virtual attributes for vehicle/car fields (test Auto Lender). */
+    public $car_year, $car_make, $car_model, $car_trim;
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }
@@ -528,7 +532,7 @@ class Submissions extends MortgageActive {
         $fields = 'SUM(IF(`is_returned` = "0", `vendor_lead_price`,0)) as total_vendor_price,SUM(`is_returned`) AS returned, DATE(sub_date) as date,promo_code';
         $where = "lead_status=1 AND  `sub_date` <= '".$edate."' AND `sub_date` >= '".$sdate."'";
         $groupby = 'DATE(sub_date),promo_code';
-        $orderby = 'sub_date desc';
+        $orderby = 'DATE(sub_date) desc, promo_code';
         $dbCommand = Yii::app()->dbMortgage->createCommand()
         ->select($fields)
         ->from("mortgage_submissions as A")
@@ -557,7 +561,7 @@ class Submissions extends MortgageActive {
         $fields = 'SUM(IF(`is_returned` = "0", `lender_lead_price`,0)) as total_buyer_price,SUM(`is_returned`) AS returned, DATE(sub_date) as date,user_name as lender';
         $where = "lead_status=1 AND  `sub_date` <= '".$edate."' AND `sub_date` >= '".$sdate."'";
         $groupby = 'DATE(sub_date),lender_id';
-        $orderby = 'sub_date desc';
+        $orderby = 'DATE(sub_date) desc, lender_id';
         $dbCommand = Yii::app()->dbMortgage->createCommand()
         ->select($fields)
         ->from("mortgage_submissions as A")
@@ -624,7 +628,7 @@ class Submissions extends MortgageActive {
         $fields = 'COUNT(id) as total,SUM(vendor_lead_price) as vendor_price,SUM(lender_lead_price) as buyer_price, DATE(sub_date) as date';
         $where = 'lead_status=1 AND sub_date >= "' . $sdate . '" and sub_date <= "' . $edate . '"';
         $groupby = 'DATE(sub_date)';
-        $orderby = 'sub_date desc';
+        $orderby = 'DATE(sub_date) desc';
         $dbCommand = Yii::app()->dbMortgage->createCommand()
                 ->select($fields)
                 ->from("mortgage_submissions a_sub")

@@ -1,6 +1,7 @@
 # --- Directories ---
 /vendor/
 /runtime/
+/protected/runtime/
 /web/assets/
 
 # --- Local Configurations (Where your API keys live) ---
@@ -21,6 +22,11 @@
 .DS_Store
 Thumbs.db
 .env
+
+# --- Cursor editor (do not commit) ---
+.cursor/
+.cursorrules
+.cursorignore
 
 # --- Composer ---
 composer.phar

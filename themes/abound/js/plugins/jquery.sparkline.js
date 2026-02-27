@@ -213,6 +213,13 @@
 (function($) {
     'use strict';
 
+    if (typeof $.browser === 'undefined') {
+        $.browser = {
+            msie: /msie|trident/i.test(navigator.userAgent),
+            hasCanvas: !!(document.createElement('canvas').getContext && document.createElement('canvas').getContext('2d'))
+        };
+    }
+
     var UNSET_OPTION = {},
         getDefaults, createClass, SPFormat, clipval, quartile, normalizeValue, normalizeValues,
         remove, isNumber, all, sum, addCSS, ensureArray, formatNumber, RangeMap,
